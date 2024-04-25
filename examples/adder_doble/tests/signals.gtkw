@@ -1,0 +1,22 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Thu Apr 25 01:02:30 2024
+[*]
+[dumpfile] "/home/ajor/github/cocotb_prac/examples/adder_doble/tests/dump.vcd"
+[dumpfile_mtime] "Thu Apr 25 01:01:20 2024"
+[dumpfile_size] 2454
+[savefile] "/home/ajor/github/cocotb_prac/examples/adder_doble/tests/signals.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-11.494676 340 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 244
+[signals_width] 96
+[sst_expanded] 1
+[sst_vpaned_height] 287
+@25
+A[7:0]
+B[7:0]
+X[8:0]
+[pattern_trace] 1
+[pattern_trace] 0

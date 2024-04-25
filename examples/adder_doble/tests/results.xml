@@ -1,0 +1,7 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1714006880" />
+    <testcase name="adder_basic_test" classname="test_adder" file="/home/ajor/github/cocotb_prac/examples/adder_doble/tests/test_adder.py" lineno="17" time="0.0005888938903808594" sim_time_ns="2.001" ratio_time="3397.895669635627" />
+    <testcase name="adder_randomised_test" classname="test_adder" file="/home/ajor/github/cocotb_prac/examples/adder_doble/tests/test_adder.py" lineno="34" time="0.0008544921875" sim_time_ns="20.000999999999998" ratio_time="23406.884571428567" />
+  </testsuite>
+</testsuites>
