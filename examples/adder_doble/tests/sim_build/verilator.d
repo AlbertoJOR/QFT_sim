@@ -1,5 +1,5 @@
 verilator.o: \
- /home/ajor/github/cocotb_prac/venv/lib/python3.10/site-packages/cocotb/share/lib/verilator/verilator.cpp \
+ /home/ajor/Documents/GitHub/cocotb_prac/venv/lib/python3.10/site-packages/cocotb/share/lib/verilator/verilator.cpp \
  Vtop.h /usr/local/share/verilator/include/verilated.h \
  /usr/local/share/verilator/include/verilatedos.h \
  /usr/local/share/verilator/include/verilated_config.h \
