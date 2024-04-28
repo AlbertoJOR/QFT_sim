@@ -1,3 +1,5 @@
 /venv
 /sim_build/
 /__pycache__/
+/__pycache__/*
+*.pyc
