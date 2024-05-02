@@ -1,0 +1,19 @@
+<shape name="stencilName" h="90" w="60" aspect="variable" strokewidth="inherit">
+  <background>
+    <path>
+      <move x="0" y="0"/>
+      <line x="0" y="30"/>
+      <line x="25" y="45"/>
+      <line x="0" y="60"/>
+      <line x="0" y="90"/>
+      <line x="60" y="60"/>
+      <line x="60" y="30"/>
+      <line x="0" y="0"/>
+      <close/>
+    </path>
+  </background>
+  <foreground>
+    <fillstroke/>
+    <stroke/>
+  </foreground>
+</shape>
