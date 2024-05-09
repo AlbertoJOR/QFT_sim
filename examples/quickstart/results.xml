@@ -1,6 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1713828515" />
-    <testcase name="my_second_test" classname="test_my_design" file="/home/ajor/github/cocotb_prac/examples/quickstart/test_my_design.py" lineno="15" time="0.0010457038879394531" sim_time_ns="6.001" ratio_time="5738.718263565892" />
-  </testsuite>
-</testsuites>
