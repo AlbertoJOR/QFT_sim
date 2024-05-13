@@ -28,6 +28,7 @@ async def signextend_randomised_test(dut):
 
         "Randomised test failed with: {A} = {S}".format(
             A=dut.A.value, S=dut.S.value)
+        
 
 
 
