@@ -17,23 +17,34 @@ def sign_extend(value, input_bits, output_bits):
     else:
         # If it's 0, then sign extend by filling the upper bits with 0s
         return value
-# a = 5
-# b = 7
-# neg_a = inverter_module(a)
-# negneg_a = inverter_module(neg_a)
 
-# mult1 = multiplication(a, b)
-# mult2 = multiplication(a, inverter_module(b))
-# mult3 = multiplication(b, inverter_module(a))
-# mult4 = multiplication(inverter_module(b), inverter_module(a))
+def karatsuba_binary(A, B):
+    # Convert A and B to binary strings
+    A_bin = bin(A)[2:]
+    B_bin = bin(B)[2:]
+    
+    # Pad with leading zeros to make the length 32 bits
+    A_bin = '0' * (32 - len(A_bin)) + A_bin
+    B_bin = '0' * (32 - len(B_bin)) + B_bin
+    
+    # Split A and B into high and low halves
+    A_high = int(A_bin[:16], 2)
+    A_low = int(A_bin[16:], 2)
+    B_high = int(B_bin[:16], 2)
+    B_low = int(B_bin[16:], 2)
+    
+    # Compute intermediate products
+    P1 = A_high * B_high
+    P2 = A_low * B_low
+    P3 = (A_high + A_low) * (B_high + B_low)
+    
+    # Compute the final result
+    Result = (P1 << 32) + ((P3 - P1 - P2) << 16) + P2
+    
+    return Result
 
-# print('{:08x}'.format(a))
-# print('{:08x}'.format(neg_a))
-# print('{:08x}'.format(neg_a))
+# Example usage
+A = 0x0ABCD901
+B = 0x04511230
 
-# print()
-
-# print('{:08x}'.format(mult1))
-# print('{:08x}'.format(mult2))
-# print('{:08x}'.format(mult3))
-# print('{:08x}'.format(mult4))
+print("Result:", hex(karatsuba_binary(A, B)))

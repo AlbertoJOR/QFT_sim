@@ -25,17 +25,11 @@ async def signextend_randomised_test(dut):
 
         S = sign_extend(A, D_W, D_W + E_W)
 
-        print(bin(A))
-        print(bin(dut.A.value))
-        print(bin(S))
-        print(bin(dut.S.value))
-        print()
-
-        # assert dut.X.value == sign_extend(
-        #     A, D_W, E_W + D_W
-        # ), "Randomised test failed with: {A} = {S}".format(
-        #     A=dut.A.value, S=dut.S.value
-        # )
+        assert dut.S.value == sign_extend(
+            A, D_W, E_W + D_W
+        ), "Randomised test failed with: {A} = {S}".format(
+            A=dut.A.value, S=dut.S.value
+        )
         
 
 

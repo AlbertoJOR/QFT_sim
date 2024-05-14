@@ -4,7 +4,7 @@ module multiplierkara #(
 ) (
     input logic [DATA_W - 1 : 0] A,
     input logic [DATA_W - 1 : 0] B,
-    input logic [DATA_W * 2 - 1 : 0] S
+    output logic [DATA_W * 2 - 1 : 0] S
 );
     // P1 = Ahigh * Bhigh;
     // P2 = Alow * Blow;
@@ -45,7 +45,7 @@ module multiplierkara #(
         .S(sB)
     );
     
-    wire [DATA_W+1 : 0] m3;
+    wire [DATA_W+1 : 0] m3, sinvext;
 
     multiplier #(.DATA_W(DATA_W/2 + 1)) mult3 (
         .A(sA),
@@ -74,8 +74,22 @@ module multiplierkara #(
         .S(sinv)
     );
 
+    singextend #(.DATA_W(DATA_W+1), .EXT_W(1)) sing(
+        .A(sinv),
+        .S(sinvext)
+    );
 
+    wire [DATA_W + 2: 0] m3sum;
 
+    adder #(.DATA_W(DATA_W +2)) m3adder (
+        .A(sinvext),
+        .B(m3),
+        .Carry(1'b0),
+        .S(m3sum)
+    );
+    wire [DATA_W *2 + 7 :0] res;
+    assign res =  {m1, m3sum[7:0]} + {m3sum[15:8], m2};
+    assign S = res[DATA_W*2 -1 : 0];
 
 
 endmodule
