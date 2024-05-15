@@ -45,7 +45,7 @@ module multiplierkara #(
         .S(sB)
     );
     
-    wire [DATA_W+1 : 0] m3, sinvext;
+    wire [DATA_W+1 : 0] m3;
 
     multiplier #(.DATA_W(DATA_W/2 + 1)) mult3 (
         .A(sA),
@@ -53,43 +53,82 @@ module multiplierkara #(
         .S(m3)
     );
 
-    wire [DATA_W-1: 0] im1, im2;
-
-    inverter #(.DATA_W(DATA_W)) inv1(
-        .A(m1),
-        .S(im1)
+    wire [DATA_W: 0] m1inv, m2inv;
+    
+    inverter #(.DATA_W(DATA_W+1)) inv1(
+        .A({1'b0,m1}),
+        .S(m1inv)
+    );
+    
+    inverter #(.DATA_W(DATA_W+1)) inv2(
+        .A({1'b0,m2}),
+        .S(m2inv)
     );
 
-    inverter #(.DATA_W(DATA_W)) inv2(
-        .A(m1),
-        .S(im1)
-    );
+    wire [DATA_W+1: 0] invsum;
 
-    wire [DATA_W: 0] sinv;
-
-    adder #(.DATA_W(DATA_W)) invsum(
-        .A(im1),
-        .B(im2),
+    subs #(.DATA_W(DATA_W+1)) invm1m2(
+        .A(m1inv),
+        .B(m2inv),
         .Carry(1'b0),
-        .S(sinv)
+        .S(invsum)
     );
 
-    singextend #(.DATA_W(DATA_W+1), .EXT_W(1)) sing(
-        .A(sinv),
-        .S(sinvext)
+    wire [DATA_W+2:0] invsumext;
+    wire [DATA_W+3:0] m3subs;
+
+    signextend #(.DATA_W(DATA_W+2), .EXT_W(1)) ext1(
+        .A(invsum),
+        .S(invsumext)
     );
 
-    wire [DATA_W + 2: 0] m3sum;
-
-    adder #(.DATA_W(DATA_W +2)) m3adder (
-        .A(sinvext),
-        .B(m3),
+    subs2 #(.DATA_W(DATA_W+3)) m3adder(
+        .A(invsumext),
+        .B({1'b0,m3}),
         .Carry(1'b0),
-        .S(m3sum)
+        .S(m3subs)
     );
-    wire [DATA_W *2 + 7 :0] res;
-    assign res =  {m1, m3sum[7:0]} + {m3sum[15:8], m2};
-    assign S = res[DATA_W*2 -1 : 0];
 
+    wire [DATA_W + 4 + DATA_W/2 -1:0] m3subspad;
+
+    padderright #(.DATA_W(DATA_W+4), .EXT_W(DATA_W/2)) padder
+    (
+        .A(m3subs),
+        .S(m3subspad)
+    );
+    wire [DATA_W*2-1:0] m1extend, m2extend, m3extend;
+
+    signextend #(.DATA_W(DATA_W + 4 + DATA_W/2), .EXT_W(DATA_W/2 -4)) extm3(
+        .A(m3subspad),
+        .S(m3extend)
+    );
+
+    padderleft #(.DATA_W(DATA_W), .EXT_W(DATA_W)) extm2(
+        .A(m2),
+        .S(m2extend)
+    );
+
+    padderright #(.DATA_W(DATA_W), .EXT_W(DATA_W)) extm1(
+        .A(m1),
+        .S(m1extend)
+    );
+
+    wire [DATA_W*2:0] summ1, summ2;
+
+    adder #(.DATA_W(DATA_W*2)) adderext1(
+        .A(m1extend),
+        .B(m2extend),
+        .Carry(1'b0),
+        .S(summ1)
+    );
+
+    adder #(.DATA_W(DATA_W*2)) adderext2(
+        .A(summ1[DATA_W*2-1:0]),
+        .B(m3extend),
+        .Carry(1'b0),
+        .S(summ2)
+    );
+
+    assign S = summ2[DATA_W *2-1:0];
 
 endmodule

@@ -14,11 +14,11 @@ if cocotb.simulator.is_running():
 async def signextend_randomised_test(dut):
     """Test for adding 2 random numbers multiple times"""
 
-    for i in range(10):
+    for i in range(20):
 
-        A = random.randint(0, 255)
         D_W = dut.DATA_W.value
         E_W = dut.EXT_W.value
+        A = random.randint(0, 2**D_W-1)
         dut.A.value = A
 
         await Timer(2, units="ns")

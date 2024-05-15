@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed May 15 21:27:58 2024
+[*]
+[dumpfile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/karatsuba/tests/multiplierkara/dump.vcd"
+[dumpfile_mtime] "Wed May 15 21:17:11 2024"
+[dumpfile_size] 5810
+[savefile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/karatsuba/tests/multiplierkara/signals.gtkw"
+[timestart] 0
+[size] 1440 1690
+[pos] -1 -1
+*-8.716858 1002 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 372
+[signals_width] 345
+[sst_expanded] 1
+[sst_vpaned_height] 514
+@28
+A[7:0]
+B[7:0]
+S[15:0]
+multiplierkara.m3[9:0]
+multiplierkara.m3extend[15:0]
+multiplierkara.m3subspad[15:0]
+@29
+multiplierkara.m3[9:0]
+@28
+multiplierkara.invsumext[10:0]
+multiplierkara.m3subs[11:0]
+[pattern_trace] 1
+[pattern_trace] 0
