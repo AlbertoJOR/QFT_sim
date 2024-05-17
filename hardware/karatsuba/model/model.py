@@ -43,8 +43,3 @@ def karatsuba_binary(A, B):
     
     return Result
 
-# Example usage
-A = 0x0ABCD901
-B = 0x04511230
-
-print("Result:", hex(karatsuba_binary(A, B)))

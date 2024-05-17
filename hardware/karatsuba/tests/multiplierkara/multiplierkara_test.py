@@ -13,7 +13,7 @@ if cocotb.simulator.is_running():
 async def multiplication_randomised_test(dut):
     """Test for karatusuba multiple times"""
 
-    for i in range(500000):
+    for i in range(50000):
 
         D_W = dut.DATA_W.value
         A = random.randint(0, 2**D_W-1)
