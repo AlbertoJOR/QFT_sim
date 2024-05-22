@@ -3,7 +3,7 @@ def inverter_module(a: int) -> int :
     return (~a) + 1
 
 def multiplication(a: int , b: int) -> int:
-    return a * b
+    return a * b 
 
 def sign_extend(value, input_bits, output_bits):
     # Calculate the maximum positive value for the input bit length

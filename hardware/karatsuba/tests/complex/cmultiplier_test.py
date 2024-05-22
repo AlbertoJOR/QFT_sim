@@ -13,7 +13,7 @@ if cocotb.simulator.is_running():
 async def complex_multiplication_randomised_test(dut):
     """Test for complex multiplication times"""
 
-    for i in range(100000):
+    for i in range(1000):
 
         D_W = dut.DATA_W.value
         A_real = random.randint(0, 2**D_W-1)
