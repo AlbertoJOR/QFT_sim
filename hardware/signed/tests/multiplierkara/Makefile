@@ -1,0 +1,17 @@
+TOPLEVEL_LANG ?= verilog
+SIM ?= verilator
+
+PWD=$(shell pwd)
+
+export PYTHONPATH := $(PWD)/../../model:$(PYTHONPATH)
+
+VERILOG_SOURCES = $(PWD)/../../hdl/*.sv
+
+TOPLEVEL := multiplierkara
+MODULE   := multiplierkara_test
+
+# Waveform for verilator
+# EXTRA_ARGS += --trace --trace-structs
+EXTRA_ARGS += --trace --trace-structs -GDATA_W=32
+
+include $(shell cocotb-config --makefiles)/Makefile.sim

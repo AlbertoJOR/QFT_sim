@@ -1,0 +1,21 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed May 15 15:51:59 2024
+[*]
+[dumpfile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/karatsuba/tests/singextend/dump.vcd"
+[dumpfile_mtime] "Wed May 15 15:50:39 2024"
+[dumpfile_size] 1170
+[savefile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/karatsuba/tests/singextend/signals.gtkw"
+[timestart] 0
+[size] 2880 1672
+[pos] -75 -75
+*-10.788330 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 388
+[signals_width] 177
+[sst_expanded] 1
+[sst_vpaned_height] 492
+@29
+A[8:0]
+S[15:0]
+[pattern_trace] 1
+[pattern_trace] 0
