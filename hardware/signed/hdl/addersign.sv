@@ -38,6 +38,8 @@ module addersign #(
     assign As = Asig & diffsig? Ainv : Aex;
     assign Bs = Bsig & diffsig? Binv : Bex;
 
+    // Puedes cambiar > si te fijas en los últimos bits de la suma para determinar
+    // el signo del resultado.
     assign compare = Aex > Bex;
 
     assign Ssig = diffsig & ((compare & Asig) | (~compare & Bsig)) | (Asig & Bsig);

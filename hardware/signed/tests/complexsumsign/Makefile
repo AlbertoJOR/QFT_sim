@@ -7,8 +7,8 @@ export PYTHONPATH := $(PWD)/../../model:$(PYTHONPATH)
 
 VERILOG_SOURCES = $(PWD)/../../hdl/*.sv
 
-TOPLEVEL := addersign
-MODULE   := addersign_test
+TOPLEVEL := caddersign
+MODULE   := caddersign_test
 
 # Waveform for verilator
 EXTRA_ARGS += --trace --trace-structs -GDATA_W=16

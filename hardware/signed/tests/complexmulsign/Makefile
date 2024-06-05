@@ -7,10 +7,10 @@ export PYTHONPATH := $(PWD)/../../model:$(PYTHONPATH)
 
 VERILOG_SOURCES = $(PWD)/../../hdl/*.sv
 
-TOPLEVEL := cmultiplier
-MODULE   := cmultiplier_test
+TOPLEVEL := cmultipliersign
+MODULE   := cmulsign_test
 
 # Waveform for verilator
-EXTRA_ARGS += --trace --trace-structs -GDATA_W=4
+EXTRA_ARGS += --trace --trace-structs -GDATA_W=16
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
