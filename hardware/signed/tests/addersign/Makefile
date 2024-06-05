@@ -11,6 +11,6 @@ TOPLEVEL := addersign
 MODULE   := addersign_test
 
 # Waveform for verilator
-EXTRA_ARGS += --trace --trace-structs -GDATA_W=4
+EXTRA_ARGS += --trace --trace-structs -GDATA_W=8
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
