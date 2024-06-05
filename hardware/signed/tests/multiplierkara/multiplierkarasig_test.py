@@ -7,23 +7,24 @@ from cocotb.runner import get_runner
 from cocotb.triggers import Timer
 
 if cocotb.simulator.is_running():
-    from complexmodel import *
+    from model import *
     from util import *
 
 @cocotb.test()
-async def signed_addition_randomised_test(dut):
-    """Test for signed addition"""
+async def multiplication_randomised_test(dut):
+    """Test for karatusuba multiple times"""
 
     for i in range(10):
 
         D_W = dut.DATA_W.value
         A = random.randint(0, 2**D_W-1)
         B = random.randint(0, 2**D_W-1)
-
         dut.A.value = A
         dut.B.value = B
 
         await Timer(2, units="ns")
+
+
         A_add = int(dut.A.value)
         B_add = int(dut.B.value)
         S_add = int(dut.S.value)
@@ -36,6 +37,11 @@ async def signed_addition_randomised_test(dut):
         S_F = fixedPointString(S_add, D_W, D_W-2)
 
         print("{} + {} = {}".format(dut.A.value, dut.B.value, dut.S.value))
-        print(A_S + " + " + B_S + " = " + S_S + "  o=" + str(over))
-        print(A_F + " + " + B_F + " = " + S_F + "  o=" + str(over))
+        print(A_S + " * " + B_S + " = " + S_S + "  o=" + str(over))
+        print(A_F + " * " + B_F + " = " + S_F + "  o=" + str(over))
         print()
+
+        
+
+
+

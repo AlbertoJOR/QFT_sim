@@ -1,10 +1,11 @@
 `timescale 1ns/1ps
-module multiplierkara #(
+module multiplierkarasign #(
     parameter integer DATA_W = 32
 ) (
     input logic [DATA_W - 1 : 0] A,
     input logic [DATA_W - 1 : 0] B,
-    output logic [DATA_W * 2 - 1 : 0] S
+    output logic [DATA_W - 1 : 0] S,
+    output logic overflow
 );
     // P1 = Ahigh * Bhigh;
     // P2 = Alow * Blow;
@@ -12,10 +13,15 @@ module multiplierkara #(
 
     wire [DATA_W/2 - 1:0] A_h, A_l, B_h, B_l;
     wire [DATA_W - 1:0] m1, m2;
-    assign A_h = A[DATA_W - 1 : DATA_W/2];
-    assign B_h = B[DATA_W - 1 : DATA_W/2];
+    wire Asig, Bsig, Ssig, over;
+    assign A_h = {1'b0, A[DATA_W - 2 : DATA_W/2]};
+    assign B_h = {1'b0, B[DATA_W - 2 : DATA_W/2]};
     assign A_l = A[DATA_W/2 - 1 : 0];
     assign B_l = B[DATA_W/2 - 1 : 0];
+
+    assign Asig = A[DATA_W -1];
+    assign Bsig = B[DATA_W -1];
+    assign Ssig = Asig ^ Bsig;
 
     multiplier #(.DATA_W(DATA_W/2)) mult1 (
         .A(A_h),
@@ -34,14 +40,12 @@ module multiplierkara #(
     adder #(.DATA_W(DATA_W/2)) adderA(
         .A(A_h),
         .B(A_l),
-        .Carry(1'b0),
         .S(sA)
     );
 
     adder #(.DATA_W(DATA_W/2)) adderB(
         .A(B_h),
         .B(B_l),
-        .Carry(1'b0),
         .S(sB)
     );
     
@@ -70,7 +74,6 @@ module multiplierkara #(
     subs #(.DATA_W(DATA_W+1)) invm1m2(
         .A(m1inv),
         .B(m2inv),
-        .Carry(1'b0),
         .S(invsum)
     );
 
@@ -85,7 +88,6 @@ module multiplierkara #(
     subs2 #(.DATA_W(DATA_W+3)) m3adder(
         .A(invsumext),
         .B({1'b0,m3}),
-        .Carry(1'b0),
         .S(m3subs)
     );
 
@@ -118,17 +120,18 @@ module multiplierkara #(
     adder #(.DATA_W(DATA_W*2)) adderext1(
         .A(m1extend),
         .B(m2extend),
-        .Carry(1'b0),
         .S(summ1)
     );
 
     adder #(.DATA_W(DATA_W*2)) adderext2(
         .A(summ1[DATA_W*2-1:0]),
         .B(m3extend),
-        .Carry(1'b0),
         .S(summ2)
     );
 
-    assign S = summ2[DATA_W *2-1:0];
+    assign over = summ2[DATA_W*2-1] | summ2[DATA_W*2-2] | summ2[DATA_W*2-3];
+    assign overflow = over;
+
+    assign S = over ? {DATA_W{1'b1}} : {Ssig, summ2[DATA_W*2 -4:DATA_W-2]};
 
 endmodule

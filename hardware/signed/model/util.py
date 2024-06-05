@@ -13,6 +13,16 @@ def signedString(A:int, D_W:int):
     sign = "-" if sign_bit else " "
     return "{}{}".format(sign,magnitud)
 
+def fixedPointString(A:int, D_W:int, point_index: int):
+    sign_bit = mask_bit(A, D_W)
+    magnitud = mask_int (A, D_W-1)
+    sign = "-" if sign_bit else " "
+
+    fixed_point_value = magnitud / (2 ** point_index)
+    fixed_point_str = sign + f"{fixed_point_value:.{point_index}f}"
+    
+    return fixed_point_str
+
 
 
 
