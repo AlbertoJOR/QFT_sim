@@ -63,7 +63,7 @@ module ckarasign #(
 
     addersign #(.DATA_W(DATA_W )) sumneg(
         .A({~real_part[DATA_W-1], real_part[DATA_W-2:0]}),
-        .B({~img_part[DATA_W-1], real_part[DATA_W-2:0]}),
+        .B({~img_part[DATA_W-1], img_part[DATA_W-2:0]}),
         .S(neg_part),
         .overflow(over[6])
     );
