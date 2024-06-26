@@ -11,7 +11,12 @@ module Ctrl #(
    parameter integer N =1 
 ) (
    input logic clk, rst,
-   output logic sel[N-1:0]
+   input logic op,
+   input logic abs,
+   output logic new_s,
+   output logic mult,
+   output logic sel[N-1:0],
+   output logic acc_sel[2**N:0] // Checar
 );
 
    State current_s, next_s;
@@ -25,10 +30,26 @@ module Ctrl #(
       end
 
    end
-   always_comb begin 
+   always_comb begin
+      mult = 1'b0; 
       case (current_s)
-         s_rst: 
+         s_rst:
+            next_s = idle;
+         idle:
+            if (op == 1'b1) begin
+               if (abs == 1'b1) begin
+                  next_s = abs;
+               end
+                  next_s = mul;
+            end
+         add:
+
+         mul:
+            mult = 1'b1;
+         acc:
+         abs:
          default: 
+            next_s = idle;
       endcase
       
    end

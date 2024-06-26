@@ -1,0 +1,39 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Tue Jun 25 21:00:15 2024
+[*]
+[dumpfile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/top/dump.vcd"
+[dumpfile_mtime] "Tue Jun 25 19:42:14 2024"
+[dumpfile_size] 32733
+[savefile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/top/wave.gtkw"
+[timestart] 70500
+[size] 2880 1648
+[pos] -1 -1
+*-13.000000 124890 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] top.
+[treeopen] top.gen_block[0].
+[treeopen] top.gen_block[1].
+[treeopen] top.gen_block[2].
+[treeopen] top.gen_block[3].
+[treeopen] top.gen_block[4].
+[treeopen] top.gen_block[7].
+[sst_width] 372
+[signals_width] 177
+[sst_expanded] 1
+[sst_vpaned_height] 499
+@23
+A[31:0]
+@22
+S[31:0]
+@200
+-block0
+@22
+top.gen_block[0].u_my_module.A[3:0]
+top.gen_block[0].u_my_module.S[3:0]
+@200
+-block7
+@22
+top.gen_block[7].u_my_module.A[3:0]
+top.gen_block[7].u_my_module.S[3:0]
+[pattern_trace] 1
+[pattern_trace] 0
