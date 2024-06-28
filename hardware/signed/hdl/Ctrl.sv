@@ -15,11 +15,16 @@ module Ctrl #(
    input logic abs,
    output logic new_s,
    output logic mult,
-   output logic sel[N-1:0],
+   output logic CAU_w_en,
+   output logic 
+   output logic sel[N-1:0], // Select 
    output logic acc_sel[2**N:0] // Checar
 );
 
    State current_s, next_s;
+   reg count_row[N-1:0];
+   reg count_acc[$clog2(N)-1:0];
+   reg CAU_acc_sel[2**N:0]
 
    always_ff @( posedge clk or rst ) begin
       if (rst) begin
