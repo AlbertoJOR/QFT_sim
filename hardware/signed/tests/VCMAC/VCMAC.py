@@ -189,9 +189,33 @@ async def complex_adder_randomised_test(dut):
     print_fixed_double(B_r, B_i,"B")
     print_fixed_double(S_r, S_i,"S")
 
+    print("doble")
+    dut.A_r[0].value= floatToSignedInt(0.5, D_W-2)
+    dut.A_r[1].value= floatToSignedInt(0.4, D_W-2)
+    dut.A_i[0].value= floatToSignedInt(0.8, D_W-2)
+    dut.A_i[1].value= floatToSignedInt(0.3, D_W-2)
+    dut.B_r[0].value= floatToSignedInt(0.2, D_W-2)
+    dut.B_r[1].value= floatToSignedInt(0.4, D_W-2)
+    dut.B_i[0].value=  floatToSignedInt(0.5, D_W-2)
+    dut.B_i[1].value= 0
+    dut.w_en_mult.value = 0
+    dut.acc.value = 0
+    dut.w_en_acc.value = 0
+    dut.abs.value = 1
 
-    # dut.w_en_mult.value = 0
-    # await Timer(10, units="ns")
+    await Timer(10, units="ns")
 
-    print("Sum")
+    A_r = fixed_point_array(dut.A_r, N, D_W)
+    A_i = fixed_point_array(dut.A_i, N, D_W)
+    B_r = fixed_point_array(dut.B_r, N, D_W)
+    B_i = fixed_point_array(dut.B_i, N, D_W)
+    S_r = fixed_point_array(dut.S_r, N, D_W)
+    S_i = fixed_point_array(dut.S_i, N, D_W)
+
+    print_fixed_double(A_r, A_i,"A")
+    print_fixed_double(B_r, B_i,"B")
+    print_fixed_double(S_r, S_i,"S")
+
+
+
 
