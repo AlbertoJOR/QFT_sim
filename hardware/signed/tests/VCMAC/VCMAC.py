@@ -49,8 +49,8 @@ async def complex_adder_randomised_test(dut):
     dut.rst.value = 1
     dut.acc.value = 0
     dut.abs.value = 0
-    dut.w_en.value = 0
-    dut.mult.value = 0
+    dut.w_en_mult.value = 0
+    dut.w_en_acc.value = 0
     for i in range(N):
         dut.A_r[i].value = 0
         dut.A_i[i].value = 0
@@ -61,15 +61,7 @@ async def complex_adder_randomised_test(dut):
 
     dut.rst.value = 0
 
-    # print(N)
-    # print(D_W)
-    # A_r = fixed_point_array(dut.A_r, N, D_W)
-    # A_i = fixed_point_array(dut.A_i, N, D_W)
-    # B_r = fixed_point_array(dut.B_r, N, D_W)
-    # B_i = fixed_point_array(dut.B_i, N, D_W)
 
-    # print_fixed_double(A_r, A_i,"A")
-    # print_fixed_double(B_r, B_i,"B")
 
 
     dut.A_r[0].value= floatToSignedInt(0.7071067811865475244008443, D_W-2)
@@ -80,8 +72,7 @@ async def complex_adder_randomised_test(dut):
     dut.B_r[1].value= floatToSignedInt(0.32, D_W-2)
     dut.B_i[0].value=  floatToSignedInt(0.5, D_W-2)
     dut.B_i[1].value= 0
-    dut.w_en.value = 1
-    dut.mult.value = 1
+    dut.w_en_mult.value = 1
 
     await Timer(10, units="ns")
 
@@ -95,4 +86,112 @@ async def complex_adder_randomised_test(dut):
     print_fixed_double(A_r, A_i,"A")
     print_fixed_double(B_r, B_i,"B")
     print_fixed_double(S_r, S_i,"S")
+
+    dut.A_r[0].value= floatToSignedInt(0.9, D_W-2)
+    dut.A_r[1].value= floatToSignedInt(0.4, D_W-2)
+    dut.A_i[0].value= 0
+    dut.A_i[1].value= floatToSignedInt(0.3, D_W-2)
+    dut.B_r[0].value= floatToSignedInt(0.2, D_W-2)
+    dut.B_r[1].value= floatToSignedInt(0.4, D_W-2)
+    dut.B_i[0].value=  floatToSignedInt(0.5, D_W-2)
+    dut.B_i[1].value= 0
+
+    await Timer(10, units="ns")
+
+    A_r = fixed_point_array(dut.A_r, N, D_W)
+    A_i = fixed_point_array(dut.A_i, N, D_W)
+    B_r = fixed_point_array(dut.B_r, N, D_W)
+    B_i = fixed_point_array(dut.B_i, N, D_W)
+    S_r = fixed_point_array(dut.S_r, N, D_W)
+    S_i = fixed_point_array(dut.S_i, N, D_W)
+
+    print_fixed_double(A_r, A_i,"A")
+    print_fixed_double(B_r, B_i,"B")
+    print_fixed_double(S_r, S_i,"S")
+
+
+    # dut.w_en_mult.value = 0
+    # await Timer(10, units="ns")
+
+    print("Sum")
+
+    dut.A_r[0].value= floatToSignedInt(0.7071067811865475244008443, D_W-2)
+    dut.A_r[1].value= floatToSignedInt(0.7071067811865475244008443, D_W-2)
+    dut.A_i[0].value= 0
+    dut.A_i[1].value= floatToSignedInt(1, D_W-2)
+    dut.B_r[0].value= floatToSignedInt(0.7071067811865475244008443, D_W-2)
+    dut.B_r[1].value= floatToSignedInt(0.32, D_W-2)
+    dut.B_i[0].value=  floatToSignedInt(0.5, D_W-2)
+    dut.B_i[1].value= 0
+    dut.w_en_acc.value = 1
+    dut.w_en_mult.value = 0
+    dut.acc.value = 1
+
+    await Timer(10, units="ns")
+
+    A_r = fixed_point_array(dut.A_r, N, D_W)
+    A_i = fixed_point_array(dut.A_i, N, D_W)
+    B_r = fixed_point_array(dut.B_r, N, D_W)
+    B_i = fixed_point_array(dut.B_i, N, D_W)
+    S_r = fixed_point_array(dut.S_r, N, D_W)
+    S_i = fixed_point_array(dut.S_i, N, D_W)
+
+    print_fixed_double(A_r, A_i,"A")
+    print_fixed_double(B_r, B_i,"B")
+    print_fixed_double(S_r, S_i,"S")
+
+    await Timer(10, units="ns")
+
+    dut.A_r[0].value= floatToSignedInt(0.7071067811865475244008443, D_W-2)
+    dut.A_r[1].value= floatToSignedInt(0.7071067811865475244008443, D_W-2)
+    dut.A_i[0].value= 0
+    dut.A_i[1].value= floatToSignedInt(1, D_W-2)
+    dut.B_r[0].value= floatToSignedInt(0.7071067811865475244008443, D_W-2)
+    dut.B_r[1].value= floatToSignedInt(0.32, D_W-2)
+    dut.B_i[0].value=  floatToSignedInt(0.5, D_W-2)
+    dut.B_i[1].value= 0
+    dut.w_en_mult.value = 1
+    dut.acc.value = 1
+    dut.w_en_acc.value = 0
+
+    await Timer(10, units="ns")
+
+    A_r = fixed_point_array(dut.A_r, N, D_W)
+    A_i = fixed_point_array(dut.A_i, N, D_W)
+    B_r = fixed_point_array(dut.B_r, N, D_W)
+    B_i = fixed_point_array(dut.B_i, N, D_W)
+    S_r = fixed_point_array(dut.S_r, N, D_W)
+    S_i = fixed_point_array(dut.S_i, N, D_W)
+
+    print_fixed_double(A_r, A_i,"A")
+    print_fixed_double(B_r, B_i,"B")
+    print_fixed_double(S_r, S_i,"S")
+
+    dut.A_r[0].value= floatToSignedInt(0.9, D_W-2)
+    dut.A_r[1].value= floatToSignedInt(0.4, D_W-2)
+    dut.A_i[0].value= 0
+    dut.A_i[1].value= floatToSignedInt(0.3, D_W-2)
+    dut.B_r[0].value= floatToSignedInt(0.2, D_W-2)
+    dut.B_r[1].value= floatToSignedInt(0.4, D_W-2)
+    dut.B_i[0].value=  floatToSignedInt(0.5, D_W-2)
+    dut.B_i[1].value= 0
+
+    await Timer(10, units="ns")
+
+    A_r = fixed_point_array(dut.A_r, N, D_W)
+    A_i = fixed_point_array(dut.A_i, N, D_W)
+    B_r = fixed_point_array(dut.B_r, N, D_W)
+    B_i = fixed_point_array(dut.B_i, N, D_W)
+    S_r = fixed_point_array(dut.S_r, N, D_W)
+    S_i = fixed_point_array(dut.S_i, N, D_W)
+
+    print_fixed_double(A_r, A_i,"A")
+    print_fixed_double(B_r, B_i,"B")
+    print_fixed_double(S_r, S_i,"S")
+
+
+    # dut.w_en_mult.value = 0
+    # await Timer(10, units="ns")
+
+    print("Sum")
 

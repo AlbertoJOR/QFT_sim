@@ -1,32 +1,22 @@
 `timescale 1ns/1ps
-module register_m#(
+module register_m #(
     parameter integer DATA_W = 32
-)
-(
-    input clk,
-    input rst,
-    input w_en,
-    input logic [DATA_W - 1 :0] A,
+) (
+    input logic clk,
+    input logic rst,
+    input logic w_en,
+    input logic [DATA_W - 1 : 0] A,
     output logic [DATA_W - 1 : 0] S
 );
 
-    reg [DATA_W -1: 0] Q;
-
-    initial begin
-        Q = {DATA_W{1'b0}};
-    end
-
-    always @(posedge clk or posedge rst) begin
+    // Bloque secuencial sensible al flanco positivo de clk o rst
+    always_ff @(posedge clk or posedge rst) begin
         if (rst) begin
-            Q <= {DATA_W{1'b0}};
-
+            S <= {DATA_W{1'b0}};  // Reiniciar el registro
         end 
-        else begin
-            if (w_en) begin
-                Q <= A;
-            end
+        else if (w_en) begin
+            S <= A;               // Actualizar S con A si w_en está activo
         end
     end
-    assign S = Q;
 
-endmodule;
+endmodule

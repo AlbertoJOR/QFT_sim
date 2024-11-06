@@ -26,7 +26,13 @@ module CMAC # (
     assign mux_mult_A[0] = {A_r, A_i};
     assign mux_acc_A[0] = {B_r, B_i};
 
-
+    register_m #(.DATA_W(DATA_W*2)) accu_reg(
+        .clk(clk),
+        .rst(rst),
+        .w_en(acc_en),
+        .A({S_r_res, S_i_res}),
+        .S(reg_acc)
+    );
 
     register_m #(.DATA_W(DATA_W*2)) mult_reg(
         .clk(clk),
@@ -36,13 +42,7 @@ module CMAC # (
         .S(reg_mult)
     );
 
-    register_m #(.DATA_W(DATA_W*2)) acc_reg(
-        .clk(clk),
-        .rst(rst),
-        .w_en(acc_en),
-        .A({S_r_res, S_i_res}),
-        .S(reg_acc)
-    );
+
 
     assign mux_mult_A[1] = reg_mult;
     assign mux_acc_A[1] = reg_acc;
@@ -56,7 +56,7 @@ module CMAC # (
     nmux #(.DATA_W(2*DATA_W), .N(2)) mux_mult(
         .A(mux_mult_A),
         .S(mux_mult_S),
-        .sel()
+        .sel(acc)
     );
 
     CAU #(.DATA_W(DATA_W)) cau(

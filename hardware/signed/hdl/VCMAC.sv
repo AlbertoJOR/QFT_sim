@@ -10,8 +10,8 @@ module VCMAC #(
     input logic [DATA_W -1 : 0] B_i[N-1:0],
     input logic acc,
     input logic abs,
-    input logic w_en,
-    input logic mult,
+    input logic w_en_mult,
+    input logic w_en_acc,
 
 
     output logic overflow,
@@ -19,10 +19,7 @@ module VCMAC #(
     output logic [DATA_W -1 : 0] S_i[N-1:0]  
 
 );
-    wire acc_en, mult_en;
     wire [N-1:0] over;
-    assign acc_en = w_en & acc & ~mult;
-    assign mult_en = w_en & mult & ~acc;
     genvar i;
     generate
         for (i = 0; i < N; i = i + 1) begin : CMAC_gen
@@ -35,8 +32,8 @@ module VCMAC #(
                 .B_i(B_i[i]),
                 .acc(acc),
                 .abs(abs),
-                .acc_en(acc_en),
-                .mult_en(mult_en),
+                .acc_en(w_en_acc),
+                .mult_en(w_en_mult),
                 .overflow(over[i]),
                 .S_r(S_r[i]),
                 .S_i(S_i[i])
