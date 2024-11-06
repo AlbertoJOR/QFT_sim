@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module register_m#(
     parameter integer DATA_W = 32
 )

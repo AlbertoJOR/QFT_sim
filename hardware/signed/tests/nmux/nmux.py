@@ -24,6 +24,10 @@ async def complex_adder_randomised_test(dut):
     """Test for complex multiplication times"""
 
     # cocotb.fork(clock_generator(dut.clk))
+    print(dut)
+    # Print the instances and signals (which includes the ports) of the design's toplevel
+    print(dir(dut))
+
     D_W = dut.DATA_W.value
     N = dut.N.value
     print("parameters:")

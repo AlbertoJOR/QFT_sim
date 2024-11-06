@@ -1,0 +1,84 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Wed Nov  6 01:14:08 2024
+[*]
+[dumpfile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/VCMAC/dump.vcd"
+[dumpfile_mtime] "Wed Nov  6 01:02:27 2024"
+[dumpfile_size] 93786
+[savefile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/VCMAC/signals.gtkw"
+[timestart] 0
+[size] 2880 1658
+[pos] -1 -1
+*-11.148358 5890 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] VCMAC.
+[treeopen] VCMAC.CMAC_gen[0].
+[treeopen] VCMAC.CMAC_gen[0].cmac_.
+[sst_width] 398
+[signals_width] 254
+[sst_expanded] 1
+[sst_vpaned_height] 490
+@28
+clk
+@22
+A_r[0][15:0]
+A_i[0][15:0]
+A_r[1][15:0]
+A_i[1][15:0]
+B_r[0][15:0]
+B_i[0][15:0]
+B_r[1][15:0]
+B_i[1][15:0]
+S_r[0][15:0]
+S_i[0][15:0]
+S_r[1][15:0]
+S_i[1][15:0]
+@28
+mult
+w_en
+VCMAC.overflow
+@200
+-CMAC1
+@22
+VCMAC.CMAC_gen[0].cmac_.A_r[15:0]
+VCMAC.CMAC_gen[0].cmac_.A_i[15:0]
+VCMAC.CMAC_gen[0].cmac_.B_r[15:0]
+VCMAC.CMAC_gen[0].cmac_.B_i[15:0]
+@c00022
+VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+@28
+(0)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(1)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(2)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(3)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(4)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(5)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(6)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(7)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(8)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(9)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(10)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(11)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(12)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(13)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(14)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+(15)VCMAC.CMAC_gen[0].cmac_.S_r_res[15:0]
+@1401200
+-group_end
+@22
+VCMAC.CMAC_gen[0].cmac_.S_i_res[15:0]
+@28
+VCMAC.CMAC_gen[0].cmac_.acc_en
+VCMAC.CMAC_gen[0].cmac_.mult_en
+@22
+VCMAC.CMAC_gen[0].cmac_.reg_acc[31:0]
+VCMAC.CMAC_gen[0].cmac_.reg_mult[31:0]
+@200
+-CAU
+@22
+VCMAC.CMAC_gen[0].cmac_.cau.S_i[15:0]
+VCMAC.CMAC_gen[0].cmac_.cau.S_r[15:0]
+VCMAC.CMAC_gen[0].cmac_.cau.S_r_s[0][15:0]
+@23
+VCMAC.CMAC_gen[0].cmac_.cau.S_r_s[1][15:0]
+[pattern_trace] 1
+[pattern_trace] 0

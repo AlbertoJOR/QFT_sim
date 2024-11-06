@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module inverter #(
     parameter integer DATA_W = 32
 ) (

@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module nmux #(
     parameter N = 2,
     parameter DATA_W = 32
