@@ -7,11 +7,11 @@ export PYTHONPATH := $(PWD)/../../model:$(PYTHONPATH)
 
 VERILOG_SOURCES = $(PWD)/../../hdl/*.sv
 
-TOPLEVEL := multiplierkara
-MODULE   := multiplierkara_test
+TOPLEVEL := indexmod
+MODULE   := indexmod
 
 # Waveform for verilator
 # EXTRA_ARGS += --trace --trace-structs
-EXTRA_ARGS += --trace --trace-structs -GDATA_W=32
+EXTRA_ARGS += --trace --trace-structs -GN=8
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
