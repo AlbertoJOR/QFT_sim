@@ -39,6 +39,14 @@ def fixedPointString(A:int, D_W:int, point_index: int):
     fixed_point_str = sign + f"{fixed_point_value:.{decimal_digits}f}"
     
     return fixed_point_str
+def fixedPointStringComplex(value:str, D_W:int, point_index:int):
+    res = []
+    real_part = int(value.binstr[0:D_W])
+    img_part = int(value.binstr[D_W:D_W*2])
+    real_fixed = fixedPointString(real_part,D_W, point_index)
+    img_fixed = fixedPointString(img_part,D_W, point_index)
+    res.append(real_fixed)
+    res.append(img_fixed)
 
 def intToSignedInt(A:int, D_W:int, sign:bool)->int:
     sign = shiftLeftBit(sign,D_W)
@@ -59,27 +67,38 @@ def floatToSignedInt(A:float, fraction:int) -> int:
         fixed_point = sign_val | fixed_point
     return fixed_point
 
+def ComplexFloatToSignedInt(Real:float, Img:float, fraction:int, D_W: int):
+    real_sint = floatToSignedInt(Real, fraction)
+    img_sint = floatToSignedInt(Real, fraction)
+    return (real_sint << D_W)|img_sint
+
+
+def fixed_point_array (array_sig, N, D_W):
+    data = []
+    for i in range(N):
+        data.append(fixedPointString(int(array_sig[i].value), D_W, D_W-2))
+    return data 
+
+def fixed_point_array_complex (array_sig, N, D_W):
+    data = []
+    for i in range(N):
+        data.append(fixedPointStringComplex(array_sig[i].value, D_W, D_W-2))
+    return data 
+
+
+def print_fixed_double(array_r, array_i, name):
+    N = len(array_r)
+    print()
+    for i in range(N):
+        print(name + "[" + str(i) +"] R = " + array_r[i] +"   "+ "I = " + array_i[i] )
+
+def print_fixed_complex(value_array, N, D_W, name):
+    fixed_array = fixed_point_array_complex(value_array, N, D_W)
+    print()
+    for i in range(N):
+        print(name + "[" + str(i) +"] R = " + fixed_array[i][0] +"   "+ "I = " + fixed_array[i][1] )
+
+    
     
 
-# float_val = -0.7071067811865475244008443
-# fixed_val = floatToSignedInt(float_val, 14)
-# print(float_val)
-# print(format(fixed_val, f'0{16}b'))
-# print()
-
-# float_val = 0.7071067811865475244008443
-# fixed_val = floatToSignedInt(float_val, 14)
-# print(float_val)
-# print(format(fixed_val, f'0{16}b'))
-
-# float_val = -1
-# fixed_val = floatToSignedInt(float_val, 14)
-# print(float_val)
-# print(format(fixed_val, f'0{16}b'))
-# print()
-
-# float_val = 1 
-# fixed_val = floatToSignedInt(float_val, 14)
-# print(float_val)
-# print(format(fixed_val, f'0{16}b'))
 

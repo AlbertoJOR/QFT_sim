@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module VCMAC #(
+module VCMAC2 #(
     parameter integer DATA_W = 32,
     parameter integer N = 2
 )(

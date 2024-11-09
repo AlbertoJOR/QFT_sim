@@ -1,0 +1,55 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sat Nov  9 20:27:20 2024
+[*]
+[dumpfile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/dump.vcd"
+[dumpfile_mtime] "Sat Nov  9 20:19:43 2024"
+[dumpfile_size] 195528
+[savefile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/signals.gtkw"
+[timestart] 0
+[size] 2880 1658
+[pos] -1 -1
+*-13.602076 81690 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] QFT.
+[sst_width] 398
+[signals_width] 388
+[sst_expanded] 1
+[sst_vpaned_height] 490
+@28
+clk
+@200
+-FSM
+@28
+QFT.FSM.strt_qft
+@2028
+^1 /home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/sate.txt
+QFT.FSM.current_state[2:0]
+@28
+QFT.FSM.update_state
+QFT.FSM.w_en_mult
+QFT.FSM.w_en_acc
+QFT.FSM.w_en_abs
+@2028
+^1 /home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/sate.txt
+QFT.FSM.next_state[2:0]
+^1 /home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/sate.txt
+QFT.FSM.prev_state[2:0]
+@24
+QFT.FSM.sel_counter[1:0]
+@201
+-mux
+@22
+QFT.IND_MUX.A[0][31:0]
+QFT.IND_MUX.A[1][31:0]
+@28
+QFT.IND_MUX.SEL[0][0]
+QFT.IND_MUX.SEL[1][0]
+@22
+QFT.IND_MUX.S[0][31:0]
+QFT.IND_MUX.S[1][31:0]
+@28
+QFT.index.A[0]
+QFT.index.S[0][0]
+QFT.index.S[1][0]
+[pattern_trace] 1
+[pattern_trace] 0

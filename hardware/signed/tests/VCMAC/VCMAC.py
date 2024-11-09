@@ -8,23 +8,7 @@ from cocotb.clock import Clock
 from cocotb.runner import get_runner
 from cocotb.triggers import Timer
 
-def fixed_point_array (array_sig, N, D_W):
-    data = []
-    for i in range(N):
-        data.append(fixedPointString(int(array_sig[i].value), D_W, D_W-2))
-    return data 
 
-def print_fixed_array(array_sig, name):
-    N = len(array_sig)
-    print()
-    for i in range(N):
-        print(name + "[" + str(i) +"] = " + array_sig[i])
-
-def print_fixed_double(array_r, array_i, name):
-    N = len(array_r)
-    print()
-    for i in range(N):
-        print(name + "[" + str(i) +"] R = " + array_r[i] +"   "+ "I = " + array_i[i] )
 
 if cocotb.simulator.is_running():
     from util import *
@@ -108,6 +92,11 @@ async def complex_adder_randomised_test(dut):
     print_fixed_double(A_r, A_i,"A")
     print_fixed_double(B_r, B_i,"B")
     print_fixed_double(S_r, S_i,"S")
+    print("Test")
+    print(dut.S_i[0].value)
+    print(type(dut.S_i[0].value))
+    print(dut.S_i[0].value.binstr[0:8])
+    print(dut.S_i[0].value.binstr[8:16])
 
 
     # dut.w_en_mult.value = 0

@@ -1,6 +1,7 @@
 module FSM #(
-    parameter integer N = 2,
-    parameter integer WIDTH = $clog2(N)
+    parameter  N = 2,
+    parameter  WIDTH = $clog2(N),
+    parameter MAX = {1'b0, {WIDTH{1'b1}}} // MAX tendrá N bits, todos a 1
 
 )(
     input logic clk,
@@ -12,7 +13,7 @@ module FSM #(
     output logic w_en_mult,
     output logic w_en_abs,
     output logic update_state,
-    output reg sel_counter[WIDTH-1:0]
+    output reg [WIDTH:0] sel_counter
 );
 
     // Definición de los estados
@@ -24,13 +25,23 @@ module FSM #(
         ABS  = 3'b100
     } state_t;
 
-    state_t current_state, next_state;
+    state_t current_state, next_state, prev_state;
 
     always @(posedge clk or posedge rst) begin
-        if (rst)
-            current_state <= INIT;  
-        else
+        if (rst) begin 
+            current_state <= INIT; 
+            prev_state <= INIT;
+            // sel_counter <= {(WIDTH+1){1'b0}};
+            sel_counter <= 0;
+        end else begin
+            prev_state <= current_state;
             current_state <= next_state;
+            if(current_state == ACC)begin
+                sel_counter <= sel_counter + 1;
+            end else if(current_state == IDLE) begin
+                sel_counter <= 0;
+            end
+        end 
     end
 
     always @(*) begin
@@ -47,43 +58,26 @@ module FSM #(
                     next_state = IDLE;
             end
             MULT : begin
-                next_state = ACC;
+                    next_state = ACC;
             end
             ACC : begin
-                if(sel_counter < N)
+                if(sel_counter < MAX)
                     next_state = MULT;
                 else
                     next_state = IDLE;
             end
             ABS : begin
+                next_state = IDLE;
             end
             default: next_state = IDLE; // Estado por defecto
         endcase
     end
 
-    // Lógica de salida (Moore) dependiente del estado actual
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            sel_counter <= 0;
-            w_en_acc <= 0;
-            w_en_mult 
-            w_en_abs,
-            update_state,
-            state <= INIT;
-        end
-        else begin
-            case (current_state)
-                READ: begin
-                    w_en <= 0;
-                    read <= 1;      // Habilitar `read` en el estado `READ`
-                end
-                default: begin
-                    w_en <= 0;
-                    read <= 0;
-                end
-            endcase
-            state <= current_state;
-        end
-    end
+    // Lógica de salida
+    assign  w_en_acc = (current_state == ACC);
+    assign  w_en_mult = (current_state == MULT); 
+    assign  w_en_abs = (current_state == ABS);
+    assign  update_state = (current_state == IDLE && 
+            ((prev_state == ACC)||(prev_state == ABS)));
 
 endmodule
