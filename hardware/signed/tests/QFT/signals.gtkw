@@ -1,16 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Sat Nov  9 20:27:20 2024
+[*] Thu Nov 21 02:02:54 2024
 [*]
 [dumpfile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/dump.vcd"
-[dumpfile_mtime] "Sat Nov  9 20:19:43 2024"
-[dumpfile_size] 195528
+[dumpfile_mtime] "Thu Nov 21 02:01:14 2024"
+[dumpfile_size] 967449
 [savefile] "/home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/signals.gtkw"
-[timestart] 0
+[timestart] 35580
 [size] 2880 1658
 [pos] -1 -1
-*-13.602076 81690 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-13.602076 46770 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] QFT.
+[treeopen] QFT.VCMAC.
+[treeopen] QFT.VCMAC.CMAC_gen[0].
+[treeopen] QFT.VCMAC.CMAC_gen[0].cmac_.
+[treeopen] QFT.VCMAC.CMAC_gen[1].
+[treeopen] QFT.VCMAC.CMAC_gen[1].cmac_.
 [sst_width] 398
 [signals_width] 388
 [sst_expanded] 1
@@ -19,9 +24,12 @@
 clk
 @200
 -FSM
+@22
+QFT.AMP_MEM.A[0][15:0]
 @28
 QFT.FSM.strt_qft
 @2028
+[color] 3
 ^1 /home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/sate.txt
 QFT.FSM.current_state[2:0]
 @28
@@ -34,22 +42,48 @@ QFT.FSM.w_en_abs
 QFT.FSM.next_state[2:0]
 ^1 /home/ajor/Documents/GitHub/cocotb_prac/hardware/signed/tests/QFT/sate.txt
 QFT.FSM.prev_state[2:0]
-@24
-QFT.FSM.sel_counter[1:0]
-@201
+@23
+[color] 3
+QFT.FSM.sel_counter[3:0]
+@200
 -mux
+@24
+QFT.index.A[2:0]
+QFT.index.S[0][2:0]
+QFT.index.S[1][2:0]
+QFT.index.S[2][2:0]
+QFT.index.S[3][2:0]
+QFT.index.S[4][2:0]
+QFT.index.S[5][2:0]
+QFT.index.S[6][2:0]
+QFT.index.S[7][2:0]
+@200
+-ALU_0
 @22
-QFT.IND_MUX.A[0][31:0]
-QFT.IND_MUX.A[1][31:0]
+QFT.VCMAC.A[0][15:0]
+QFT.VCMAC.B[0][15:0]
+QFT.VCMAC.S[0][15:0]
+QFT.VCMAC.CMAC_gen[0].cmac_.A[15:0]
+QFT.VCMAC.CMAC_gen[0].cmac_.B[15:0]
 @28
-QFT.IND_MUX.SEL[0][0]
-QFT.IND_MUX.SEL[1][0]
+QFT.VCMAC.CMAC_gen[0].cmac_.abs
+QFT.VCMAC.CMAC_gen[0].cmac_.acc
+QFT.VCMAC.CMAC_gen[0].cmac_.acc_en
+QFT.VCMAC.CMAC_gen[0].cmac_.mult_en
 @22
-QFT.IND_MUX.S[0][31:0]
-QFT.IND_MUX.S[1][31:0]
-@28
-QFT.index.A[0]
-QFT.index.S[0][0]
-QFT.index.S[1][0]
+QFT.VCMAC.CMAC_gen[0].cmac_.reg_acc[15:0]
+QFT.VCMAC.CMAC_gen[0].cmac_.reg_mult[15:0]
+@200
+-ALU_1
+@22
+QFT.VCMAC.A[1][15:0]
+QFT.VCMAC.B[1][15:0]
+QFT.VCMAC.S[1][15:0]
+QFT.VCMAC.CMAC_gen[1].cmac_.accu_reg.S[15:0]
+@200
+-Root
+@22
+QFT.ROOT_MEM.A[0][15:0]
+QFT.ROOT_MEM.A[1][15:0]
 [pattern_trace] 1
 [pattern_trace] 0

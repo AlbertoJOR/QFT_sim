@@ -69,7 +69,7 @@ def floatToSignedInt(A:float, fraction:int) -> int:
 
 def ComplexFloatToSignedInt(Real:float, Img:float, fraction:int, D_W: int):
     real_sint = floatToSignedInt(Real, fraction)
-    img_sint = floatToSignedInt(Real, fraction)
+    img_sint = floatToSignedInt(Img, fraction)
     return (real_sint << D_W)|img_sint
 
 

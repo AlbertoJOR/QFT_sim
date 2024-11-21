@@ -1,7 +1,8 @@
 module FSM #(
     parameter  N = 2,
     parameter  WIDTH = $clog2(N),
-    parameter MAX = {1'b0, {WIDTH{1'b1}}} // MAX tendrá N bits, todos a 1
+    parameter MAX = {1'b1, {WIDTH{1'b0}}} // MAX tendrá N bits, todos a 1
+    // parameter MAX = {1'b0, {WIDTH{1'b1}}} // MAX tendrá N bits, todos a 1
 
 )(
     input logic clk,
@@ -36,7 +37,7 @@ module FSM #(
         end else begin
             prev_state <= current_state;
             current_state <= next_state;
-            if(current_state == ACC)begin
+            if(current_state == MULT)begin
                 sel_counter <= sel_counter + 1;
             end else if(current_state == IDLE) begin
                 sel_counter <= 0;
