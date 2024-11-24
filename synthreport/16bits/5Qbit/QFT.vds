@@ -1,0 +1,2043 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov 23 17:48:10 2024
+# Process ID: 33336
+# Current directory: /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1
+# Command line: vivado -log QFT.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source QFT.tcl
+# Log file: /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1/QFT.vds
+# Journal file: /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1/vivado.jou
+# Running On: GF76, OS: Linux, CPU Frequency: 690.103 MHz, CPU Physical cores: 14, Host memory: 16455 MB
+#-----------------------------------------------------------
+source QFT.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1327.961 ; gain = 0.023 ; free physical = 8625 ; free virtual = 10531
+Command: read_checkpoint -auto_incremental -incremental /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.srcs/utils_1/imports/synth_1/QFT.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.srcs/utils_1/imports/synth_1/QFT.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top QFT -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 33363
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-9448] extra semicolon in $unit (global) scope [/home/ajor/Documents/Vivado/qft/CAU.sv:59]
+INFO: [Synth 8-11241] undeclared symbol 'w_en_abs', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:28]
+INFO: [Synth 8-11241] undeclared symbol 'w_en_acc', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:29]
+INFO: [Synth 8-11241] undeclared symbol 'w_en_mult', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:30]
+INFO: [Synth 8-11241] undeclared symbol 'update_state', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:31]
+INFO: [Synth 8-11241] undeclared symbol 'sel_counter', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:32]
+WARNING: [Synth 8-8895] 'w_en_abs' is already implicitly declared on line 28 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'w_en_acc' is already implicitly declared on line 29 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'w_en_mult' is already implicitly declared on line 30 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'update_state' is already implicitly declared on line 31 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'sel_counter' is already implicitly declared on line 32 [/home/ajor/Documents/Vivado/qft/QFT.sv:35]
+INFO: [Synth 8-11241] undeclared symbol 'A_amplitudes', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:44]
+WARNING: [Synth 8-8895] 'A_amplitudes' is already implicitly declared on line 44 [/home/ajor/Documents/Vivado/qft/QFT.sv:47]
+INFO: [Synth 8-11241] undeclared symbol 'A_roots', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:58]
+WARNING: [Synth 8-8895] 'A_roots' is already implicitly declared on line 58 [/home/ajor/Documents/Vivado/qft/QFT.sv:62]
+INFO: [Synth 8-11241] undeclared symbol 'SEL', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:66]
+WARNING: [Synth 8-8895] 'SEL' is already implicitly declared on line 66 [/home/ajor/Documents/Vivado/qft/QFT.sv:69]
+INFO: [Synth 8-11241] undeclared symbol 'COL_roots', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:74]
+WARNING: [Synth 8-8895] 'COL_roots' is already implicitly declared on line 74 [/home/ajor/Documents/Vivado/qft/QFT.sv:76]
+INFO: [Synth 8-11241] undeclared symbol 'VMAC_res', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:88]
+WARNING: [Synth 8-8895] 'VMAC_res' is already implicitly declared on line 88 [/home/ajor/Documents/Vivado/qft/QFT.sv:90]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1668.762 ; gain = 340.801 ; free physical = 7909 ; free virtual = 9949
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1225.854; parent = 980.478; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2649.488; parent = 1668.766; children = 980.723
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'QFT' [/home/ajor/Documents/Vivado/qft/QFT.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'FSM' [/home/ajor/Documents/Vivado/qft/FSM.sv:1]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'FSM' (0#1) [/home/ajor/Documents/Vivado/qft/FSM.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'CMEM' [/home/ajor/Documents/Vivado/qft/CMEM.sv:2]
+	Parameter N bound to: 32 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'register_m' [/home/ajor/Documents/Vivado/qft/register_m.sv:2]
+	Parameter DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'register_m' (0#1) [/home/ajor/Documents/Vivado/qft/register_m.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'CMEM' (0#1) [/home/ajor/Documents/Vivado/qft/CMEM.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'indexmod' [/home/ajor/Documents/Vivado/qft/indexmod.sv:2]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multipliertrunc' [/home/ajor/Documents/Vivado/qft/multipliertrunc.sv:3]
+	Parameter DATA_W bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multipliertrunc' (0#1) [/home/ajor/Documents/Vivado/qft/multipliertrunc.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'indexmod' (0#1) [/home/ajor/Documents/Vivado/qft/indexmod.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'VMux' [/home/ajor/Documents/Vivado/qft/VMux.sv:2]
+	Parameter N bound to: 32 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'nmux' [/home/ajor/Documents/Vivado/qft/nmux.sv:2]
+	Parameter N bound to: 32 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'nmux' (0#1) [/home/ajor/Documents/Vivado/qft/nmux.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'VMux' (0#1) [/home/ajor/Documents/Vivado/qft/VMux.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'VCMAC2' [/home/ajor/Documents/Vivado/qft/VCMAC2.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'CMAC2' [/home/ajor/Documents/Vivado/qft/CMAC2.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'nmux__parameterized0' [/home/ajor/Documents/Vivado/qft/nmux.sv:2]
+	Parameter N bound to: 2 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'nmux__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/nmux.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'CAU' [/home/ajor/Documents/Vivado/qft/CAU.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ckarasign' [/home/ajor/Documents/Vivado/qft/ckarasign.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multiplierkarasign' [/home/ajor/Documents/Vivado/qft/multiplierkarasign.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multiplier' [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (0#1) [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'adder' [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder' (0#1) [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'multiplier__parameterized0' [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+	Parameter DATA_W bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multiplier__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'inverter' [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+	Parameter DATA_W bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'inverter' (0#1) [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'subs' [/home/ajor/Documents/Vivado/qft/subs.sv:3]
+	Parameter DATA_W bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'subs' (0#1) [/home/ajor/Documents/Vivado/qft/subs.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'signextend' [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+	Parameter DATA_W bound to: 18 - type: integer 
+	Parameter EXT_W bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'signextend' (0#1) [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'subs2' [/home/ajor/Documents/Vivado/qft/subs2.sv:3]
+	Parameter DATA_W bound to: 19 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'subs2' (0#1) [/home/ajor/Documents/Vivado/qft/subs2.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'padderright' [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+	Parameter DATA_W bound to: 20 - type: integer 
+	Parameter EXT_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'padderright' (0#1) [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'signextend__parameterized0' [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+	Parameter DATA_W bound to: 28 - type: integer 
+	Parameter EXT_W bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'signextend__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'padderleft' [/home/ajor/Documents/Vivado/qft/padderleft.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter EXT_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'padderleft' (0#1) [/home/ajor/Documents/Vivado/qft/padderleft.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'padderright__parameterized0' [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter EXT_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'padderright__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'adder__parameterized0' [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+	Parameter DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'multiplierkarasign' (0#1) [/home/ajor/Documents/Vivado/qft/multiplierkarasign.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'addersign' [/home/ajor/Documents/Vivado/qft/addersign.sv:3]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'inverter__parameterized0' [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'inverter__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'inverter__parameterized1' [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+	Parameter DATA_W bound to: 15 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'inverter__parameterized1' (0#1) [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'addersign' (0#1) [/home/ajor/Documents/Vivado/qft/addersign.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ckarasign' (0#1) [/home/ajor/Documents/Vivado/qft/ckarasign.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'caddersign' [/home/ajor/Documents/Vivado/qft/caddersign.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'caddersign' (0#1) [/home/ajor/Documents/Vivado/qft/caddersign.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'CAU' (0#1) [/home/ajor/Documents/Vivado/qft/CAU.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'CMAC2' (0#1) [/home/ajor/Documents/Vivado/qft/CMAC2.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'VCMAC2' (0#1) [/home/ajor/Documents/Vivado/qft/VCMAC2.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'QFT' (0#1) [/home/ajor/Documents/Vivado/qft/QFT.sv:2]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1743.730 ; gain = 415.770 ; free physical = 7928 ; free virtual = 9969
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1225.854; parent = 980.478; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2724.457; parent = 1743.734; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1761.543 ; gain = 433.582 ; free physical = 7928 ; free virtual = 9969
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1225.854; parent = 980.478; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2742.270; parent = 1761.547; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1769.547 ; gain = 441.586 ; free physical = 7928 ; free virtual = 9969
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1225.854; parent = 980.478; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2750.273; parent = 1769.551; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Preparing Guide Design
+---------------------------------------------------------------------------------
+got a mismatch FSM
+got a mismatch CMEM
+got a mismatch CMEM
+got a mismatch indexmod
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch multipliertrunc
+got a mismatch VMux
+Is not a child genome
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch nmux
+got a mismatch VCMAC2
+Is not a child genome
+WARNING: [Synth 8-6702] IncrSynth : Design change found in an area of the design that prevents previous synthesis information being used, Reverting to default synthesis
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1796.453 ; gain = 468.492 ; free physical = 7846 ; free virtual = 9888
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1286.623; parent = 1041.246; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2777.180; parent = 1796.457; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1796.453 ; gain = 468.492 ; free physical = 7854 ; free virtual = 9896
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1286.639; parent = 1041.262; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2777.180; parent = 1796.457; children = 980.723
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'FSM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                              100 |                              000
+                    IDLE |                              000 |                              001
+                    MULT |                              011 |                              010
+                     ACC |                              010 |                              011
+                     ABS |                              001 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'FSM'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 1814.484 ; gain = 486.523 ; free physical = 7826 ; free virtual = 9869
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1314.426; parent = 1069.050; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2795.211; parent = 1814.488; children = 980.723
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : Design change found in an area of the design that prevents previous synthesis information being used
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 192   
+	   2 Input   19 Bit       Adders := 96    
+	   2 Input   18 Bit       Adders := 96    
+	   2 Input   16 Bit       Adders := 224   
+	   2 Input    9 Bit       Adders := 192   
+	   2 Input    6 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 544   
++---Registers : 
+	               32 Bit    Registers := 128   
+	                6 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 128   
+	   2 Input   16 Bit        Muxes := 1120  
+	   2 Input    6 Bit        Muxes := 1     
+	   5 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:30 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7614 ; free virtual = 9670
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1605.934; parent = 1360.582; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:31 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7625 ; free virtual = 9681
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1605.934; parent = 1360.582; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:35 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7544 ; free virtual = 9600
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1614.860; parent = 1369.515; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:41 ; elapsed = 00:00:41 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7584 ; free virtual = 9640
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1624.310; parent = 1378.964; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7584 ; free virtual = 9640
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1624.591; parent = 1379.245; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:46 ; elapsed = 00:00:47 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7566 ; free virtual = 9622
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1659.802; parent = 1414.456; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7572 ; free virtual = 9628
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1659.931; parent = 1414.585; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7574 ; free virtual = 9630
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1659.931; parent = 1414.585; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:52 ; elapsed = 00:00:52 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7574 ; free virtual = 9630
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1659.931; parent = 1414.585; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |  9955|
+|3     |LUT1   |  6690|
+|4     |LUT2   | 10418|
+|5     |LUT3   | 10123|
+|6     |LUT4   | 10955|
+|7     |LUT5   |  4988|
+|8     |LUT6   | 25870|
+|9     |MUXF7  |   288|
+|10    |FDCE   |  4124|
+|11    |FDPE   |     1|
+|12    |IBUF   |  2123|
+|13    |OBUF   |  1056|
++------+-------+------+
+
+Report Instance Areas: 
++------+----------------------------+--------------------------------+------+
+|      |Instance                    |Module                          |Cells |
++------+----------------------------+--------------------------------+------+
+|1     |top                         |                                | 86592|
+|2     |  AMP_MEM                   |CMEM                            |  2088|
+|3     |    \register_gen[0].reg_   |register_m_1458                 |    53|
+|4     |    \register_gen[10].reg_  |register_m_1459                 |    52|
+|5     |    \register_gen[11].reg_  |register_m_1460                 |   116|
+|6     |    \register_gen[12].reg_  |register_m_1461                 |    53|
+|7     |    \register_gen[13].reg_  |register_m_1462                 |    52|
+|8     |    \register_gen[14].reg_  |register_m_1463                 |    52|
+|9     |    \register_gen[15].reg_  |register_m_1464                 |    84|
+|10    |    \register_gen[16].reg_  |register_m_1465                 |    53|
+|11    |    \register_gen[17].reg_  |register_m_1466                 |    52|
+|12    |    \register_gen[18].reg_  |register_m_1467                 |    52|
+|13    |    \register_gen[19].reg_  |register_m_1468                 |   116|
+|14    |    \register_gen[1].reg_   |register_m_1469                 |    52|
+|15    |    \register_gen[20].reg_  |register_m_1470                 |    53|
+|16    |    \register_gen[21].reg_  |register_m_1471                 |    52|
+|17    |    \register_gen[22].reg_  |register_m_1472                 |    52|
+|18    |    \register_gen[23].reg_  |register_m_1473                 |    84|
+|19    |    \register_gen[24].reg_  |register_m_1474                 |    53|
+|20    |    \register_gen[25].reg_  |register_m_1475                 |    52|
+|21    |    \register_gen[26].reg_  |register_m_1476                 |    52|
+|22    |    \register_gen[27].reg_  |register_m_1477                 |   148|
+|23    |    \register_gen[28].reg_  |register_m_1478                 |    53|
+|24    |    \register_gen[29].reg_  |register_m_1479                 |    52|
+|25    |    \register_gen[2].reg_   |register_m_1480                 |    52|
+|26    |    \register_gen[30].reg_  |register_m_1481                 |    52|
+|27    |    \register_gen[31].reg_  |register_m_1482                 |    84|
+|28    |    \register_gen[3].reg_   |register_m_1483                 |   116|
+|29    |    \register_gen[4].reg_   |register_m_1484                 |    53|
+|30    |    \register_gen[5].reg_   |register_m_1485                 |    52|
+|31    |    \register_gen[6].reg_   |register_m_1486                 |    52|
+|32    |    \register_gen[7].reg_   |register_m_1487                 |    84|
+|33    |    \register_gen[8].reg_   |register_m_1488                 |    53|
+|34    |    \register_gen[9].reg_   |register_m_1489                 |    52|
+|35    |  FSM                       |FSM                             |  4901|
+|36    |  ROOT_MEM                  |CMEM_0                          |  5060|
+|37    |    \register_gen[0].reg_   |register_m_1426                 |    65|
+|38    |    \register_gen[10].reg_  |register_m_1427                 |    65|
+|39    |    \register_gen[11].reg_  |register_m_1428                 |   193|
+|40    |    \register_gen[12].reg_  |register_m_1429                 |   129|
+|41    |    \register_gen[13].reg_  |register_m_1430                 |    65|
+|42    |    \register_gen[14].reg_  |register_m_1431                 |   129|
+|43    |    \register_gen[15].reg_  |register_m_1432                 |   417|
+|44    |    \register_gen[16].reg_  |register_m_1433                 |    98|
+|45    |    \register_gen[17].reg_  |register_m_1434                 |    65|
+|46    |    \register_gen[18].reg_  |register_m_1435                 |    66|
+|47    |    \register_gen[19].reg_  |register_m_1436                 |   193|
+|48    |    \register_gen[1].reg_   |register_m_1437                 |    65|
+|49    |    \register_gen[20].reg_  |register_m_1438                 |    66|
+|50    |    \register_gen[21].reg_  |register_m_1439                 |    65|
+|51    |    \register_gen[22].reg_  |register_m_1440                 |   129|
+|52    |    \register_gen[23].reg_  |register_m_1441                 |   289|
+|53    |    \register_gen[24].reg_  |register_m_1442                 |   129|
+|54    |    \register_gen[25].reg_  |register_m_1443                 |    65|
+|55    |    \register_gen[26].reg_  |register_m_1444                 |    65|
+|56    |    \register_gen[27].reg_  |register_m_1445                 |   225|
+|57    |    \register_gen[28].reg_  |register_m_1446                 |   257|
+|58    |    \register_gen[29].reg_  |register_m_1447                 |    65|
+|59    |    \register_gen[2].reg_   |register_m_1448                 |    65|
+|60    |    \register_gen[30].reg_  |register_m_1449                 |   385|
+|61    |    \register_gen[31].reg_  |register_m_1450                 |   834|
+|62    |    \register_gen[3].reg_   |register_m_1451                 |   193|
+|63    |    \register_gen[4].reg_   |register_m_1452                 |    65|
+|64    |    \register_gen[5].reg_   |register_m_1453                 |    65|
+|65    |    \register_gen[6].reg_   |register_m_1454                 |   129|
+|66    |    \register_gen[7].reg_   |register_m_1455                 |   289|
+|67    |    \register_gen[8].reg_   |register_m_1456                 |    65|
+|68    |    \register_gen[9].reg_   |register_m_1457                 |    65|
+|69    |  VCMAC                     |VCMAC2                          | 71360|
+|70    |    \CMAC_gen[0].cmac_      |CMAC2                           |  2230|
+|71    |      mux_acc               |nmux__parameterized0_1385       |    34|
+|72    |      mux_mult              |nmux__parameterized0_1386       |    52|
+|73    |      accu_reg              |register_m_1382                 |    52|
+|74    |      cau                   |CAU_1383                        |  1012|
+|75    |        addr                |caddersign_1387                 |    34|
+|76    |          addI              |addersign_1422                  |    17|
+|77    |            invS            |inverter__parameterized1_1425   |    15|
+|78    |          addR              |addersign_1423                  |    17|
+|79    |            invS            |inverter__parameterized1_1424   |    15|
+|80    |        mult                |ckarasign_1388                  |   899|
+|81    |          adderA            |addersign_1389                  |    65|
+|82    |            invS            |inverter__parameterized1_1421   |    54|
+|83    |          adderB            |addersign_1390                  |    20|
+|84    |            invS            |inverter__parameterized1_1420   |    15|
+|85    |          adderimg          |addersign_1391                  |    43|
+|86    |            invA            |inverter__parameterized0_1418   |     4|
+|87    |            invS            |inverter__parameterized1_1419   |    30|
+|88    |          addreal           |addersign_1392                  |    37|
+|89    |            invS            |inverter__parameterized1_1417   |    30|
+|90    |          mult1             |multiplierkarasign_1393         |   255|
+|91    |            adderext2       |adder__parameterized0_1411      |   108|
+|92    |            invm1m2         |subs_1412                       |    16|
+|93    |            m3adder         |subs2_1413                      |     6|
+|94    |            mult1           |multiplier_1414                 |    28|
+|95    |            mult2           |multiplier_1415                 |    29|
+|96    |            mult3           |multiplier__parameterized0_1416 |    68|
+|97    |          mult2             |multiplierkarasign_1394         |   219|
+|98    |            adderext2       |adder__parameterized0_1405      |    72|
+|99    |            invm1m2         |subs_1406                       |    16|
+|100   |            m3adder         |subs2_1407                      |     6|
+|101   |            mult1           |multiplier_1408                 |    28|
+|102   |            mult2           |multiplier_1409                 |    29|
+|103   |            mult3           |multiplier__parameterized0_1410 |    68|
+|104   |          mult3             |multiplierkarasign_1395         |   218|
+|105   |            adderA          |adder_1398                      |     7|
+|106   |            adderext2       |adder__parameterized0_1399      |    49|
+|107   |            invm1m2         |subs_1400                       |    16|
+|108   |            m3adder         |subs2_1401                      |     6|
+|109   |            mult1           |multiplier_1402                 |    30|
+|110   |            mult2           |multiplier_1403                 |    42|
+|111   |            mult3           |multiplier__parameterized0_1404 |    68|
+|112   |          sumneg            |addersign_1396                  |    18|
+|113   |            invS            |inverter__parameterized1_1397   |    15|
+|114   |      mult_reg              |register_m_1384                 |   338|
+|115   |    \CMAC_gen[10].cmac_     |CMAC2_2                         |  2230|
+|116   |      mux_acc               |nmux__parameterized0_1341       |    34|
+|117   |      mux_mult              |nmux__parameterized0_1342       |    52|
+|118   |      accu_reg              |register_m_1338                 |    52|
+|119   |      cau                   |CAU_1339                        |   990|
+|120   |        addr                |caddersign_1343                 |    34|
+|121   |          addI              |addersign_1378                  |    17|
+|122   |            invS            |inverter__parameterized1_1381   |    15|
+|123   |          addR              |addersign_1379                  |    17|
+|124   |            invS            |inverter__parameterized1_1380   |    15|
+|125   |        mult                |ckarasign_1344                  |   862|
+|126   |          adderA            |addersign_1345                  |    65|
+|127   |            invS            |inverter__parameterized1_1377   |    54|
+|128   |          adderB            |addersign_1346                  |    20|
+|129   |            invS            |inverter__parameterized1_1376   |    15|
+|130   |          adderimg          |addersign_1347                  |    55|
+|131   |            invA            |inverter__parameterized0_1374   |    16|
+|132   |            invS            |inverter__parameterized1_1375   |    30|
+|133   |          addreal           |addersign_1348                  |    34|
+|134   |            invS            |inverter__parameterized1_1373   |    27|
+|135   |          mult1             |multiplierkarasign_1349         |   225|
+|136   |            adderext2       |adder__parameterized0_1367      |    78|
+|137   |            invm1m2         |subs_1368                       |    16|
+|138   |            m3adder         |subs2_1369                      |     6|
+|139   |            mult1           |multiplier_1370                 |    28|
+|140   |            mult2           |multiplier_1371                 |    29|
+|141   |            mult3           |multiplier__parameterized0_1372 |    68|
+|142   |          mult2             |multiplierkarasign_1350         |   198|
+|143   |            adderext2       |adder__parameterized0_1361      |    51|
+|144   |            invm1m2         |subs_1362                       |    16|
+|145   |            m3adder         |subs2_1363                      |     6|
+|146   |            mult1           |multiplier_1364                 |    28|
+|147   |            mult2           |multiplier_1365                 |    29|
+|148   |            mult3           |multiplier__parameterized0_1366 |    68|
+|149   |          mult3             |multiplierkarasign_1351         |   218|
+|150   |            adderA          |adder_1354                      |     7|
+|151   |            adderext2       |adder__parameterized0_1355      |    49|
+|152   |            invm1m2         |subs_1356                       |    16|
+|153   |            m3adder         |subs2_1357                      |     6|
+|154   |            mult1           |multiplier_1358                 |    30|
+|155   |            mult2           |multiplier_1359                 |    42|
+|156   |            mult3           |multiplier__parameterized0_1360 |    68|
+|157   |          sumneg            |addersign_1352                  |    23|
+|158   |            invS            |inverter__parameterized1_1353   |    15|
+|159   |      mult_reg              |register_m_1340                 |   360|
+|160   |    \CMAC_gen[11].cmac_     |CMAC2_3                         |  2230|
+|161   |      mux_acc               |nmux__parameterized0_1297       |    34|
+|162   |      mux_mult              |nmux__parameterized0_1298       |    52|
+|163   |      accu_reg              |register_m_1294                 |    52|
+|164   |      cau                   |CAU_1295                        |   990|
+|165   |        addr                |caddersign_1299                 |    34|
+|166   |          addI              |addersign_1334                  |    17|
+|167   |            invS            |inverter__parameterized1_1337   |    15|
+|168   |          addR              |addersign_1335                  |    17|
+|169   |            invS            |inverter__parameterized1_1336   |    15|
+|170   |        mult                |ckarasign_1300                  |   862|
+|171   |          adderA            |addersign_1301                  |    65|
+|172   |            invS            |inverter__parameterized1_1333   |    54|
+|173   |          adderB            |addersign_1302                  |    20|
+|174   |            invS            |inverter__parameterized1_1332   |    15|
+|175   |          adderimg          |addersign_1303                  |    55|
+|176   |            invA            |inverter__parameterized0_1330   |    16|
+|177   |            invS            |inverter__parameterized1_1331   |    30|
+|178   |          addreal           |addersign_1304                  |    34|
+|179   |            invS            |inverter__parameterized1_1329   |    27|
+|180   |          mult1             |multiplierkarasign_1305         |   225|
+|181   |            adderext2       |adder__parameterized0_1323      |    78|
+|182   |            invm1m2         |subs_1324                       |    16|
+|183   |            m3adder         |subs2_1325                      |     6|
+|184   |            mult1           |multiplier_1326                 |    28|
+|185   |            mult2           |multiplier_1327                 |    29|
+|186   |            mult3           |multiplier__parameterized0_1328 |    68|
+|187   |          mult2             |multiplierkarasign_1306         |   198|
+|188   |            adderext2       |adder__parameterized0_1317      |    51|
+|189   |            invm1m2         |subs_1318                       |    16|
+|190   |            m3adder         |subs2_1319                      |     6|
+|191   |            mult1           |multiplier_1320                 |    28|
+|192   |            mult2           |multiplier_1321                 |    29|
+|193   |            mult3           |multiplier__parameterized0_1322 |    68|
+|194   |          mult3             |multiplierkarasign_1307         |   218|
+|195   |            adderA          |adder_1310                      |     7|
+|196   |            adderext2       |adder__parameterized0_1311      |    49|
+|197   |            invm1m2         |subs_1312                       |    16|
+|198   |            m3adder         |subs2_1313                      |     6|
+|199   |            mult1           |multiplier_1314                 |    30|
+|200   |            mult2           |multiplier_1315                 |    42|
+|201   |            mult3           |multiplier__parameterized0_1316 |    68|
+|202   |          sumneg            |addersign_1308                  |    23|
+|203   |            invS            |inverter__parameterized1_1309   |    15|
+|204   |      mult_reg              |register_m_1296                 |   360|
+|205   |    \CMAC_gen[12].cmac_     |CMAC2_4                         |  2230|
+|206   |      mux_acc               |nmux__parameterized0_1253       |    34|
+|207   |      mux_mult              |nmux__parameterized0_1254       |    52|
+|208   |      accu_reg              |register_m_1250                 |    52|
+|209   |      cau                   |CAU_1251                        |   990|
+|210   |        addr                |caddersign_1255                 |    34|
+|211   |          addI              |addersign_1290                  |    17|
+|212   |            invS            |inverter__parameterized1_1293   |    15|
+|213   |          addR              |addersign_1291                  |    17|
+|214   |            invS            |inverter__parameterized1_1292   |    15|
+|215   |        mult                |ckarasign_1256                  |   862|
+|216   |          adderA            |addersign_1257                  |    65|
+|217   |            invS            |inverter__parameterized1_1289   |    54|
+|218   |          adderB            |addersign_1258                  |    20|
+|219   |            invS            |inverter__parameterized1_1288   |    15|
+|220   |          adderimg          |addersign_1259                  |    55|
+|221   |            invA            |inverter__parameterized0_1286   |    16|
+|222   |            invS            |inverter__parameterized1_1287   |    30|
+|223   |          addreal           |addersign_1260                  |    34|
+|224   |            invS            |inverter__parameterized1_1285   |    27|
+|225   |          mult1             |multiplierkarasign_1261         |   225|
+|226   |            adderext2       |adder__parameterized0_1279      |    78|
+|227   |            invm1m2         |subs_1280                       |    16|
+|228   |            m3adder         |subs2_1281                      |     6|
+|229   |            mult1           |multiplier_1282                 |    28|
+|230   |            mult2           |multiplier_1283                 |    29|
+|231   |            mult3           |multiplier__parameterized0_1284 |    68|
+|232   |          mult2             |multiplierkarasign_1262         |   198|
+|233   |            adderext2       |adder__parameterized0_1273      |    51|
+|234   |            invm1m2         |subs_1274                       |    16|
+|235   |            m3adder         |subs2_1275                      |     6|
+|236   |            mult1           |multiplier_1276                 |    28|
+|237   |            mult2           |multiplier_1277                 |    29|
+|238   |            mult3           |multiplier__parameterized0_1278 |    68|
+|239   |          mult3             |multiplierkarasign_1263         |   218|
+|240   |            adderA          |adder_1266                      |     7|
+|241   |            adderext2       |adder__parameterized0_1267      |    49|
+|242   |            invm1m2         |subs_1268                       |    16|
+|243   |            m3adder         |subs2_1269                      |     6|
+|244   |            mult1           |multiplier_1270                 |    30|
+|245   |            mult2           |multiplier_1271                 |    42|
+|246   |            mult3           |multiplier__parameterized0_1272 |    68|
+|247   |          sumneg            |addersign_1264                  |    23|
+|248   |            invS            |inverter__parameterized1_1265   |    15|
+|249   |      mult_reg              |register_m_1252                 |   360|
+|250   |    \CMAC_gen[13].cmac_     |CMAC2_5                         |  2230|
+|251   |      mux_acc               |nmux__parameterized0_1209       |    34|
+|252   |      mux_mult              |nmux__parameterized0_1210       |    52|
+|253   |      accu_reg              |register_m_1206                 |    52|
+|254   |      cau                   |CAU_1207                        |   990|
+|255   |        addr                |caddersign_1211                 |    34|
+|256   |          addI              |addersign_1246                  |    17|
+|257   |            invS            |inverter__parameterized1_1249   |    15|
+|258   |          addR              |addersign_1247                  |    17|
+|259   |            invS            |inverter__parameterized1_1248   |    15|
+|260   |        mult                |ckarasign_1212                  |   862|
+|261   |          adderA            |addersign_1213                  |    65|
+|262   |            invS            |inverter__parameterized1_1245   |    54|
+|263   |          adderB            |addersign_1214                  |    20|
+|264   |            invS            |inverter__parameterized1_1244   |    15|
+|265   |          adderimg          |addersign_1215                  |    55|
+|266   |            invA            |inverter__parameterized0_1242   |    16|
+|267   |            invS            |inverter__parameterized1_1243   |    30|
+|268   |          addreal           |addersign_1216                  |    34|
+|269   |            invS            |inverter__parameterized1_1241   |    27|
+|270   |          mult1             |multiplierkarasign_1217         |   225|
+|271   |            adderext2       |adder__parameterized0_1235      |    78|
+|272   |            invm1m2         |subs_1236                       |    16|
+|273   |            m3adder         |subs2_1237                      |     6|
+|274   |            mult1           |multiplier_1238                 |    28|
+|275   |            mult2           |multiplier_1239                 |    29|
+|276   |            mult3           |multiplier__parameterized0_1240 |    68|
+|277   |          mult2             |multiplierkarasign_1218         |   198|
+|278   |            adderext2       |adder__parameterized0_1229      |    51|
+|279   |            invm1m2         |subs_1230                       |    16|
+|280   |            m3adder         |subs2_1231                      |     6|
+|281   |            mult1           |multiplier_1232                 |    28|
+|282   |            mult2           |multiplier_1233                 |    29|
+|283   |            mult3           |multiplier__parameterized0_1234 |    68|
+|284   |          mult3             |multiplierkarasign_1219         |   218|
+|285   |            adderA          |adder_1222                      |     7|
+|286   |            adderext2       |adder__parameterized0_1223      |    49|
+|287   |            invm1m2         |subs_1224                       |    16|
+|288   |            m3adder         |subs2_1225                      |     6|
+|289   |            mult1           |multiplier_1226                 |    30|
+|290   |            mult2           |multiplier_1227                 |    42|
+|291   |            mult3           |multiplier__parameterized0_1228 |    68|
+|292   |          sumneg            |addersign_1220                  |    23|
+|293   |            invS            |inverter__parameterized1_1221   |    15|
+|294   |      mult_reg              |register_m_1208                 |   360|
+|295   |    \CMAC_gen[14].cmac_     |CMAC2_6                         |  2230|
+|296   |      mux_acc               |nmux__parameterized0_1165       |    34|
+|297   |      mux_mult              |nmux__parameterized0_1166       |    52|
+|298   |      accu_reg              |register_m_1162                 |    52|
+|299   |      cau                   |CAU_1163                        |   990|
+|300   |        addr                |caddersign_1167                 |    34|
+|301   |          addI              |addersign_1202                  |    17|
+|302   |            invS            |inverter__parameterized1_1205   |    15|
+|303   |          addR              |addersign_1203                  |    17|
+|304   |            invS            |inverter__parameterized1_1204   |    15|
+|305   |        mult                |ckarasign_1168                  |   862|
+|306   |          adderA            |addersign_1169                  |    65|
+|307   |            invS            |inverter__parameterized1_1201   |    54|
+|308   |          adderB            |addersign_1170                  |    20|
+|309   |            invS            |inverter__parameterized1_1200   |    15|
+|310   |          adderimg          |addersign_1171                  |    55|
+|311   |            invA            |inverter__parameterized0_1198   |    16|
+|312   |            invS            |inverter__parameterized1_1199   |    30|
+|313   |          addreal           |addersign_1172                  |    34|
+|314   |            invS            |inverter__parameterized1_1197   |    27|
+|315   |          mult1             |multiplierkarasign_1173         |   225|
+|316   |            adderext2       |adder__parameterized0_1191      |    78|
+|317   |            invm1m2         |subs_1192                       |    16|
+|318   |            m3adder         |subs2_1193                      |     6|
+|319   |            mult1           |multiplier_1194                 |    28|
+|320   |            mult2           |multiplier_1195                 |    29|
+|321   |            mult3           |multiplier__parameterized0_1196 |    68|
+|322   |          mult2             |multiplierkarasign_1174         |   198|
+|323   |            adderext2       |adder__parameterized0_1185      |    51|
+|324   |            invm1m2         |subs_1186                       |    16|
+|325   |            m3adder         |subs2_1187                      |     6|
+|326   |            mult1           |multiplier_1188                 |    28|
+|327   |            mult2           |multiplier_1189                 |    29|
+|328   |            mult3           |multiplier__parameterized0_1190 |    68|
+|329   |          mult3             |multiplierkarasign_1175         |   218|
+|330   |            adderA          |adder_1178                      |     7|
+|331   |            adderext2       |adder__parameterized0_1179      |    49|
+|332   |            invm1m2         |subs_1180                       |    16|
+|333   |            m3adder         |subs2_1181                      |     6|
+|334   |            mult1           |multiplier_1182                 |    30|
+|335   |            mult2           |multiplier_1183                 |    42|
+|336   |            mult3           |multiplier__parameterized0_1184 |    68|
+|337   |          sumneg            |addersign_1176                  |    23|
+|338   |            invS            |inverter__parameterized1_1177   |    15|
+|339   |      mult_reg              |register_m_1164                 |   360|
+|340   |    \CMAC_gen[15].cmac_     |CMAC2_7                         |  2230|
+|341   |      mux_acc               |nmux__parameterized0_1121       |    34|
+|342   |      mux_mult              |nmux__parameterized0_1122       |    52|
+|343   |      accu_reg              |register_m_1118                 |    52|
+|344   |      cau                   |CAU_1119                        |   990|
+|345   |        addr                |caddersign_1123                 |    34|
+|346   |          addI              |addersign_1158                  |    17|
+|347   |            invS            |inverter__parameterized1_1161   |    15|
+|348   |          addR              |addersign_1159                  |    17|
+|349   |            invS            |inverter__parameterized1_1160   |    15|
+|350   |        mult                |ckarasign_1124                  |   862|
+|351   |          adderA            |addersign_1125                  |    65|
+|352   |            invS            |inverter__parameterized1_1157   |    54|
+|353   |          adderB            |addersign_1126                  |    20|
+|354   |            invS            |inverter__parameterized1_1156   |    15|
+|355   |          adderimg          |addersign_1127                  |    55|
+|356   |            invA            |inverter__parameterized0_1154   |    16|
+|357   |            invS            |inverter__parameterized1_1155   |    30|
+|358   |          addreal           |addersign_1128                  |    34|
+|359   |            invS            |inverter__parameterized1_1153   |    27|
+|360   |          mult1             |multiplierkarasign_1129         |   225|
+|361   |            adderext2       |adder__parameterized0_1147      |    78|
+|362   |            invm1m2         |subs_1148                       |    16|
+|363   |            m3adder         |subs2_1149                      |     6|
+|364   |            mult1           |multiplier_1150                 |    28|
+|365   |            mult2           |multiplier_1151                 |    29|
+|366   |            mult3           |multiplier__parameterized0_1152 |    68|
+|367   |          mult2             |multiplierkarasign_1130         |   198|
+|368   |            adderext2       |adder__parameterized0_1141      |    51|
+|369   |            invm1m2         |subs_1142                       |    16|
+|370   |            m3adder         |subs2_1143                      |     6|
+|371   |            mult1           |multiplier_1144                 |    28|
+|372   |            mult2           |multiplier_1145                 |    29|
+|373   |            mult3           |multiplier__parameterized0_1146 |    68|
+|374   |          mult3             |multiplierkarasign_1131         |   218|
+|375   |            adderA          |adder_1134                      |     7|
+|376   |            adderext2       |adder__parameterized0_1135      |    49|
+|377   |            invm1m2         |subs_1136                       |    16|
+|378   |            m3adder         |subs2_1137                      |     6|
+|379   |            mult1           |multiplier_1138                 |    30|
+|380   |            mult2           |multiplier_1139                 |    42|
+|381   |            mult3           |multiplier__parameterized0_1140 |    68|
+|382   |          sumneg            |addersign_1132                  |    23|
+|383   |            invS            |inverter__parameterized1_1133   |    15|
+|384   |      mult_reg              |register_m_1120                 |   360|
+|385   |    \CMAC_gen[16].cmac_     |CMAC2_8                         |  2230|
+|386   |      mux_acc               |nmux__parameterized0_1077       |    34|
+|387   |      mux_mult              |nmux__parameterized0_1078       |    52|
+|388   |      accu_reg              |register_m_1074                 |    52|
+|389   |      cau                   |CAU_1075                        |   990|
+|390   |        addr                |caddersign_1079                 |    34|
+|391   |          addI              |addersign_1114                  |    17|
+|392   |            invS            |inverter__parameterized1_1117   |    15|
+|393   |          addR              |addersign_1115                  |    17|
+|394   |            invS            |inverter__parameterized1_1116   |    15|
+|395   |        mult                |ckarasign_1080                  |   862|
+|396   |          adderA            |addersign_1081                  |    65|
+|397   |            invS            |inverter__parameterized1_1113   |    54|
+|398   |          adderB            |addersign_1082                  |    20|
+|399   |            invS            |inverter__parameterized1_1112   |    15|
+|400   |          adderimg          |addersign_1083                  |    55|
+|401   |            invA            |inverter__parameterized0_1110   |    16|
+|402   |            invS            |inverter__parameterized1_1111   |    30|
+|403   |          addreal           |addersign_1084                  |    34|
+|404   |            invS            |inverter__parameterized1_1109   |    27|
+|405   |          mult1             |multiplierkarasign_1085         |   225|
+|406   |            adderext2       |adder__parameterized0_1103      |    78|
+|407   |            invm1m2         |subs_1104                       |    16|
+|408   |            m3adder         |subs2_1105                      |     6|
+|409   |            mult1           |multiplier_1106                 |    28|
+|410   |            mult2           |multiplier_1107                 |    29|
+|411   |            mult3           |multiplier__parameterized0_1108 |    68|
+|412   |          mult2             |multiplierkarasign_1086         |   198|
+|413   |            adderext2       |adder__parameterized0_1097      |    51|
+|414   |            invm1m2         |subs_1098                       |    16|
+|415   |            m3adder         |subs2_1099                      |     6|
+|416   |            mult1           |multiplier_1100                 |    28|
+|417   |            mult2           |multiplier_1101                 |    29|
+|418   |            mult3           |multiplier__parameterized0_1102 |    68|
+|419   |          mult3             |multiplierkarasign_1087         |   218|
+|420   |            adderA          |adder_1090                      |     7|
+|421   |            adderext2       |adder__parameterized0_1091      |    49|
+|422   |            invm1m2         |subs_1092                       |    16|
+|423   |            m3adder         |subs2_1093                      |     6|
+|424   |            mult1           |multiplier_1094                 |    30|
+|425   |            mult2           |multiplier_1095                 |    42|
+|426   |            mult3           |multiplier__parameterized0_1096 |    68|
+|427   |          sumneg            |addersign_1088                  |    23|
+|428   |            invS            |inverter__parameterized1_1089   |    15|
+|429   |      mult_reg              |register_m_1076                 |   360|
+|430   |    \CMAC_gen[17].cmac_     |CMAC2_9                         |  2230|
+|431   |      mux_acc               |nmux__parameterized0_1033       |    34|
+|432   |      mux_mult              |nmux__parameterized0_1034       |    52|
+|433   |      accu_reg              |register_m_1030                 |    52|
+|434   |      cau                   |CAU_1031                        |   990|
+|435   |        addr                |caddersign_1035                 |    34|
+|436   |          addI              |addersign_1070                  |    17|
+|437   |            invS            |inverter__parameterized1_1073   |    15|
+|438   |          addR              |addersign_1071                  |    17|
+|439   |            invS            |inverter__parameterized1_1072   |    15|
+|440   |        mult                |ckarasign_1036                  |   862|
+|441   |          adderA            |addersign_1037                  |    65|
+|442   |            invS            |inverter__parameterized1_1069   |    54|
+|443   |          adderB            |addersign_1038                  |    20|
+|444   |            invS            |inverter__parameterized1_1068   |    15|
+|445   |          adderimg          |addersign_1039                  |    55|
+|446   |            invA            |inverter__parameterized0_1066   |    16|
+|447   |            invS            |inverter__parameterized1_1067   |    30|
+|448   |          addreal           |addersign_1040                  |    34|
+|449   |            invS            |inverter__parameterized1_1065   |    27|
+|450   |          mult1             |multiplierkarasign_1041         |   225|
+|451   |            adderext2       |adder__parameterized0_1059      |    78|
+|452   |            invm1m2         |subs_1060                       |    16|
+|453   |            m3adder         |subs2_1061                      |     6|
+|454   |            mult1           |multiplier_1062                 |    28|
+|455   |            mult2           |multiplier_1063                 |    29|
+|456   |            mult3           |multiplier__parameterized0_1064 |    68|
+|457   |          mult2             |multiplierkarasign_1042         |   198|
+|458   |            adderext2       |adder__parameterized0_1053      |    51|
+|459   |            invm1m2         |subs_1054                       |    16|
+|460   |            m3adder         |subs2_1055                      |     6|
+|461   |            mult1           |multiplier_1056                 |    28|
+|462   |            mult2           |multiplier_1057                 |    29|
+|463   |            mult3           |multiplier__parameterized0_1058 |    68|
+|464   |          mult3             |multiplierkarasign_1043         |   218|
+|465   |            adderA          |adder_1046                      |     7|
+|466   |            adderext2       |adder__parameterized0_1047      |    49|
+|467   |            invm1m2         |subs_1048                       |    16|
+|468   |            m3adder         |subs2_1049                      |     6|
+|469   |            mult1           |multiplier_1050                 |    30|
+|470   |            mult2           |multiplier_1051                 |    42|
+|471   |            mult3           |multiplier__parameterized0_1052 |    68|
+|472   |          sumneg            |addersign_1044                  |    23|
+|473   |            invS            |inverter__parameterized1_1045   |    15|
+|474   |      mult_reg              |register_m_1032                 |   360|
+|475   |    \CMAC_gen[18].cmac_     |CMAC2_10                        |  2230|
+|476   |      mux_acc               |nmux__parameterized0_989        |    34|
+|477   |      mux_mult              |nmux__parameterized0_990        |    52|
+|478   |      accu_reg              |register_m_986                  |    52|
+|479   |      cau                   |CAU_987                         |   990|
+|480   |        addr                |caddersign_991                  |    34|
+|481   |          addI              |addersign_1026                  |    17|
+|482   |            invS            |inverter__parameterized1_1029   |    15|
+|483   |          addR              |addersign_1027                  |    17|
+|484   |            invS            |inverter__parameterized1_1028   |    15|
+|485   |        mult                |ckarasign_992                   |   862|
+|486   |          adderA            |addersign_993                   |    65|
+|487   |            invS            |inverter__parameterized1_1025   |    54|
+|488   |          adderB            |addersign_994                   |    20|
+|489   |            invS            |inverter__parameterized1_1024   |    15|
+|490   |          adderimg          |addersign_995                   |    55|
+|491   |            invA            |inverter__parameterized0_1022   |    16|
+|492   |            invS            |inverter__parameterized1_1023   |    30|
+|493   |          addreal           |addersign_996                   |    34|
+|494   |            invS            |inverter__parameterized1_1021   |    27|
+|495   |          mult1             |multiplierkarasign_997          |   225|
+|496   |            adderext2       |adder__parameterized0_1015      |    78|
+|497   |            invm1m2         |subs_1016                       |    16|
+|498   |            m3adder         |subs2_1017                      |     6|
+|499   |            mult1           |multiplier_1018                 |    28|
+|500   |            mult2           |multiplier_1019                 |    29|
+|501   |            mult3           |multiplier__parameterized0_1020 |    68|
+|502   |          mult2             |multiplierkarasign_998          |   198|
+|503   |            adderext2       |adder__parameterized0_1009      |    51|
+|504   |            invm1m2         |subs_1010                       |    16|
+|505   |            m3adder         |subs2_1011                      |     6|
+|506   |            mult1           |multiplier_1012                 |    28|
+|507   |            mult2           |multiplier_1013                 |    29|
+|508   |            mult3           |multiplier__parameterized0_1014 |    68|
+|509   |          mult3             |multiplierkarasign_999          |   218|
+|510   |            adderA          |adder_1002                      |     7|
+|511   |            adderext2       |adder__parameterized0_1003      |    49|
+|512   |            invm1m2         |subs_1004                       |    16|
+|513   |            m3adder         |subs2_1005                      |     6|
+|514   |            mult1           |multiplier_1006                 |    30|
+|515   |            mult2           |multiplier_1007                 |    42|
+|516   |            mult3           |multiplier__parameterized0_1008 |    68|
+|517   |          sumneg            |addersign_1000                  |    23|
+|518   |            invS            |inverter__parameterized1_1001   |    15|
+|519   |      mult_reg              |register_m_988                  |   360|
+|520   |    \CMAC_gen[19].cmac_     |CMAC2_11                        |  2230|
+|521   |      mux_acc               |nmux__parameterized0_945        |    34|
+|522   |      mux_mult              |nmux__parameterized0_946        |    52|
+|523   |      accu_reg              |register_m_942                  |    52|
+|524   |      cau                   |CAU_943                         |   990|
+|525   |        addr                |caddersign_947                  |    34|
+|526   |          addI              |addersign_982                   |    17|
+|527   |            invS            |inverter__parameterized1_985    |    15|
+|528   |          addR              |addersign_983                   |    17|
+|529   |            invS            |inverter__parameterized1_984    |    15|
+|530   |        mult                |ckarasign_948                   |   862|
+|531   |          adderA            |addersign_949                   |    65|
+|532   |            invS            |inverter__parameterized1_981    |    54|
+|533   |          adderB            |addersign_950                   |    20|
+|534   |            invS            |inverter__parameterized1_980    |    15|
+|535   |          adderimg          |addersign_951                   |    55|
+|536   |            invA            |inverter__parameterized0_978    |    16|
+|537   |            invS            |inverter__parameterized1_979    |    30|
+|538   |          addreal           |addersign_952                   |    34|
+|539   |            invS            |inverter__parameterized1_977    |    27|
+|540   |          mult1             |multiplierkarasign_953          |   225|
+|541   |            adderext2       |adder__parameterized0_971       |    78|
+|542   |            invm1m2         |subs_972                        |    16|
+|543   |            m3adder         |subs2_973                       |     6|
+|544   |            mult1           |multiplier_974                  |    28|
+|545   |            mult2           |multiplier_975                  |    29|
+|546   |            mult3           |multiplier__parameterized0_976  |    68|
+|547   |          mult2             |multiplierkarasign_954          |   198|
+|548   |            adderext2       |adder__parameterized0_965       |    51|
+|549   |            invm1m2         |subs_966                        |    16|
+|550   |            m3adder         |subs2_967                       |     6|
+|551   |            mult1           |multiplier_968                  |    28|
+|552   |            mult2           |multiplier_969                  |    29|
+|553   |            mult3           |multiplier__parameterized0_970  |    68|
+|554   |          mult3             |multiplierkarasign_955          |   218|
+|555   |            adderA          |adder_958                       |     7|
+|556   |            adderext2       |adder__parameterized0_959       |    49|
+|557   |            invm1m2         |subs_960                        |    16|
+|558   |            m3adder         |subs2_961                       |     6|
+|559   |            mult1           |multiplier_962                  |    30|
+|560   |            mult2           |multiplier_963                  |    42|
+|561   |            mult3           |multiplier__parameterized0_964  |    68|
+|562   |          sumneg            |addersign_956                   |    23|
+|563   |            invS            |inverter__parameterized1_957    |    15|
+|564   |      mult_reg              |register_m_944                  |   360|
+|565   |    \CMAC_gen[1].cmac_      |CMAC2_12                        |  2230|
+|566   |      mux_acc               |nmux__parameterized0_901        |    34|
+|567   |      mux_mult              |nmux__parameterized0_902        |    52|
+|568   |      accu_reg              |register_m_898                  |    52|
+|569   |      cau                   |CAU_899                         |   990|
+|570   |        addr                |caddersign_903                  |    34|
+|571   |          addI              |addersign_938                   |    17|
+|572   |            invS            |inverter__parameterized1_941    |    15|
+|573   |          addR              |addersign_939                   |    17|
+|574   |            invS            |inverter__parameterized1_940    |    15|
+|575   |        mult                |ckarasign_904                   |   862|
+|576   |          adderA            |addersign_905                   |    65|
+|577   |            invS            |inverter__parameterized1_937    |    54|
+|578   |          adderB            |addersign_906                   |    20|
+|579   |            invS            |inverter__parameterized1_936    |    15|
+|580   |          adderimg          |addersign_907                   |    55|
+|581   |            invA            |inverter__parameterized0_934    |    16|
+|582   |            invS            |inverter__parameterized1_935    |    30|
+|583   |          addreal           |addersign_908                   |    34|
+|584   |            invS            |inverter__parameterized1_933    |    27|
+|585   |          mult1             |multiplierkarasign_909          |   225|
+|586   |            adderext2       |adder__parameterized0_927       |    78|
+|587   |            invm1m2         |subs_928                        |    16|
+|588   |            m3adder         |subs2_929                       |     6|
+|589   |            mult1           |multiplier_930                  |    28|
+|590   |            mult2           |multiplier_931                  |    29|
+|591   |            mult3           |multiplier__parameterized0_932  |    68|
+|592   |          mult2             |multiplierkarasign_910          |   198|
+|593   |            adderext2       |adder__parameterized0_921       |    51|
+|594   |            invm1m2         |subs_922                        |    16|
+|595   |            m3adder         |subs2_923                       |     6|
+|596   |            mult1           |multiplier_924                  |    28|
+|597   |            mult2           |multiplier_925                  |    29|
+|598   |            mult3           |multiplier__parameterized0_926  |    68|
+|599   |          mult3             |multiplierkarasign_911          |   218|
+|600   |            adderA          |adder_914                       |     7|
+|601   |            adderext2       |adder__parameterized0_915       |    49|
+|602   |            invm1m2         |subs_916                        |    16|
+|603   |            m3adder         |subs2_917                       |     6|
+|604   |            mult1           |multiplier_918                  |    30|
+|605   |            mult2           |multiplier_919                  |    42|
+|606   |            mult3           |multiplier__parameterized0_920  |    68|
+|607   |          sumneg            |addersign_912                   |    23|
+|608   |            invS            |inverter__parameterized1_913    |    15|
+|609   |      mult_reg              |register_m_900                  |   360|
+|610   |    \CMAC_gen[20].cmac_     |CMAC2_13                        |  2230|
+|611   |      mux_acc               |nmux__parameterized0_857        |    34|
+|612   |      mux_mult              |nmux__parameterized0_858        |    52|
+|613   |      accu_reg              |register_m_854                  |    52|
+|614   |      cau                   |CAU_855                         |   990|
+|615   |        addr                |caddersign_859                  |    34|
+|616   |          addI              |addersign_894                   |    17|
+|617   |            invS            |inverter__parameterized1_897    |    15|
+|618   |          addR              |addersign_895                   |    17|
+|619   |            invS            |inverter__parameterized1_896    |    15|
+|620   |        mult                |ckarasign_860                   |   862|
+|621   |          adderA            |addersign_861                   |    65|
+|622   |            invS            |inverter__parameterized1_893    |    54|
+|623   |          adderB            |addersign_862                   |    20|
+|624   |            invS            |inverter__parameterized1_892    |    15|
+|625   |          adderimg          |addersign_863                   |    55|
+|626   |            invA            |inverter__parameterized0_890    |    16|
+|627   |            invS            |inverter__parameterized1_891    |    30|
+|628   |          addreal           |addersign_864                   |    34|
+|629   |            invS            |inverter__parameterized1_889    |    27|
+|630   |          mult1             |multiplierkarasign_865          |   225|
+|631   |            adderext2       |adder__parameterized0_883       |    78|
+|632   |            invm1m2         |subs_884                        |    16|
+|633   |            m3adder         |subs2_885                       |     6|
+|634   |            mult1           |multiplier_886                  |    28|
+|635   |            mult2           |multiplier_887                  |    29|
+|636   |            mult3           |multiplier__parameterized0_888  |    68|
+|637   |          mult2             |multiplierkarasign_866          |   198|
+|638   |            adderext2       |adder__parameterized0_877       |    51|
+|639   |            invm1m2         |subs_878                        |    16|
+|640   |            m3adder         |subs2_879                       |     6|
+|641   |            mult1           |multiplier_880                  |    28|
+|642   |            mult2           |multiplier_881                  |    29|
+|643   |            mult3           |multiplier__parameterized0_882  |    68|
+|644   |          mult3             |multiplierkarasign_867          |   218|
+|645   |            adderA          |adder_870                       |     7|
+|646   |            adderext2       |adder__parameterized0_871       |    49|
+|647   |            invm1m2         |subs_872                        |    16|
+|648   |            m3adder         |subs2_873                       |     6|
+|649   |            mult1           |multiplier_874                  |    30|
+|650   |            mult2           |multiplier_875                  |    42|
+|651   |            mult3           |multiplier__parameterized0_876  |    68|
+|652   |          sumneg            |addersign_868                   |    23|
+|653   |            invS            |inverter__parameterized1_869    |    15|
+|654   |      mult_reg              |register_m_856                  |   360|
+|655   |    \CMAC_gen[21].cmac_     |CMAC2_14                        |  2230|
+|656   |      mux_acc               |nmux__parameterized0_813        |    34|
+|657   |      mux_mult              |nmux__parameterized0_814        |    52|
+|658   |      accu_reg              |register_m_810                  |    52|
+|659   |      cau                   |CAU_811                         |   990|
+|660   |        addr                |caddersign_815                  |    34|
+|661   |          addI              |addersign_850                   |    17|
+|662   |            invS            |inverter__parameterized1_853    |    15|
+|663   |          addR              |addersign_851                   |    17|
+|664   |            invS            |inverter__parameterized1_852    |    15|
+|665   |        mult                |ckarasign_816                   |   862|
+|666   |          adderA            |addersign_817                   |    65|
+|667   |            invS            |inverter__parameterized1_849    |    54|
+|668   |          adderB            |addersign_818                   |    20|
+|669   |            invS            |inverter__parameterized1_848    |    15|
+|670   |          adderimg          |addersign_819                   |    55|
+|671   |            invA            |inverter__parameterized0_846    |    16|
+|672   |            invS            |inverter__parameterized1_847    |    30|
+|673   |          addreal           |addersign_820                   |    34|
+|674   |            invS            |inverter__parameterized1_845    |    27|
+|675   |          mult1             |multiplierkarasign_821          |   225|
+|676   |            adderext2       |adder__parameterized0_839       |    78|
+|677   |            invm1m2         |subs_840                        |    16|
+|678   |            m3adder         |subs2_841                       |     6|
+|679   |            mult1           |multiplier_842                  |    28|
+|680   |            mult2           |multiplier_843                  |    29|
+|681   |            mult3           |multiplier__parameterized0_844  |    68|
+|682   |          mult2             |multiplierkarasign_822          |   198|
+|683   |            adderext2       |adder__parameterized0_833       |    51|
+|684   |            invm1m2         |subs_834                        |    16|
+|685   |            m3adder         |subs2_835                       |     6|
+|686   |            mult1           |multiplier_836                  |    28|
+|687   |            mult2           |multiplier_837                  |    29|
+|688   |            mult3           |multiplier__parameterized0_838  |    68|
+|689   |          mult3             |multiplierkarasign_823          |   218|
+|690   |            adderA          |adder_826                       |     7|
+|691   |            adderext2       |adder__parameterized0_827       |    49|
+|692   |            invm1m2         |subs_828                        |    16|
+|693   |            m3adder         |subs2_829                       |     6|
+|694   |            mult1           |multiplier_830                  |    30|
+|695   |            mult2           |multiplier_831                  |    42|
+|696   |            mult3           |multiplier__parameterized0_832  |    68|
+|697   |          sumneg            |addersign_824                   |    23|
+|698   |            invS            |inverter__parameterized1_825    |    15|
+|699   |      mult_reg              |register_m_812                  |   360|
+|700   |    \CMAC_gen[22].cmac_     |CMAC2_15                        |  2230|
+|701   |      mux_acc               |nmux__parameterized0_769        |    34|
+|702   |      mux_mult              |nmux__parameterized0_770        |    52|
+|703   |      accu_reg              |register_m_766                  |    52|
+|704   |      cau                   |CAU_767                         |   990|
+|705   |        addr                |caddersign_771                  |    34|
+|706   |          addI              |addersign_806                   |    17|
+|707   |            invS            |inverter__parameterized1_809    |    15|
+|708   |          addR              |addersign_807                   |    17|
+|709   |            invS            |inverter__parameterized1_808    |    15|
+|710   |        mult                |ckarasign_772                   |   862|
+|711   |          adderA            |addersign_773                   |    65|
+|712   |            invS            |inverter__parameterized1_805    |    54|
+|713   |          adderB            |addersign_774                   |    20|
+|714   |            invS            |inverter__parameterized1_804    |    15|
+|715   |          adderimg          |addersign_775                   |    55|
+|716   |            invA            |inverter__parameterized0_802    |    16|
+|717   |            invS            |inverter__parameterized1_803    |    30|
+|718   |          addreal           |addersign_776                   |    34|
+|719   |            invS            |inverter__parameterized1_801    |    27|
+|720   |          mult1             |multiplierkarasign_777          |   225|
+|721   |            adderext2       |adder__parameterized0_795       |    78|
+|722   |            invm1m2         |subs_796                        |    16|
+|723   |            m3adder         |subs2_797                       |     6|
+|724   |            mult1           |multiplier_798                  |    28|
+|725   |            mult2           |multiplier_799                  |    29|
+|726   |            mult3           |multiplier__parameterized0_800  |    68|
+|727   |          mult2             |multiplierkarasign_778          |   198|
+|728   |            adderext2       |adder__parameterized0_789       |    51|
+|729   |            invm1m2         |subs_790                        |    16|
+|730   |            m3adder         |subs2_791                       |     6|
+|731   |            mult1           |multiplier_792                  |    28|
+|732   |            mult2           |multiplier_793                  |    29|
+|733   |            mult3           |multiplier__parameterized0_794  |    68|
+|734   |          mult3             |multiplierkarasign_779          |   218|
+|735   |            adderA          |adder_782                       |     7|
+|736   |            adderext2       |adder__parameterized0_783       |    49|
+|737   |            invm1m2         |subs_784                        |    16|
+|738   |            m3adder         |subs2_785                       |     6|
+|739   |            mult1           |multiplier_786                  |    30|
+|740   |            mult2           |multiplier_787                  |    42|
+|741   |            mult3           |multiplier__parameterized0_788  |    68|
+|742   |          sumneg            |addersign_780                   |    23|
+|743   |            invS            |inverter__parameterized1_781    |    15|
+|744   |      mult_reg              |register_m_768                  |   360|
+|745   |    \CMAC_gen[23].cmac_     |CMAC2_16                        |  2230|
+|746   |      mux_acc               |nmux__parameterized0_725        |    34|
+|747   |      mux_mult              |nmux__parameterized0_726        |    52|
+|748   |      accu_reg              |register_m_722                  |    52|
+|749   |      cau                   |CAU_723                         |   990|
+|750   |        addr                |caddersign_727                  |    34|
+|751   |          addI              |addersign_762                   |    17|
+|752   |            invS            |inverter__parameterized1_765    |    15|
+|753   |          addR              |addersign_763                   |    17|
+|754   |            invS            |inverter__parameterized1_764    |    15|
+|755   |        mult                |ckarasign_728                   |   862|
+|756   |          adderA            |addersign_729                   |    65|
+|757   |            invS            |inverter__parameterized1_761    |    54|
+|758   |          adderB            |addersign_730                   |    20|
+|759   |            invS            |inverter__parameterized1_760    |    15|
+|760   |          adderimg          |addersign_731                   |    55|
+|761   |            invA            |inverter__parameterized0_758    |    16|
+|762   |            invS            |inverter__parameterized1_759    |    30|
+|763   |          addreal           |addersign_732                   |    34|
+|764   |            invS            |inverter__parameterized1_757    |    27|
+|765   |          mult1             |multiplierkarasign_733          |   225|
+|766   |            adderext2       |adder__parameterized0_751       |    78|
+|767   |            invm1m2         |subs_752                        |    16|
+|768   |            m3adder         |subs2_753                       |     6|
+|769   |            mult1           |multiplier_754                  |    28|
+|770   |            mult2           |multiplier_755                  |    29|
+|771   |            mult3           |multiplier__parameterized0_756  |    68|
+|772   |          mult2             |multiplierkarasign_734          |   198|
+|773   |            adderext2       |adder__parameterized0_745       |    51|
+|774   |            invm1m2         |subs_746                        |    16|
+|775   |            m3adder         |subs2_747                       |     6|
+|776   |            mult1           |multiplier_748                  |    28|
+|777   |            mult2           |multiplier_749                  |    29|
+|778   |            mult3           |multiplier__parameterized0_750  |    68|
+|779   |          mult3             |multiplierkarasign_735          |   218|
+|780   |            adderA          |adder_738                       |     7|
+|781   |            adderext2       |adder__parameterized0_739       |    49|
+|782   |            invm1m2         |subs_740                        |    16|
+|783   |            m3adder         |subs2_741                       |     6|
+|784   |            mult1           |multiplier_742                  |    30|
+|785   |            mult2           |multiplier_743                  |    42|
+|786   |            mult3           |multiplier__parameterized0_744  |    68|
+|787   |          sumneg            |addersign_736                   |    23|
+|788   |            invS            |inverter__parameterized1_737    |    15|
+|789   |      mult_reg              |register_m_724                  |   360|
+|790   |    \CMAC_gen[24].cmac_     |CMAC2_17                        |  2230|
+|791   |      mux_acc               |nmux__parameterized0_681        |    34|
+|792   |      mux_mult              |nmux__parameterized0_682        |    52|
+|793   |      accu_reg              |register_m_678                  |    52|
+|794   |      cau                   |CAU_679                         |  1012|
+|795   |        addr                |caddersign_683                  |    34|
+|796   |          addI              |addersign_718                   |    17|
+|797   |            invS            |inverter__parameterized1_721    |    15|
+|798   |          addR              |addersign_719                   |    17|
+|799   |            invS            |inverter__parameterized1_720    |    15|
+|800   |        mult                |ckarasign_684                   |   899|
+|801   |          adderA            |addersign_685                   |    65|
+|802   |            invS            |inverter__parameterized1_717    |    54|
+|803   |          adderB            |addersign_686                   |    20|
+|804   |            invS            |inverter__parameterized1_716    |    15|
+|805   |          adderimg          |addersign_687                   |    43|
+|806   |            invA            |inverter__parameterized0_714    |     4|
+|807   |            invS            |inverter__parameterized1_715    |    30|
+|808   |          addreal           |addersign_688                   |    37|
+|809   |            invS            |inverter__parameterized1_713    |    30|
+|810   |          mult1             |multiplierkarasign_689          |   255|
+|811   |            adderext2       |adder__parameterized0_707       |   108|
+|812   |            invm1m2         |subs_708                        |    16|
+|813   |            m3adder         |subs2_709                       |     6|
+|814   |            mult1           |multiplier_710                  |    28|
+|815   |            mult2           |multiplier_711                  |    29|
+|816   |            mult3           |multiplier__parameterized0_712  |    68|
+|817   |          mult2             |multiplierkarasign_690          |   219|
+|818   |            adderext2       |adder__parameterized0_701       |    72|
+|819   |            invm1m2         |subs_702                        |    16|
+|820   |            m3adder         |subs2_703                       |     6|
+|821   |            mult1           |multiplier_704                  |    28|
+|822   |            mult2           |multiplier_705                  |    29|
+|823   |            mult3           |multiplier__parameterized0_706  |    68|
+|824   |          mult3             |multiplierkarasign_691          |   218|
+|825   |            adderA          |adder_694                       |     7|
+|826   |            adderext2       |adder__parameterized0_695       |    49|
+|827   |            invm1m2         |subs_696                        |    16|
+|828   |            m3adder         |subs2_697                       |     6|
+|829   |            mult1           |multiplier_698                  |    30|
+|830   |            mult2           |multiplier_699                  |    42|
+|831   |            mult3           |multiplier__parameterized0_700  |    68|
+|832   |          sumneg            |addersign_692                   |    18|
+|833   |            invS            |inverter__parameterized1_693    |    15|
+|834   |      mult_reg              |register_m_680                  |   338|
+|835   |    \CMAC_gen[25].cmac_     |CMAC2_18                        |  2230|
+|836   |      mux_acc               |nmux__parameterized0_637        |    34|
+|837   |      mux_mult              |nmux__parameterized0_638        |    52|
+|838   |      accu_reg              |register_m_634                  |    52|
+|839   |      cau                   |CAU_635                         |   990|
+|840   |        addr                |caddersign_639                  |    34|
+|841   |          addI              |addersign_674                   |    17|
+|842   |            invS            |inverter__parameterized1_677    |    15|
+|843   |          addR              |addersign_675                   |    17|
+|844   |            invS            |inverter__parameterized1_676    |    15|
+|845   |        mult                |ckarasign_640                   |   862|
+|846   |          adderA            |addersign_641                   |    65|
+|847   |            invS            |inverter__parameterized1_673    |    54|
+|848   |          adderB            |addersign_642                   |    20|
+|849   |            invS            |inverter__parameterized1_672    |    15|
+|850   |          adderimg          |addersign_643                   |    55|
+|851   |            invA            |inverter__parameterized0_670    |    16|
+|852   |            invS            |inverter__parameterized1_671    |    30|
+|853   |          addreal           |addersign_644                   |    34|
+|854   |            invS            |inverter__parameterized1_669    |    27|
+|855   |          mult1             |multiplierkarasign_645          |   225|
+|856   |            adderext2       |adder__parameterized0_663       |    78|
+|857   |            invm1m2         |subs_664                        |    16|
+|858   |            m3adder         |subs2_665                       |     6|
+|859   |            mult1           |multiplier_666                  |    28|
+|860   |            mult2           |multiplier_667                  |    29|
+|861   |            mult3           |multiplier__parameterized0_668  |    68|
+|862   |          mult2             |multiplierkarasign_646          |   198|
+|863   |            adderext2       |adder__parameterized0_657       |    51|
+|864   |            invm1m2         |subs_658                        |    16|
+|865   |            m3adder         |subs2_659                       |     6|
+|866   |            mult1           |multiplier_660                  |    28|
+|867   |            mult2           |multiplier_661                  |    29|
+|868   |            mult3           |multiplier__parameterized0_662  |    68|
+|869   |          mult3             |multiplierkarasign_647          |   218|
+|870   |            adderA          |adder_650                       |     7|
+|871   |            adderext2       |adder__parameterized0_651       |    49|
+|872   |            invm1m2         |subs_652                        |    16|
+|873   |            m3adder         |subs2_653                       |     6|
+|874   |            mult1           |multiplier_654                  |    30|
+|875   |            mult2           |multiplier_655                  |    42|
+|876   |            mult3           |multiplier__parameterized0_656  |    68|
+|877   |          sumneg            |addersign_648                   |    23|
+|878   |            invS            |inverter__parameterized1_649    |    15|
+|879   |      mult_reg              |register_m_636                  |   360|
+|880   |    \CMAC_gen[26].cmac_     |CMAC2_19                        |  2230|
+|881   |      mux_acc               |nmux__parameterized0_593        |    34|
+|882   |      mux_mult              |nmux__parameterized0_594        |    52|
+|883   |      accu_reg              |register_m_590                  |    52|
+|884   |      cau                   |CAU_591                         |   990|
+|885   |        addr                |caddersign_595                  |    34|
+|886   |          addI              |addersign_630                   |    17|
+|887   |            invS            |inverter__parameterized1_633    |    15|
+|888   |          addR              |addersign_631                   |    17|
+|889   |            invS            |inverter__parameterized1_632    |    15|
+|890   |        mult                |ckarasign_596                   |   862|
+|891   |          adderA            |addersign_597                   |    65|
+|892   |            invS            |inverter__parameterized1_629    |    54|
+|893   |          adderB            |addersign_598                   |    20|
+|894   |            invS            |inverter__parameterized1_628    |    15|
+|895   |          adderimg          |addersign_599                   |    55|
+|896   |            invA            |inverter__parameterized0_626    |    16|
+|897   |            invS            |inverter__parameterized1_627    |    30|
+|898   |          addreal           |addersign_600                   |    34|
+|899   |            invS            |inverter__parameterized1_625    |    27|
+|900   |          mult1             |multiplierkarasign_601          |   225|
+|901   |            adderext2       |adder__parameterized0_619       |    78|
+|902   |            invm1m2         |subs_620                        |    16|
+|903   |            m3adder         |subs2_621                       |     6|
+|904   |            mult1           |multiplier_622                  |    28|
+|905   |            mult2           |multiplier_623                  |    29|
+|906   |            mult3           |multiplier__parameterized0_624  |    68|
+|907   |          mult2             |multiplierkarasign_602          |   198|
+|908   |            adderext2       |adder__parameterized0_613       |    51|
+|909   |            invm1m2         |subs_614                        |    16|
+|910   |            m3adder         |subs2_615                       |     6|
+|911   |            mult1           |multiplier_616                  |    28|
+|912   |            mult2           |multiplier_617                  |    29|
+|913   |            mult3           |multiplier__parameterized0_618  |    68|
+|914   |          mult3             |multiplierkarasign_603          |   218|
+|915   |            adderA          |adder_606                       |     7|
+|916   |            adderext2       |adder__parameterized0_607       |    49|
+|917   |            invm1m2         |subs_608                        |    16|
+|918   |            m3adder         |subs2_609                       |     6|
+|919   |            mult1           |multiplier_610                  |    30|
+|920   |            mult2           |multiplier_611                  |    42|
+|921   |            mult3           |multiplier__parameterized0_612  |    68|
+|922   |          sumneg            |addersign_604                   |    23|
+|923   |            invS            |inverter__parameterized1_605    |    15|
+|924   |      mult_reg              |register_m_592                  |   360|
+|925   |    \CMAC_gen[27].cmac_     |CMAC2_20                        |  2230|
+|926   |      mux_acc               |nmux__parameterized0_549        |    34|
+|927   |      mux_mult              |nmux__parameterized0_550        |    52|
+|928   |      accu_reg              |register_m_546                  |    52|
+|929   |      cau                   |CAU_547                         |   990|
+|930   |        addr                |caddersign_551                  |    34|
+|931   |          addI              |addersign_586                   |    17|
+|932   |            invS            |inverter__parameterized1_589    |    15|
+|933   |          addR              |addersign_587                   |    17|
+|934   |            invS            |inverter__parameterized1_588    |    15|
+|935   |        mult                |ckarasign_552                   |   862|
+|936   |          adderA            |addersign_553                   |    65|
+|937   |            invS            |inverter__parameterized1_585    |    54|
+|938   |          adderB            |addersign_554                   |    20|
+|939   |            invS            |inverter__parameterized1_584    |    15|
+|940   |          adderimg          |addersign_555                   |    55|
+|941   |            invA            |inverter__parameterized0_582    |    16|
+|942   |            invS            |inverter__parameterized1_583    |    30|
+|943   |          addreal           |addersign_556                   |    34|
+|944   |            invS            |inverter__parameterized1_581    |    27|
+|945   |          mult1             |multiplierkarasign_557          |   225|
+|946   |            adderext2       |adder__parameterized0_575       |    78|
+|947   |            invm1m2         |subs_576                        |    16|
+|948   |            m3adder         |subs2_577                       |     6|
+|949   |            mult1           |multiplier_578                  |    28|
+|950   |            mult2           |multiplier_579                  |    29|
+|951   |            mult3           |multiplier__parameterized0_580  |    68|
+|952   |          mult2             |multiplierkarasign_558          |   198|
+|953   |            adderext2       |adder__parameterized0_569       |    51|
+|954   |            invm1m2         |subs_570                        |    16|
+|955   |            m3adder         |subs2_571                       |     6|
+|956   |            mult1           |multiplier_572                  |    28|
+|957   |            mult2           |multiplier_573                  |    29|
+|958   |            mult3           |multiplier__parameterized0_574  |    68|
+|959   |          mult3             |multiplierkarasign_559          |   218|
+|960   |            adderA          |adder_562                       |     7|
+|961   |            adderext2       |adder__parameterized0_563       |    49|
+|962   |            invm1m2         |subs_564                        |    16|
+|963   |            m3adder         |subs2_565                       |     6|
+|964   |            mult1           |multiplier_566                  |    30|
+|965   |            mult2           |multiplier_567                  |    42|
+|966   |            mult3           |multiplier__parameterized0_568  |    68|
+|967   |          sumneg            |addersign_560                   |    23|
+|968   |            invS            |inverter__parameterized1_561    |    15|
+|969   |      mult_reg              |register_m_548                  |   360|
+|970   |    \CMAC_gen[28].cmac_     |CMAC2_21                        |  2230|
+|971   |      mux_acc               |nmux__parameterized0_505        |    34|
+|972   |      mux_mult              |nmux__parameterized0_506        |    52|
+|973   |      accu_reg              |register_m_502                  |    52|
+|974   |      cau                   |CAU_503                         |   990|
+|975   |        addr                |caddersign_507                  |    34|
+|976   |          addI              |addersign_542                   |    17|
+|977   |            invS            |inverter__parameterized1_545    |    15|
+|978   |          addR              |addersign_543                   |    17|
+|979   |            invS            |inverter__parameterized1_544    |    15|
+|980   |        mult                |ckarasign_508                   |   862|
+|981   |          adderA            |addersign_509                   |    65|
+|982   |            invS            |inverter__parameterized1_541    |    54|
+|983   |          adderB            |addersign_510                   |    20|
+|984   |            invS            |inverter__parameterized1_540    |    15|
+|985   |          adderimg          |addersign_511                   |    55|
+|986   |            invA            |inverter__parameterized0_538    |    16|
+|987   |            invS            |inverter__parameterized1_539    |    30|
+|988   |          addreal           |addersign_512                   |    34|
+|989   |            invS            |inverter__parameterized1_537    |    27|
+|990   |          mult1             |multiplierkarasign_513          |   225|
+|991   |            adderext2       |adder__parameterized0_531       |    78|
+|992   |            invm1m2         |subs_532                        |    16|
+|993   |            m3adder         |subs2_533                       |     6|
+|994   |            mult1           |multiplier_534                  |    28|
+|995   |            mult2           |multiplier_535                  |    29|
+|996   |            mult3           |multiplier__parameterized0_536  |    68|
+|997   |          mult2             |multiplierkarasign_514          |   198|
+|998   |            adderext2       |adder__parameterized0_525       |    51|
+|999   |            invm1m2         |subs_526                        |    16|
+|1000  |            m3adder         |subs2_527                       |     6|
+|1001  |            mult1           |multiplier_528                  |    28|
+|1002  |            mult2           |multiplier_529                  |    29|
+|1003  |            mult3           |multiplier__parameterized0_530  |    68|
+|1004  |          mult3             |multiplierkarasign_515          |   218|
+|1005  |            adderA          |adder_518                       |     7|
+|1006  |            adderext2       |adder__parameterized0_519       |    49|
+|1007  |            invm1m2         |subs_520                        |    16|
+|1008  |            m3adder         |subs2_521                       |     6|
+|1009  |            mult1           |multiplier_522                  |    30|
+|1010  |            mult2           |multiplier_523                  |    42|
+|1011  |            mult3           |multiplier__parameterized0_524  |    68|
+|1012  |          sumneg            |addersign_516                   |    23|
+|1013  |            invS            |inverter__parameterized1_517    |    15|
+|1014  |      mult_reg              |register_m_504                  |   360|
+|1015  |    \CMAC_gen[29].cmac_     |CMAC2_22                        |  2230|
+|1016  |      mux_acc               |nmux__parameterized0_461        |    34|
+|1017  |      mux_mult              |nmux__parameterized0_462        |    52|
+|1018  |      accu_reg              |register_m_458                  |    52|
+|1019  |      cau                   |CAU_459                         |   990|
+|1020  |        addr                |caddersign_463                  |    34|
+|1021  |          addI              |addersign_498                   |    17|
+|1022  |            invS            |inverter__parameterized1_501    |    15|
+|1023  |          addR              |addersign_499                   |    17|
+|1024  |            invS            |inverter__parameterized1_500    |    15|
+|1025  |        mult                |ckarasign_464                   |   862|
+|1026  |          adderA            |addersign_465                   |    65|
+|1027  |            invS            |inverter__parameterized1_497    |    54|
+|1028  |          adderB            |addersign_466                   |    20|
+|1029  |            invS            |inverter__parameterized1_496    |    15|
+|1030  |          adderimg          |addersign_467                   |    55|
+|1031  |            invA            |inverter__parameterized0_494    |    16|
+|1032  |            invS            |inverter__parameterized1_495    |    30|
+|1033  |          addreal           |addersign_468                   |    34|
+|1034  |            invS            |inverter__parameterized1_493    |    27|
+|1035  |          mult1             |multiplierkarasign_469          |   225|
+|1036  |            adderext2       |adder__parameterized0_487       |    78|
+|1037  |            invm1m2         |subs_488                        |    16|
+|1038  |            m3adder         |subs2_489                       |     6|
+|1039  |            mult1           |multiplier_490                  |    28|
+|1040  |            mult2           |multiplier_491                  |    29|
+|1041  |            mult3           |multiplier__parameterized0_492  |    68|
+|1042  |          mult2             |multiplierkarasign_470          |   198|
+|1043  |            adderext2       |adder__parameterized0_481       |    51|
+|1044  |            invm1m2         |subs_482                        |    16|
+|1045  |            m3adder         |subs2_483                       |     6|
+|1046  |            mult1           |multiplier_484                  |    28|
+|1047  |            mult2           |multiplier_485                  |    29|
+|1048  |            mult3           |multiplier__parameterized0_486  |    68|
+|1049  |          mult3             |multiplierkarasign_471          |   218|
+|1050  |            adderA          |adder_474                       |     7|
+|1051  |            adderext2       |adder__parameterized0_475       |    49|
+|1052  |            invm1m2         |subs_476                        |    16|
+|1053  |            m3adder         |subs2_477                       |     6|
+|1054  |            mult1           |multiplier_478                  |    30|
+|1055  |            mult2           |multiplier_479                  |    42|
+|1056  |            mult3           |multiplier__parameterized0_480  |    68|
+|1057  |          sumneg            |addersign_472                   |    23|
+|1058  |            invS            |inverter__parameterized1_473    |    15|
+|1059  |      mult_reg              |register_m_460                  |   360|
+|1060  |    \CMAC_gen[2].cmac_      |CMAC2_23                        |  2230|
+|1061  |      mux_acc               |nmux__parameterized0_417        |    34|
+|1062  |      mux_mult              |nmux__parameterized0_418        |    52|
+|1063  |      accu_reg              |register_m_414                  |    52|
+|1064  |      cau                   |CAU_415                         |   990|
+|1065  |        addr                |caddersign_419                  |    34|
+|1066  |          addI              |addersign_454                   |    17|
+|1067  |            invS            |inverter__parameterized1_457    |    15|
+|1068  |          addR              |addersign_455                   |    17|
+|1069  |            invS            |inverter__parameterized1_456    |    15|
+|1070  |        mult                |ckarasign_420                   |   862|
+|1071  |          adderA            |addersign_421                   |    65|
+|1072  |            invS            |inverter__parameterized1_453    |    54|
+|1073  |          adderB            |addersign_422                   |    20|
+|1074  |            invS            |inverter__parameterized1_452    |    15|
+|1075  |          adderimg          |addersign_423                   |    55|
+|1076  |            invA            |inverter__parameterized0_450    |    16|
+|1077  |            invS            |inverter__parameterized1_451    |    30|
+|1078  |          addreal           |addersign_424                   |    34|
+|1079  |            invS            |inverter__parameterized1_449    |    27|
+|1080  |          mult1             |multiplierkarasign_425          |   225|
+|1081  |            adderext2       |adder__parameterized0_443       |    78|
+|1082  |            invm1m2         |subs_444                        |    16|
+|1083  |            m3adder         |subs2_445                       |     6|
+|1084  |            mult1           |multiplier_446                  |    28|
+|1085  |            mult2           |multiplier_447                  |    29|
+|1086  |            mult3           |multiplier__parameterized0_448  |    68|
+|1087  |          mult2             |multiplierkarasign_426          |   198|
+|1088  |            adderext2       |adder__parameterized0_437       |    51|
+|1089  |            invm1m2         |subs_438                        |    16|
+|1090  |            m3adder         |subs2_439                       |     6|
+|1091  |            mult1           |multiplier_440                  |    28|
+|1092  |            mult2           |multiplier_441                  |    29|
+|1093  |            mult3           |multiplier__parameterized0_442  |    68|
+|1094  |          mult3             |multiplierkarasign_427          |   218|
+|1095  |            adderA          |adder_430                       |     7|
+|1096  |            adderext2       |adder__parameterized0_431       |    49|
+|1097  |            invm1m2         |subs_432                        |    16|
+|1098  |            m3adder         |subs2_433                       |     6|
+|1099  |            mult1           |multiplier_434                  |    30|
+|1100  |            mult2           |multiplier_435                  |    42|
+|1101  |            mult3           |multiplier__parameterized0_436  |    68|
+|1102  |          sumneg            |addersign_428                   |    23|
+|1103  |            invS            |inverter__parameterized1_429    |    15|
+|1104  |      mult_reg              |register_m_416                  |   360|
+|1105  |    \CMAC_gen[30].cmac_     |CMAC2_24                        |  2230|
+|1106  |      mux_acc               |nmux__parameterized0_373        |    34|
+|1107  |      mux_mult              |nmux__parameterized0_374        |    52|
+|1108  |      accu_reg              |register_m_370                  |    52|
+|1109  |      cau                   |CAU_371                         |   990|
+|1110  |        addr                |caddersign_375                  |    34|
+|1111  |          addI              |addersign_410                   |    17|
+|1112  |            invS            |inverter__parameterized1_413    |    15|
+|1113  |          addR              |addersign_411                   |    17|
+|1114  |            invS            |inverter__parameterized1_412    |    15|
+|1115  |        mult                |ckarasign_376                   |   862|
+|1116  |          adderA            |addersign_377                   |    65|
+|1117  |            invS            |inverter__parameterized1_409    |    54|
+|1118  |          adderB            |addersign_378                   |    20|
+|1119  |            invS            |inverter__parameterized1_408    |    15|
+|1120  |          adderimg          |addersign_379                   |    55|
+|1121  |            invA            |inverter__parameterized0_406    |    16|
+|1122  |            invS            |inverter__parameterized1_407    |    30|
+|1123  |          addreal           |addersign_380                   |    34|
+|1124  |            invS            |inverter__parameterized1_405    |    27|
+|1125  |          mult1             |multiplierkarasign_381          |   225|
+|1126  |            adderext2       |adder__parameterized0_399       |    78|
+|1127  |            invm1m2         |subs_400                        |    16|
+|1128  |            m3adder         |subs2_401                       |     6|
+|1129  |            mult1           |multiplier_402                  |    28|
+|1130  |            mult2           |multiplier_403                  |    29|
+|1131  |            mult3           |multiplier__parameterized0_404  |    68|
+|1132  |          mult2             |multiplierkarasign_382          |   198|
+|1133  |            adderext2       |adder__parameterized0_393       |    51|
+|1134  |            invm1m2         |subs_394                        |    16|
+|1135  |            m3adder         |subs2_395                       |     6|
+|1136  |            mult1           |multiplier_396                  |    28|
+|1137  |            mult2           |multiplier_397                  |    29|
+|1138  |            mult3           |multiplier__parameterized0_398  |    68|
+|1139  |          mult3             |multiplierkarasign_383          |   218|
+|1140  |            adderA          |adder_386                       |     7|
+|1141  |            adderext2       |adder__parameterized0_387       |    49|
+|1142  |            invm1m2         |subs_388                        |    16|
+|1143  |            m3adder         |subs2_389                       |     6|
+|1144  |            mult1           |multiplier_390                  |    30|
+|1145  |            mult2           |multiplier_391                  |    42|
+|1146  |            mult3           |multiplier__parameterized0_392  |    68|
+|1147  |          sumneg            |addersign_384                   |    23|
+|1148  |            invS            |inverter__parameterized1_385    |    15|
+|1149  |      mult_reg              |register_m_372                  |   360|
+|1150  |    \CMAC_gen[31].cmac_     |CMAC2_25                        |  2230|
+|1151  |      mux_acc               |nmux__parameterized0_329        |    34|
+|1152  |      mux_mult              |nmux__parameterized0_330        |    52|
+|1153  |      accu_reg              |register_m_326                  |    52|
+|1154  |      cau                   |CAU_327                         |   990|
+|1155  |        addr                |caddersign_331                  |    34|
+|1156  |          addI              |addersign_366                   |    17|
+|1157  |            invS            |inverter__parameterized1_369    |    15|
+|1158  |          addR              |addersign_367                   |    17|
+|1159  |            invS            |inverter__parameterized1_368    |    15|
+|1160  |        mult                |ckarasign_332                   |   862|
+|1161  |          adderA            |addersign_333                   |    65|
+|1162  |            invS            |inverter__parameterized1_365    |    54|
+|1163  |          adderB            |addersign_334                   |    20|
+|1164  |            invS            |inverter__parameterized1_364    |    15|
+|1165  |          adderimg          |addersign_335                   |    55|
+|1166  |            invA            |inverter__parameterized0_362    |    16|
+|1167  |            invS            |inverter__parameterized1_363    |    30|
+|1168  |          addreal           |addersign_336                   |    34|
+|1169  |            invS            |inverter__parameterized1_361    |    27|
+|1170  |          mult1             |multiplierkarasign_337          |   225|
+|1171  |            adderext2       |adder__parameterized0_355       |    78|
+|1172  |            invm1m2         |subs_356                        |    16|
+|1173  |            m3adder         |subs2_357                       |     6|
+|1174  |            mult1           |multiplier_358                  |    28|
+|1175  |            mult2           |multiplier_359                  |    29|
+|1176  |            mult3           |multiplier__parameterized0_360  |    68|
+|1177  |          mult2             |multiplierkarasign_338          |   198|
+|1178  |            adderext2       |adder__parameterized0_349       |    51|
+|1179  |            invm1m2         |subs_350                        |    16|
+|1180  |            m3adder         |subs2_351                       |     6|
+|1181  |            mult1           |multiplier_352                  |    28|
+|1182  |            mult2           |multiplier_353                  |    29|
+|1183  |            mult3           |multiplier__parameterized0_354  |    68|
+|1184  |          mult3             |multiplierkarasign_339          |   218|
+|1185  |            adderA          |adder_342                       |     7|
+|1186  |            adderext2       |adder__parameterized0_343       |    49|
+|1187  |            invm1m2         |subs_344                        |    16|
+|1188  |            m3adder         |subs2_345                       |     6|
+|1189  |            mult1           |multiplier_346                  |    30|
+|1190  |            mult2           |multiplier_347                  |    42|
+|1191  |            mult3           |multiplier__parameterized0_348  |    68|
+|1192  |          sumneg            |addersign_340                   |    23|
+|1193  |            invS            |inverter__parameterized1_341    |    15|
+|1194  |      mult_reg              |register_m_328                  |   360|
+|1195  |    \CMAC_gen[3].cmac_      |CMAC2_26                        |  2230|
+|1196  |      mux_acc               |nmux__parameterized0_285        |    34|
+|1197  |      mux_mult              |nmux__parameterized0_286        |    52|
+|1198  |      accu_reg              |register_m_282                  |    52|
+|1199  |      cau                   |CAU_283                         |   990|
+|1200  |        addr                |caddersign_287                  |    34|
+|1201  |          addI              |addersign_322                   |    17|
+|1202  |            invS            |inverter__parameterized1_325    |    15|
+|1203  |          addR              |addersign_323                   |    17|
+|1204  |            invS            |inverter__parameterized1_324    |    15|
+|1205  |        mult                |ckarasign_288                   |   862|
+|1206  |          adderA            |addersign_289                   |    65|
+|1207  |            invS            |inverter__parameterized1_321    |    54|
+|1208  |          adderB            |addersign_290                   |    20|
+|1209  |            invS            |inverter__parameterized1_320    |    15|
+|1210  |          adderimg          |addersign_291                   |    55|
+|1211  |            invA            |inverter__parameterized0_318    |    16|
+|1212  |            invS            |inverter__parameterized1_319    |    30|
+|1213  |          addreal           |addersign_292                   |    34|
+|1214  |            invS            |inverter__parameterized1_317    |    27|
+|1215  |          mult1             |multiplierkarasign_293          |   225|
+|1216  |            adderext2       |adder__parameterized0_311       |    78|
+|1217  |            invm1m2         |subs_312                        |    16|
+|1218  |            m3adder         |subs2_313                       |     6|
+|1219  |            mult1           |multiplier_314                  |    28|
+|1220  |            mult2           |multiplier_315                  |    29|
+|1221  |            mult3           |multiplier__parameterized0_316  |    68|
+|1222  |          mult2             |multiplierkarasign_294          |   198|
+|1223  |            adderext2       |adder__parameterized0_305       |    51|
+|1224  |            invm1m2         |subs_306                        |    16|
+|1225  |            m3adder         |subs2_307                       |     6|
+|1226  |            mult1           |multiplier_308                  |    28|
+|1227  |            mult2           |multiplier_309                  |    29|
+|1228  |            mult3           |multiplier__parameterized0_310  |    68|
+|1229  |          mult3             |multiplierkarasign_295          |   218|
+|1230  |            adderA          |adder_298                       |     7|
+|1231  |            adderext2       |adder__parameterized0_299       |    49|
+|1232  |            invm1m2         |subs_300                        |    16|
+|1233  |            m3adder         |subs2_301                       |     6|
+|1234  |            mult1           |multiplier_302                  |    30|
+|1235  |            mult2           |multiplier_303                  |    42|
+|1236  |            mult3           |multiplier__parameterized0_304  |    68|
+|1237  |          sumneg            |addersign_296                   |    23|
+|1238  |            invS            |inverter__parameterized1_297    |    15|
+|1239  |      mult_reg              |register_m_284                  |   360|
+|1240  |    \CMAC_gen[4].cmac_      |CMAC2_27                        |  2230|
+|1241  |      mux_acc               |nmux__parameterized0_241        |    34|
+|1242  |      mux_mult              |nmux__parameterized0_242        |    52|
+|1243  |      accu_reg              |register_m_238                  |    52|
+|1244  |      cau                   |CAU_239                         |   990|
+|1245  |        addr                |caddersign_243                  |    34|
+|1246  |          addI              |addersign_278                   |    17|
+|1247  |            invS            |inverter__parameterized1_281    |    15|
+|1248  |          addR              |addersign_279                   |    17|
+|1249  |            invS            |inverter__parameterized1_280    |    15|
+|1250  |        mult                |ckarasign_244                   |   862|
+|1251  |          adderA            |addersign_245                   |    65|
+|1252  |            invS            |inverter__parameterized1_277    |    54|
+|1253  |          adderB            |addersign_246                   |    20|
+|1254  |            invS            |inverter__parameterized1_276    |    15|
+|1255  |          adderimg          |addersign_247                   |    55|
+|1256  |            invA            |inverter__parameterized0_274    |    16|
+|1257  |            invS            |inverter__parameterized1_275    |    30|
+|1258  |          addreal           |addersign_248                   |    34|
+|1259  |            invS            |inverter__parameterized1_273    |    27|
+|1260  |          mult1             |multiplierkarasign_249          |   225|
+|1261  |            adderext2       |adder__parameterized0_267       |    78|
+|1262  |            invm1m2         |subs_268                        |    16|
+|1263  |            m3adder         |subs2_269                       |     6|
+|1264  |            mult1           |multiplier_270                  |    28|
+|1265  |            mult2           |multiplier_271                  |    29|
+|1266  |            mult3           |multiplier__parameterized0_272  |    68|
+|1267  |          mult2             |multiplierkarasign_250          |   198|
+|1268  |            adderext2       |adder__parameterized0_261       |    51|
+|1269  |            invm1m2         |subs_262                        |    16|
+|1270  |            m3adder         |subs2_263                       |     6|
+|1271  |            mult1           |multiplier_264                  |    28|
+|1272  |            mult2           |multiplier_265                  |    29|
+|1273  |            mult3           |multiplier__parameterized0_266  |    68|
+|1274  |          mult3             |multiplierkarasign_251          |   218|
+|1275  |            adderA          |adder_254                       |     7|
+|1276  |            adderext2       |adder__parameterized0_255       |    49|
+|1277  |            invm1m2         |subs_256                        |    16|
+|1278  |            m3adder         |subs2_257                       |     6|
+|1279  |            mult1           |multiplier_258                  |    30|
+|1280  |            mult2           |multiplier_259                  |    42|
+|1281  |            mult3           |multiplier__parameterized0_260  |    68|
+|1282  |          sumneg            |addersign_252                   |    23|
+|1283  |            invS            |inverter__parameterized1_253    |    15|
+|1284  |      mult_reg              |register_m_240                  |   360|
+|1285  |    \CMAC_gen[5].cmac_      |CMAC2_28                        |  2230|
+|1286  |      mux_acc               |nmux__parameterized0_197        |    34|
+|1287  |      mux_mult              |nmux__parameterized0_198        |    52|
+|1288  |      accu_reg              |register_m_194                  |    52|
+|1289  |      cau                   |CAU_195                         |   990|
+|1290  |        addr                |caddersign_199                  |    34|
+|1291  |          addI              |addersign_234                   |    17|
+|1292  |            invS            |inverter__parameterized1_237    |    15|
+|1293  |          addR              |addersign_235                   |    17|
+|1294  |            invS            |inverter__parameterized1_236    |    15|
+|1295  |        mult                |ckarasign_200                   |   862|
+|1296  |          adderA            |addersign_201                   |    65|
+|1297  |            invS            |inverter__parameterized1_233    |    54|
+|1298  |          adderB            |addersign_202                   |    20|
+|1299  |            invS            |inverter__parameterized1_232    |    15|
+|1300  |          adderimg          |addersign_203                   |    55|
+|1301  |            invA            |inverter__parameterized0_230    |    16|
+|1302  |            invS            |inverter__parameterized1_231    |    30|
+|1303  |          addreal           |addersign_204                   |    34|
+|1304  |            invS            |inverter__parameterized1_229    |    27|
+|1305  |          mult1             |multiplierkarasign_205          |   225|
+|1306  |            adderext2       |adder__parameterized0_223       |    78|
+|1307  |            invm1m2         |subs_224                        |    16|
+|1308  |            m3adder         |subs2_225                       |     6|
+|1309  |            mult1           |multiplier_226                  |    28|
+|1310  |            mult2           |multiplier_227                  |    29|
+|1311  |            mult3           |multiplier__parameterized0_228  |    68|
+|1312  |          mult2             |multiplierkarasign_206          |   198|
+|1313  |            adderext2       |adder__parameterized0_217       |    51|
+|1314  |            invm1m2         |subs_218                        |    16|
+|1315  |            m3adder         |subs2_219                       |     6|
+|1316  |            mult1           |multiplier_220                  |    28|
+|1317  |            mult2           |multiplier_221                  |    29|
+|1318  |            mult3           |multiplier__parameterized0_222  |    68|
+|1319  |          mult3             |multiplierkarasign_207          |   218|
+|1320  |            adderA          |adder_210                       |     7|
+|1321  |            adderext2       |adder__parameterized0_211       |    49|
+|1322  |            invm1m2         |subs_212                        |    16|
+|1323  |            m3adder         |subs2_213                       |     6|
+|1324  |            mult1           |multiplier_214                  |    30|
+|1325  |            mult2           |multiplier_215                  |    42|
+|1326  |            mult3           |multiplier__parameterized0_216  |    68|
+|1327  |          sumneg            |addersign_208                   |    23|
+|1328  |            invS            |inverter__parameterized1_209    |    15|
+|1329  |      mult_reg              |register_m_196                  |   360|
+|1330  |    \CMAC_gen[6].cmac_      |CMAC2_29                        |  2230|
+|1331  |      mux_acc               |nmux__parameterized0_153        |    34|
+|1332  |      mux_mult              |nmux__parameterized0_154        |    52|
+|1333  |      accu_reg              |register_m_150                  |    52|
+|1334  |      cau                   |CAU_151                         |   990|
+|1335  |        addr                |caddersign_155                  |    34|
+|1336  |          addI              |addersign_190                   |    17|
+|1337  |            invS            |inverter__parameterized1_193    |    15|
+|1338  |          addR              |addersign_191                   |    17|
+|1339  |            invS            |inverter__parameterized1_192    |    15|
+|1340  |        mult                |ckarasign_156                   |   862|
+|1341  |          adderA            |addersign_157                   |    65|
+|1342  |            invS            |inverter__parameterized1_189    |    54|
+|1343  |          adderB            |addersign_158                   |    20|
+|1344  |            invS            |inverter__parameterized1_188    |    15|
+|1345  |          adderimg          |addersign_159                   |    55|
+|1346  |            invA            |inverter__parameterized0_186    |    16|
+|1347  |            invS            |inverter__parameterized1_187    |    30|
+|1348  |          addreal           |addersign_160                   |    34|
+|1349  |            invS            |inverter__parameterized1_185    |    27|
+|1350  |          mult1             |multiplierkarasign_161          |   225|
+|1351  |            adderext2       |adder__parameterized0_179       |    78|
+|1352  |            invm1m2         |subs_180                        |    16|
+|1353  |            m3adder         |subs2_181                       |     6|
+|1354  |            mult1           |multiplier_182                  |    28|
+|1355  |            mult2           |multiplier_183                  |    29|
+|1356  |            mult3           |multiplier__parameterized0_184  |    68|
+|1357  |          mult2             |multiplierkarasign_162          |   198|
+|1358  |            adderext2       |adder__parameterized0_173       |    51|
+|1359  |            invm1m2         |subs_174                        |    16|
+|1360  |            m3adder         |subs2_175                       |     6|
+|1361  |            mult1           |multiplier_176                  |    28|
+|1362  |            mult2           |multiplier_177                  |    29|
+|1363  |            mult3           |multiplier__parameterized0_178  |    68|
+|1364  |          mult3             |multiplierkarasign_163          |   218|
+|1365  |            adderA          |adder_166                       |     7|
+|1366  |            adderext2       |adder__parameterized0_167       |    49|
+|1367  |            invm1m2         |subs_168                        |    16|
+|1368  |            m3adder         |subs2_169                       |     6|
+|1369  |            mult1           |multiplier_170                  |    30|
+|1370  |            mult2           |multiplier_171                  |    42|
+|1371  |            mult3           |multiplier__parameterized0_172  |    68|
+|1372  |          sumneg            |addersign_164                   |    23|
+|1373  |            invS            |inverter__parameterized1_165    |    15|
+|1374  |      mult_reg              |register_m_152                  |   360|
+|1375  |    \CMAC_gen[7].cmac_      |CMAC2_30                        |  2230|
+|1376  |      mux_acc               |nmux__parameterized0_109        |    34|
+|1377  |      mux_mult              |nmux__parameterized0_110        |    52|
+|1378  |      accu_reg              |register_m_106                  |    52|
+|1379  |      cau                   |CAU_107                         |   990|
+|1380  |        addr                |caddersign_111                  |    34|
+|1381  |          addI              |addersign_146                   |    17|
+|1382  |            invS            |inverter__parameterized1_149    |    15|
+|1383  |          addR              |addersign_147                   |    17|
+|1384  |            invS            |inverter__parameterized1_148    |    15|
+|1385  |        mult                |ckarasign_112                   |   862|
+|1386  |          adderA            |addersign_113                   |    65|
+|1387  |            invS            |inverter__parameterized1_145    |    54|
+|1388  |          adderB            |addersign_114                   |    20|
+|1389  |            invS            |inverter__parameterized1_144    |    15|
+|1390  |          adderimg          |addersign_115                   |    55|
+|1391  |            invA            |inverter__parameterized0_142    |    16|
+|1392  |            invS            |inverter__parameterized1_143    |    30|
+|1393  |          addreal           |addersign_116                   |    34|
+|1394  |            invS            |inverter__parameterized1_141    |    27|
+|1395  |          mult1             |multiplierkarasign_117          |   225|
+|1396  |            adderext2       |adder__parameterized0_135       |    78|
+|1397  |            invm1m2         |subs_136                        |    16|
+|1398  |            m3adder         |subs2_137                       |     6|
+|1399  |            mult1           |multiplier_138                  |    28|
+|1400  |            mult2           |multiplier_139                  |    29|
+|1401  |            mult3           |multiplier__parameterized0_140  |    68|
+|1402  |          mult2             |multiplierkarasign_118          |   198|
+|1403  |            adderext2       |adder__parameterized0_129       |    51|
+|1404  |            invm1m2         |subs_130                        |    16|
+|1405  |            m3adder         |subs2_131                       |     6|
+|1406  |            mult1           |multiplier_132                  |    28|
+|1407  |            mult2           |multiplier_133                  |    29|
+|1408  |            mult3           |multiplier__parameterized0_134  |    68|
+|1409  |          mult3             |multiplierkarasign_119          |   218|
+|1410  |            adderA          |adder_122                       |     7|
+|1411  |            adderext2       |adder__parameterized0_123       |    49|
+|1412  |            invm1m2         |subs_124                        |    16|
+|1413  |            m3adder         |subs2_125                       |     6|
+|1414  |            mult1           |multiplier_126                  |    30|
+|1415  |            mult2           |multiplier_127                  |    42|
+|1416  |            mult3           |multiplier__parameterized0_128  |    68|
+|1417  |          sumneg            |addersign_120                   |    23|
+|1418  |            invS            |inverter__parameterized1_121    |    15|
+|1419  |      mult_reg              |register_m_108                  |   360|
+|1420  |    \CMAC_gen[8].cmac_      |CMAC2_31                        |  2230|
+|1421  |      mux_acc               |nmux__parameterized0_65         |    34|
+|1422  |      mux_mult              |nmux__parameterized0_66         |    52|
+|1423  |      accu_reg              |register_m_62                   |    52|
+|1424  |      cau                   |CAU_63                          |   990|
+|1425  |        addr                |caddersign_67                   |    34|
+|1426  |          addI              |addersign_102                   |    17|
+|1427  |            invS            |inverter__parameterized1_105    |    15|
+|1428  |          addR              |addersign_103                   |    17|
+|1429  |            invS            |inverter__parameterized1_104    |    15|
+|1430  |        mult                |ckarasign_68                    |   862|
+|1431  |          adderA            |addersign_69                    |    65|
+|1432  |            invS            |inverter__parameterized1_101    |    54|
+|1433  |          adderB            |addersign_70                    |    20|
+|1434  |            invS            |inverter__parameterized1_100    |    15|
+|1435  |          adderimg          |addersign_71                    |    55|
+|1436  |            invA            |inverter__parameterized0_98     |    16|
+|1437  |            invS            |inverter__parameterized1_99     |    30|
+|1438  |          addreal           |addersign_72                    |    34|
+|1439  |            invS            |inverter__parameterized1_97     |    27|
+|1440  |          mult1             |multiplierkarasign_73           |   225|
+|1441  |            adderext2       |adder__parameterized0_91        |    78|
+|1442  |            invm1m2         |subs_92                         |    16|
+|1443  |            m3adder         |subs2_93                        |     6|
+|1444  |            mult1           |multiplier_94                   |    28|
+|1445  |            mult2           |multiplier_95                   |    29|
+|1446  |            mult3           |multiplier__parameterized0_96   |    68|
+|1447  |          mult2             |multiplierkarasign_74           |   198|
+|1448  |            adderext2       |adder__parameterized0_85        |    51|
+|1449  |            invm1m2         |subs_86                         |    16|
+|1450  |            m3adder         |subs2_87                        |     6|
+|1451  |            mult1           |multiplier_88                   |    28|
+|1452  |            mult2           |multiplier_89                   |    29|
+|1453  |            mult3           |multiplier__parameterized0_90   |    68|
+|1454  |          mult3             |multiplierkarasign_75           |   218|
+|1455  |            adderA          |adder_78                        |     7|
+|1456  |            adderext2       |adder__parameterized0_79        |    49|
+|1457  |            invm1m2         |subs_80                         |    16|
+|1458  |            m3adder         |subs2_81                        |     6|
+|1459  |            mult1           |multiplier_82                   |    30|
+|1460  |            mult2           |multiplier_83                   |    42|
+|1461  |            mult3           |multiplier__parameterized0_84   |    68|
+|1462  |          sumneg            |addersign_76                    |    23|
+|1463  |            invS            |inverter__parameterized1_77     |    15|
+|1464  |      mult_reg              |register_m_64                   |   360|
+|1465  |    \CMAC_gen[9].cmac_      |CMAC2_32                        |  2230|
+|1466  |      mux_acc               |nmux__parameterized0            |    34|
+|1467  |      mux_mult              |nmux__parameterized0_34         |    52|
+|1468  |      accu_reg              |register_m                      |    52|
+|1469  |      cau                   |CAU                             |   990|
+|1470  |        addr                |caddersign                      |    34|
+|1471  |          addI              |addersign_58                    |    17|
+|1472  |            invS            |inverter__parameterized1_61     |    15|
+|1473  |          addR              |addersign_59                    |    17|
+|1474  |            invS            |inverter__parameterized1_60     |    15|
+|1475  |        mult                |ckarasign                       |   862|
+|1476  |          adderA            |addersign                       |    65|
+|1477  |            invS            |inverter__parameterized1_57     |    54|
+|1478  |          adderB            |addersign_35                    |    20|
+|1479  |            invS            |inverter__parameterized1_56     |    15|
+|1480  |          adderimg          |addersign_36                    |    55|
+|1481  |            invA            |inverter__parameterized0        |    16|
+|1482  |            invS            |inverter__parameterized1_55     |    30|
+|1483  |          addreal           |addersign_37                    |    34|
+|1484  |            invS            |inverter__parameterized1_54     |    27|
+|1485  |          mult1             |multiplierkarasign              |   225|
+|1486  |            adderext2       |adder__parameterized0_48        |    78|
+|1487  |            invm1m2         |subs_49                         |    16|
+|1488  |            m3adder         |subs2_50                        |     6|
+|1489  |            mult1           |multiplier_51                   |    28|
+|1490  |            mult2           |multiplier_52                   |    29|
+|1491  |            mult3           |multiplier__parameterized0_53   |    68|
+|1492  |          mult2             |multiplierkarasign_38           |   198|
+|1493  |            adderext2       |adder__parameterized0_42        |    51|
+|1494  |            invm1m2         |subs_43                         |    16|
+|1495  |            m3adder         |subs2_44                        |     6|
+|1496  |            mult1           |multiplier_45                   |    28|
+|1497  |            mult2           |multiplier_46                   |    29|
+|1498  |            mult3           |multiplier__parameterized0_47   |    68|
+|1499  |          mult3             |multiplierkarasign_39           |   218|
+|1500  |            adderA          |adder                           |     7|
+|1501  |            adderext2       |adder__parameterized0           |    49|
+|1502  |            invm1m2         |subs                            |    16|
+|1503  |            m3adder         |subs2                           |     6|
+|1504  |            mult1           |multiplier                      |    30|
+|1505  |            mult2           |multiplier_41                   |    42|
+|1506  |            mult3           |multiplier__parameterized0      |    68|
+|1507  |          sumneg            |addersign_40                    |    23|
+|1508  |            invS            |inverter__parameterized1        |    15|
+|1509  |      mult_reg              |register_m_33                   |   360|
+|1510  |  index                     |indexmod                        |     3|
+|1511  |    \mult_gen[11].mult_     |multipliertrunc                 |     2|
+|1512  |    \mult_gen[13].mult_     |multipliertrunc_1               |     1|
++------+----------------------------+--------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7575 ; free virtual = 9632
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1659.958; parent = 1414.612; children = 245.377
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 3100.430; parent = 2119.707; children = 980.723
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 13 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 2119.703 ; gain = 791.742 ; free physical = 7586 ; free virtual = 9643
+Synthesis Optimization Complete : Time (s): cpu = 00:00:52 ; elapsed = 00:00:53 . Memory (MB): peak = 2119.711 ; gain = 791.742 ; free physical = 7586 ; free virtual = 9643
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 2255.273 ; gain = 0.000 ; free physical = 7512 ; free virtual = 9568
+INFO: [Netlist 29-17] Analyzing 10243 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2484.391 ; gain = 0.000 ; free physical = 7355 ; free virtual = 9412
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 1d13f2a3
+INFO: [Common 17-83] Releasing license: Synthesis
+88 Infos, 13 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:15 ; elapsed = 00:01:12 . Memory (MB): peak = 2484.391 ; gain = 1156.430 ; free physical = 7590 ; free virtual = 9647
+INFO: [Common 17-1381] The checkpoint '/home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1/QFT.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:12 ; elapsed = 00:00:07 . Memory (MB): peak = 2556.426 ; gain = 72.035 ; free physical = 7515 ; free virtual = 9596
+INFO: [runtcl-4] Executing : report_utilization -file QFT_utilization_synth.rpt -pb QFT_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 23 17:49:41 2024...

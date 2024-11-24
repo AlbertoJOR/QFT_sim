@@ -1,0 +1,462 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Sat Nov 23 18:14:27 2024
+# Process ID: 39241
+# Current directory: /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1
+# Command line: vivado -log QFT.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source QFT.tcl
+# Log file: /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1/QFT.vds
+# Journal file: /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1/vivado.jou
+# Running On: GF76, OS: Linux, CPU Frequency: 495.910 MHz, CPU Physical cores: 14, Host memory: 16455 MB
+#-----------------------------------------------------------
+source QFT.tcl -notrace
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1329.777 ; gain = 0.023 ; free physical = 8662 ; free virtual = 10525
+Command: read_checkpoint -auto_incremental -incremental /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.srcs/utils_1/imports/synth_1/QFT.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/ajor/Documents/Vivado/QFT_prj/QFT_prj.srcs/utils_1/imports/synth_1/QFT.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top QFT -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 39267
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [/tools/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+WARNING: [Synth 8-9448] extra semicolon in $unit (global) scope [/home/ajor/Documents/Vivado/qft/CAU.sv:59]
+INFO: [Synth 8-11241] undeclared symbol 'w_en_abs', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:28]
+INFO: [Synth 8-11241] undeclared symbol 'w_en_acc', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:29]
+INFO: [Synth 8-11241] undeclared symbol 'w_en_mult', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:30]
+INFO: [Synth 8-11241] undeclared symbol 'update_state', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:31]
+INFO: [Synth 8-11241] undeclared symbol 'sel_counter', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:32]
+WARNING: [Synth 8-8895] 'w_en_abs' is already implicitly declared on line 28 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'w_en_acc' is already implicitly declared on line 29 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'w_en_mult' is already implicitly declared on line 30 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'update_state' is already implicitly declared on line 31 [/home/ajor/Documents/Vivado/qft/QFT.sv:34]
+WARNING: [Synth 8-8895] 'sel_counter' is already implicitly declared on line 32 [/home/ajor/Documents/Vivado/qft/QFT.sv:35]
+INFO: [Synth 8-11241] undeclared symbol 'A_amplitudes', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:44]
+WARNING: [Synth 8-8895] 'A_amplitudes' is already implicitly declared on line 44 [/home/ajor/Documents/Vivado/qft/QFT.sv:47]
+INFO: [Synth 8-11241] undeclared symbol 'A_roots', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:58]
+WARNING: [Synth 8-8895] 'A_roots' is already implicitly declared on line 58 [/home/ajor/Documents/Vivado/qft/QFT.sv:62]
+INFO: [Synth 8-11241] undeclared symbol 'SEL', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:66]
+WARNING: [Synth 8-8895] 'SEL' is already implicitly declared on line 66 [/home/ajor/Documents/Vivado/qft/QFT.sv:69]
+INFO: [Synth 8-11241] undeclared symbol 'COL_roots', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:74]
+WARNING: [Synth 8-8895] 'COL_roots' is already implicitly declared on line 74 [/home/ajor/Documents/Vivado/qft/QFT.sv:76]
+INFO: [Synth 8-11241] undeclared symbol 'VMAC_res', assumed default net type 'wire' [/home/ajor/Documents/Vivado/qft/QFT.sv:88]
+WARNING: [Synth 8-8895] 'VMAC_res' is already implicitly declared on line 88 [/home/ajor/Documents/Vivado/qft/QFT.sv:90]
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1667.609 ; gain = 337.832 ; free physical = 8060 ; free virtual = 9923
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1226.937; parent = 981.555; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2651.301; parent = 1670.582; children = 980.719
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'QFT' [/home/ajor/Documents/Vivado/qft/QFT.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'FSM' [/home/ajor/Documents/Vivado/qft/FSM.sv:1]
+	Parameter N bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'FSM' (0#1) [/home/ajor/Documents/Vivado/qft/FSM.sv:1]
+INFO: [Synth 8-6157] synthesizing module 'CMEM' [/home/ajor/Documents/Vivado/qft/CMEM.sv:2]
+	Parameter N bound to: 2 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'register_m' [/home/ajor/Documents/Vivado/qft/register_m.sv:2]
+	Parameter DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'register_m' (0#1) [/home/ajor/Documents/Vivado/qft/register_m.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'CMEM' (0#1) [/home/ajor/Documents/Vivado/qft/CMEM.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'indexmod' [/home/ajor/Documents/Vivado/qft/indexmod.sv:2]
+	Parameter N bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multipliertrunc' [/home/ajor/Documents/Vivado/qft/multipliertrunc.sv:3]
+	Parameter DATA_W bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multipliertrunc' (0#1) [/home/ajor/Documents/Vivado/qft/multipliertrunc.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'indexmod' (0#1) [/home/ajor/Documents/Vivado/qft/indexmod.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'VMux' [/home/ajor/Documents/Vivado/qft/VMux.sv:2]
+	Parameter N bound to: 2 - type: integer 
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'nmux' [/home/ajor/Documents/Vivado/qft/nmux.sv:2]
+	Parameter N bound to: 2 - type: integer 
+	Parameter DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'nmux' (0#1) [/home/ajor/Documents/Vivado/qft/nmux.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'VMux' (0#1) [/home/ajor/Documents/Vivado/qft/VMux.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'VCMAC2' [/home/ajor/Documents/Vivado/qft/VCMAC2.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter N bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'CMAC2' [/home/ajor/Documents/Vivado/qft/CMAC2.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'CAU' [/home/ajor/Documents/Vivado/qft/CAU.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'ckarasign' [/home/ajor/Documents/Vivado/qft/ckarasign.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multiplierkarasign' [/home/ajor/Documents/Vivado/qft/multiplierkarasign.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'multiplier' [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (0#1) [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'adder' [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+	Parameter DATA_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder' (0#1) [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'multiplier__parameterized0' [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+	Parameter DATA_W bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'multiplier__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/multiplier.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'inverter' [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+	Parameter DATA_W bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'inverter' (0#1) [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'subs' [/home/ajor/Documents/Vivado/qft/subs.sv:3]
+	Parameter DATA_W bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'subs' (0#1) [/home/ajor/Documents/Vivado/qft/subs.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'signextend' [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+	Parameter DATA_W bound to: 18 - type: integer 
+	Parameter EXT_W bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'signextend' (0#1) [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'subs2' [/home/ajor/Documents/Vivado/qft/subs2.sv:3]
+	Parameter DATA_W bound to: 19 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'subs2' (0#1) [/home/ajor/Documents/Vivado/qft/subs2.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'padderright' [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+	Parameter DATA_W bound to: 20 - type: integer 
+	Parameter EXT_W bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'padderright' (0#1) [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'signextend__parameterized0' [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+	Parameter DATA_W bound to: 28 - type: integer 
+	Parameter EXT_W bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'signextend__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/signextend.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'padderleft' [/home/ajor/Documents/Vivado/qft/padderleft.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter EXT_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'padderleft' (0#1) [/home/ajor/Documents/Vivado/qft/padderleft.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'padderright__parameterized0' [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+	Parameter EXT_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'padderright__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/padderright.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'adder__parameterized0' [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+	Parameter DATA_W bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'adder__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/adder.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'multiplierkarasign' (0#1) [/home/ajor/Documents/Vivado/qft/multiplierkarasign.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'addersign' [/home/ajor/Documents/Vivado/qft/addersign.sv:3]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'inverter__parameterized0' [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'inverter__parameterized0' (0#1) [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'inverter__parameterized1' [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+	Parameter DATA_W bound to: 15 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'inverter__parameterized1' (0#1) [/home/ajor/Documents/Vivado/qft/inverter.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'addersign' (0#1) [/home/ajor/Documents/Vivado/qft/addersign.sv:3]
+INFO: [Synth 8-6155] done synthesizing module 'ckarasign' (0#1) [/home/ajor/Documents/Vivado/qft/ckarasign.sv:2]
+INFO: [Synth 8-6157] synthesizing module 'caddersign' [/home/ajor/Documents/Vivado/qft/caddersign.sv:2]
+	Parameter DATA_W bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'caddersign' (0#1) [/home/ajor/Documents/Vivado/qft/caddersign.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'CAU' (0#1) [/home/ajor/Documents/Vivado/qft/CAU.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'CMAC2' (0#1) [/home/ajor/Documents/Vivado/qft/CMAC2.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'VCMAC2' (0#1) [/home/ajor/Documents/Vivado/qft/VCMAC2.sv:2]
+INFO: [Synth 8-6155] done synthesizing module 'QFT' (0#1) [/home/ajor/Documents/Vivado/qft/QFT.sv:2]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1738.547 ; gain = 408.770 ; free physical = 8085 ; free virtual = 9948
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1226.937; parent = 981.555; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2719.270; parent = 1738.551; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1756.359 ; gain = 426.582 ; free physical = 8092 ; free virtual = 9956
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1226.937; parent = 981.555; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2737.082; parent = 1756.363; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1764.363 ; gain = 434.586 ; free physical = 8092 ; free virtual = 9956
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1226.937; parent = 981.555; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2745.086; parent = 1764.367; children = 980.719
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'FSM'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    INIT |                              100 |                              000
+                    IDLE |                              000 |                              001
+                    MULT |                              011 |                              010
+                     ACC |                              010 |                              011
+                     ABS |                              001 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'sequential' in module 'FSM'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1772.371 ; gain = 442.594 ; free physical = 8084 ; free virtual = 9949
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1226.937; parent = 981.555; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2753.094; parent = 1772.375; children = 980.719
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   33 Bit       Adders := 12    
+	   2 Input   19 Bit       Adders := 6     
+	   2 Input   18 Bit       Adders := 6     
+	   2 Input   16 Bit       Adders := 14    
+	   2 Input    9 Bit       Adders := 12    
+	   2 Input    2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 34    
++---Registers : 
+	               32 Bit    Registers := 8     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 12    
+	   2 Input   16 Bit        Muxes := 70    
+	   5 Input    3 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1978.410 ; gain = 648.633 ; free physical = 7842 ; free virtual = 9697
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2959.133; parent = 1978.414; children = 980.719
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1978.410 ; gain = 648.633 ; free physical = 7846 ; free virtual = 9700
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2959.133; parent = 1978.414; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 1978.410 ; gain = 648.633 ; free physical = 7811 ; free virtual = 9665
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2959.133; parent = 1978.414; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7845 ; free virtual = 9699
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2962.102; parent = 1981.383; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7845 ; free virtual = 9699
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2962.102; parent = 1981.383; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7845 ; free virtual = 9699
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2962.102; parent = 1981.383; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:26 ; elapsed = 00:00:26 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7849 ; free virtual = 9704
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2962.102; parent = 1981.383; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7849 ; free virtual = 9704
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2962.102; parent = 1981.383; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7849 ; free virtual = 9704
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2962.102; parent = 1981.383; children = 980.719
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     1|
+|2     |CARRY4 |   622|
+|3     |LUT1   |   442|
+|4     |LUT2   |   669|
+|5     |LUT3   |   559|
+|6     |LUT4   |   715|
+|7     |LUT5   |   374|
+|8     |LUT6   |  1394|
+|9     |FDCE   |   263|
+|10    |FDPE   |     1|
+|11    |IBUF   |   199|
+|12    |OBUF   |    96|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------------------------+------------------------------+------+
+|      |Instance                   |Module                        |Cells |
++------+---------------------------+------------------------------+------+
+|1     |top                        |                              |  5335|
+|2     |  AMP_MEM                  |CMEM                          |   136|
+|3     |    \register_gen[0].reg_  |register_m_74                 |    52|
+|4     |    \register_gen[1].reg_  |register_m_75                 |    84|
+|5     |  FSM                      |FSM                           |   466|
+|6     |  ROOT_MEM                 |CMEM_0                        |   196|
+|7     |    \register_gen[0].reg_  |register_m_72                 |   127|
+|8     |    \register_gen[1].reg_  |register_m_73                 |    69|
+|9     |  VCMAC                    |VCMAC2                        |  4241|
+|10    |    \CMAC_gen[0].cmac_     |CMAC2                         |  2227|
+|11    |      accu_reg             |register_m_30                 |    92|
+|12    |      cau                  |CAU_31                        |  1668|
+|13    |        addr               |caddersign_33                 |    34|
+|14    |          addI             |addersign_68                  |    17|
+|15    |            invS           |inverter__parameterized1_71   |    15|
+|16    |          addR             |addersign_69                  |    17|
+|17    |            invS           |inverter__parameterized1_70   |    15|
+|18    |        mult               |ckarasign_34                  |   961|
+|19    |          adderA           |addersign_35                  |    81|
+|20    |            invS           |inverter__parameterized1_67   |    67|
+|21    |          adderB           |addersign_36                  |    20|
+|22    |            invS           |inverter__parameterized1_66   |    15|
+|23    |          adderimg         |addersign_37                  |    43|
+|24    |            invA           |inverter__parameterized0_64   |     4|
+|25    |            invS           |inverter__parameterized1_65   |    30|
+|26    |          addreal          |addersign_38                  |    37|
+|27    |            invS           |inverter__parameterized1_63   |    30|
+|28    |          mult1            |multiplierkarasign_39         |   266|
+|29    |            adderext2      |adder__parameterized0_57      |   114|
+|30    |            invm1m2        |subs_58                       |    16|
+|31    |            m3adder        |subs2_59                      |     8|
+|32    |            mult1          |multiplier_60                 |    30|
+|33    |            mult2          |multiplier_61                 |    29|
+|34    |            mult3          |multiplier__parameterized0_62 |    69|
+|35    |          mult2            |multiplierkarasign_40         |   249|
+|36    |            adderext2      |adder__parameterized0_51      |    97|
+|37    |            invm1m2        |subs_52                       |    16|
+|38    |            m3adder        |subs2_53                      |     8|
+|39    |            mult1          |multiplier_54                 |    30|
+|40    |            mult2          |multiplier_55                 |    29|
+|41    |            mult3          |multiplier__parameterized0_56 |    69|
+|42    |          mult3            |multiplierkarasign_41         |   223|
+|43    |            adderA         |adder_44                      |     7|
+|44    |            adderext2      |adder__parameterized0_45      |    49|
+|45    |            invm1m2        |subs_46                       |    16|
+|46    |            m3adder        |subs2_47                      |     8|
+|47    |            mult1          |multiplier_48                 |    32|
+|48    |            mult2          |multiplier_49                 |    42|
+|49    |            mult3          |multiplier__parameterized0_50 |    69|
+|50    |          sumneg           |addersign_42                  |    18|
+|51    |            invS           |inverter__parameterized1_43   |    15|
+|52    |      mult_reg             |register_m_32                 |   467|
+|53    |    \CMAC_gen[1].cmac_     |CMAC2_1                       |  2014|
+|54    |      accu_reg             |register_m                    |    33|
+|55    |      cau                  |CAU                           |  1768|
+|56    |        addr               |caddersign                    |    58|
+|57    |          addI             |addersign_26                  |    29|
+|58    |            invS           |inverter__parameterized1_29   |    27|
+|59    |          addR             |addersign_27                  |    29|
+|60    |            invS           |inverter__parameterized1_28   |    27|
+|61    |        mult               |ckarasign                     |  1025|
+|62    |          adderA           |addersign                     |    77|
+|63    |            invS           |inverter__parameterized1_25   |    65|
+|64    |          adderB           |addersign_3                   |    62|
+|65    |            invS           |inverter__parameterized1_24   |    52|
+|66    |          adderimg         |addersign_4                   |    43|
+|67    |            invA           |inverter__parameterized0      |     4|
+|68    |            invS           |inverter__parameterized1_23   |    30|
+|69    |          addreal          |addersign_5                   |    37|
+|70    |            invS           |inverter__parameterized1_22   |    30|
+|71    |          mult1            |multiplierkarasign            |   279|
+|72    |            adderext2      |adder__parameterized0_16      |   115|
+|73    |            invm1m2        |subs_17                       |    16|
+|74    |            m3adder        |subs2_18                      |     8|
+|75    |            mult1          |multiplier_19                 |    29|
+|76    |            mult2          |multiplier_20                 |    42|
+|77    |            mult3          |multiplier__parameterized0_21 |    69|
+|78    |          mult2            |multiplierkarasign_6          |   262|
+|79    |            adderext2      |adder__parameterized0_10      |    98|
+|80    |            invm1m2        |subs_11                       |    16|
+|81    |            m3adder        |subs2_12                      |     8|
+|82    |            mult1          |multiplier_13                 |    29|
+|83    |            mult2          |multiplier_14                 |    42|
+|84    |            mult3          |multiplier__parameterized0_15 |    69|
+|85    |          mult3            |multiplierkarasign_7          |   223|
+|86    |            adderA         |adder                         |     7|
+|87    |            adderext2      |adder__parameterized0         |    49|
+|88    |            invm1m2        |subs                          |    16|
+|89    |            m3adder        |subs2                         |     8|
+|90    |            mult1          |multiplier                    |    32|
+|91    |            mult2          |multiplier_9                  |    42|
+|92    |            mult3          |multiplier__parameterized0    |    69|
+|93    |          sumneg           |addersign_8                   |    18|
+|94    |            invS           |inverter__parameterized1      |    15|
+|95    |      mult_reg             |register_m_2                  |   213|
++------+---------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7849 ; free virtual = 9704
+Synthesis current peak Physical Memory [PSS] (MB): peak = 1542.493; parent = 1297.143; children = 245.382
+Synthesis current peak Virtual Memory [VSS] (MB): peak = 2962.102; parent = 1981.383; children = 980.719
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1981.379 ; gain = 651.602 ; free physical = 7860 ; free virtual = 9714
+Synthesis Optimization Complete : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 1981.387 ; gain = 651.602 ; free physical = 7864 ; free virtual = 9719
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.1 . Memory (MB): peak = 1991.285 ; gain = 0.000 ; free physical = 7984 ; free virtual = 9838
+INFO: [Netlist 29-17] Analyzing 622 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2078.090 ; gain = 0.000 ; free physical = 7913 ; free virtual = 9767
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 83c46de3
+INFO: [Common 17-83] Releasing license: Synthesis
+87 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 2078.090 ; gain = 748.312 ; free physical = 8059 ; free virtual = 9914
+INFO: [Common 17-1381] The checkpoint '/home/ajor/Documents/Vivado/QFT_prj/QFT_prj.runs/synth_1/QFT.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file QFT_utilization_synth.rpt -pb QFT_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 23 18:15:08 2024...
