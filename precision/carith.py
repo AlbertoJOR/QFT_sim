@@ -1,0 +1,165 @@
+import util as u
+
+def complexMultFixed(a_real :int, a_img: int, b_real : int, b_img : int, D_W: int, F_W: int):
+    pass
+
+def signedIntToFloat(fixed_point: int, F_W: int) -> float:
+    sign_bit_position = F_W + 1  
+    sign_mask = 1 << sign_bit_position 
+
+    sign = (fixed_point & sign_mask) != 0 
+    value_mask = (1 << sign_bit_position) - 1 
+
+    abs_value = fixed_point & value_mask  
+    float_value = abs_value / (2 ** F_W) 
+
+    return -float_value if sign else float_value 
+
+def flipSignedIntSign(A: int , D_W: int) -> int:
+    sign_mask = 1 << (D_W-1) 
+    return sign_mask ^ A
+
+
+
+def multiplySignedFixedPoint(A: int, B: int, F_W: int, D_W: int) -> int:
+    # 1. Extraer el bit de signo (MSB)
+    sign_mask = 1 << (D_W - 1)  # Ejemplo: si D_W=8 -> 0b10000000
+    sign_A = (A & sign_mask) != 0
+    sign_B = (B & sign_mask) != 0
+
+    # 2. Extraer los valores absolutos sin el bit de signo
+    value_mask = sign_mask - 1  # Máscara para obtener la parte entera y fracción
+    abs_A = A & value_mask
+    abs_B = B & value_mask
+
+    # 3. Multiplicar las partes sin signo
+    product = abs_A * abs_B  # Ahora es Q(2*F_W)
+
+    # 4. Ajustar la escala dividiendo por 2^F_W (desplazamiento)
+    result = (product >> F_W)  # Equivalente a dividir por 2^F_W
+
+    # 5. Restaurar el signo con OR si es necesario
+    if sign_A ^ sign_B:  # XOR: Si los signos son distintos, el resultado debe ser negativo
+        result |= sign_mask  # Aplicamos el bit de signo al resultado
+
+    return result
+
+
+def addSubtractSignedFixedPoint(A: int, B: int, F_W: int, D_W: int) -> int:
+    # Máscara para el bit de signo (MSB)
+    sign_mask = 1 << (D_W - 1)
+    
+    # Extraemos el signo de A y B
+    sign_A = (A & sign_mask) != 0
+    sign_B = (B & sign_mask) != 0
+    
+    # Máscara para las partes absolutas (sin el bit de signo)
+    value_mask = sign_mask - 1
+    abs_A = A & value_mask
+    abs_B = B & value_mask
+
+    # Si los signos son iguales, sumamos los valores absolutos
+    if sign_A == sign_B:
+        result = abs_A + abs_B  # Sumar
+    else:
+        # Si los signos son diferentes, restamos los valores absolutos
+        if abs_A >= abs_B:
+            result = abs_A - abs_B  # Restar
+        else:
+            result = abs_B - abs_A  # Restar (el resultado será positivo si B es mayor)
+
+# 
+    # Restaurar el signo según el resultado
+    if sign_A == sign_B:  # Si los signos son iguales, el resultado conserva el signo
+        if sign_A:  # Si ambos son negativos
+            result |= sign_mask  # Aplicamos el bit de signo
+    else:
+        if abs_A >= abs_B:
+            if sign_A:  # Si A es negativo, el resultado también será negativo
+                result |= sign_mask
+        else:
+            if sign_B:  # Si B es negativo, el resultado será negativo
+                result |= sign_mask
+
+    return result
+
+def divideSignedFixedPoint(A: int, B: int, F_W: int, D_W: int) -> int:
+    # 1. Extraer el bit de signo (MSB)
+    sign_mask = 1 << (D_W - 1)  # Máscara de signo (MSB)
+    sign_A = (A & sign_mask) != 0
+    sign_B = (B & sign_mask) != 0
+
+    # 2. Extraer los valores absolutos sin el bit de signo
+    value_mask = sign_mask - 1  # Máscara para obtener la parte entera y fracción
+    abs_A = A & value_mask
+    abs_B = B & value_mask
+
+    # 3. Dividir las partes absolutas
+    if abs_B == 0:
+        raise ValueError("División por cero no permitida")  # Comprobar división por cero
+    quotient = abs_A * (1 << F_W) // abs_B  # Realizamos el desplazamiento para mantener la precisión
+
+    # 4. Ajuste de escala: el resultado ya tiene la escala correcta por el desplazamiento
+    # El resultado está en Q(F_W), por lo que no necesitamos hacer más ajustes de escala
+
+    # 5. Restaurar el signo con XOR si es necesario
+    if sign_A != sign_B:  # Si los signos son diferentes, el resultado será negativo
+        quotient |= sign_mask  # Aplicamos el bit de signo al resultado
+
+    return quotient
+
+def multiplyComplexFixedPoint(A_real: int, A_img: int, B_real: int, B_img:int, F_W :int, D_W:int) -> (int, int):
+    arbr = multiplySignedFixedPoint(A_real, B_real, F_W, D_W)
+    arbi = multiplySignedFixedPoint(A_real, B_img, F_W, D_W)
+    aibr = multiplySignedFixedPoint(A_img, B_real, F_W, D_W)
+    aibi = multiplySignedFixedPoint(A_img, B_img, F_W, D_W)
+    aibi_neg = flipSignedIntSign(aibi, D_W)
+    # u.printFixedPoint(arbr, D_W, F_W)
+    # u.printFixedPoint(arbi, D_W, F_W)
+    # u.printFixedPoint(aibr, D_W, F_W)
+    # u.printFixedPoint(aibi, D_W, F_W)
+    # u.printFixedPoint(aibi_neg, D_W, F_W)
+    res_r = addSubtractSignedFixedPoint(arbr, aibi_neg, F_W , D_W)
+    res_i = addSubtractSignedFixedPoint(aibr, arbi, F_W, D_W)
+    return(res_r, res_i)
+
+def addComplexFixedPoint(A_real: int, A_img: int, B_real: int, B_img:int, F_W :int, D_W:int) -> (int, int):
+    res_r = addSubtractSignedFixedPoint(A_real, B_real, F_W , D_W)
+    res_i = addSubtractSignedFixedPoint(A_img, B_img, F_W, D_W)
+    return(res_r, res_i)
+
+def absValueComplexFixedPoint(A_real: int, A_img: int,  F_W :int, D_W:int) -> int:
+    A_img_complement = flipSignedIntSign(A_img, D_W)
+    res_r, res_i = multiplyComplexFixedPoint(A_real, A_img, A_real, A_img_complement, F_W, D_W)
+    return res_r
+
+# A =  0.823472
+# B = - 0.182335
+# F_W = 12
+# fixed_point = u.floatToSignedInt(A, F_W)
+# fixed2_point = u.floatToSignedInt(B, F_W)
+
+
+# mult_res = multiplySignedFixedPoint(fixed_point, fixed2_point ,F_W, F_W+2)
+# print("Multiplication", A*B)
+# mult_string = u.fixedPointString(mult_res, F_W +2, F_W)
+# print(f"Fixed point: {mult_string}")
+
+# print()
+# add_res = addSubtractSignedFixedPoint(fixed_point, fixed2_point ,F_W, F_W+2)
+# print("Addition", A+B)
+# add_string = u.fixedPointString(add_res, F_W +2, F_W)
+# print(f"Fixed point: {add_string}")
+
+# print("Change of sign")
+# sing_change = flipSignedIntSign(add_res, F_W +2)
+# sing_string = u.fixedPointString(sing_change, F_W +2, F_W)
+# print(f"Fixed point: {sing_string}")
+
+
+# # # Dividir A entre B
+# # result = divideSignedFixedPoint(fixed_point, fixed2_point, F_W, F_W + 2)
+# # print(A/B)
+
+# # add_string = u.fixedPointString(result, F_W +2, F_W)
+# # print(f"Fixed point: {add_string}")
