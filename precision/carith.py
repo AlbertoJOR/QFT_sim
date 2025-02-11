@@ -1,4 +1,5 @@
 import util as u
+import math
 
 def complexMultFixed(a_real :int, a_img: int, b_real : int, b_img : int, D_W: int, F_W: int):
     pass
@@ -133,33 +134,25 @@ def absValueComplexFixedPoint(A_real: int, A_img: int,  F_W :int, D_W:int) -> in
     res_r, res_i = multiplyComplexFixedPoint(A_real, A_img, A_real, A_img_complement, F_W, D_W)
     return res_r
 
-# A =  0.823472
-# B = - 0.182335
-# F_W = 12
-# fixed_point = u.floatToSignedInt(A, F_W)
-# fixed2_point = u.floatToSignedInt(B, F_W)
+def tensorProductComplexFixed(A, B, F_W, D_W):
+    
+    
+    rows_A, cols_A = len(A), len(A[0])  
+    rows_B, cols_B = len(B), len(B[0])  
 
 
-# mult_res = multiplySignedFixedPoint(fixed_point, fixed2_point ,F_W, F_W+2)
-# print("Multiplication", A*B)
-# mult_string = u.fixedPointString(mult_res, F_W +2, F_W)
-# print(f"Fixed point: {mult_string}")
-
-# print()
-# add_res = addSubtractSignedFixedPoint(fixed_point, fixed2_point ,F_W, F_W+2)
-# print("Addition", A+B)
-# add_string = u.fixedPointString(add_res, F_W +2, F_W)
-# print(f"Fixed point: {add_string}")
-
-# print("Change of sign")
-# sing_change = flipSignedIntSign(add_res, F_W +2)
-# sing_string = u.fixedPointString(sing_change, F_W +2, F_W)
-# print(f"Fixed point: {sing_string}")
+    result = [[(0, 0) for _ in range(cols_A*cols_B)] for _ in range(rows_A * rows_B)]
 
 
-# # # Dividir A entre B
-# # result = divideSignedFixedPoint(fixed_point, fixed2_point, F_W, F_W + 2)
-# # print(A/B)
+    for i in range(rows_A):
+        for j in range(cols_A):
+            for k in range(rows_B):
+                for l in range(cols_B):
+                    a_real = A[i][j][0]
+                    a_img = A[i][j][1]
+                    b_real = B[k][l][0]
+                    b_img = B[k][l][1]
+                    result[i * rows_B + k][j * cols_B + l] =  multiplyComplexFixedPoint(a_real, a_img, b_real, b_img, F_W, D_W)
 
-# # add_string = u.fixedPointString(result, F_W +2, F_W)
-# # print(f"Fixed point: {add_string}")
+    return result
+

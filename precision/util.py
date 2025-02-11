@@ -1,4 +1,5 @@
 import math
+import random
 def mask_int (a: int, data_w:int) -> int:
     mask = (1 << data_w) - 1 
     masked = a & mask
@@ -108,8 +109,33 @@ def printComplexFixedPoint(A_real: int, A_img:int, D_W:int , F_W:int)   :
     Ai_string = fixedPointString(A_img, D_W, F_W)
     print(Ar_string, " ", Ai_string, "i")
 
+def complexFixedPointString(A_real: int, A_img:int, D_W:int , F_W:int)   :
+    Ar_string = fixedPointString(A_real, D_W, F_W)
+    Ai_string = fixedPointString(A_img, D_W, F_W)
+    return "(" + Ar_string +  " " + Ai_string + "i) "
+
 def printComplexFixedPointTuple(A: tuple, D_W:int , F_W:int)  : 
     Ar, Ai = A
     Ar_string = fixedPointString(Ar, D_W, F_W)
     Ai_string = fixedPointString(Ai, D_W, F_W)
     print(Ar_string, " ", Ai_string, "i")
+
+def printComplexFixedMatrix(matrix, D_W, F_W):
+    for row in matrix:
+        rowString = ""
+        for element in row:
+            rowString = rowString + complexFixedPointString(element[0],element[1], D_W, F_W) 
+        print(rowString)
+    print()
+
+def randComplexMatrix(rows, cols, F_W):
+    
+    result = [[(0, 0) for _ in range(cols)] for _ in range(rows)]
+    for i in range(rows):
+        for j in range(cols):
+            a_real = random.random();
+            a_img = random.random();
+            ar_fix = floatToSignedInt(a_real, F_W)
+            ai_fix = floatToSignedInt(a_img, F_W)
+            result[i][j] = (ar_fix, ai_fix)
+    return result
