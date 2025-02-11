@@ -156,3 +156,75 @@ def tensorProductComplexFixed(A, B, F_W, D_W):
 
     return result
 
+
+def randomComplexFloat():
+    real = random.uniform(-1, 1)
+    imag = random.uniform(-1, 1)
+    return (real, imag)
+
+def complexNorm(vector):
+    return math.sqrt(sum(r**2 + i**2 for r, i in vector))
+
+def normalizeComplexVector(size):
+    vector = [random_complex() for _ in range(size)]
+    norm = complex_norm(vector)
+    return [(r / norm, i / norm) for r, i in vector]
+
+def randomNormComplexFixedPVector(size, F_W):
+    floatVector = normalizeComplexVector(size)
+    fixedVector = [(0, 0) for _ in range(size)]
+    for i in range(size):
+        fixedVector[i] = u.complexToFixedTuple(floatVector[i], F_W)
+    return fixedVector
+
+def complexVectorToFixed(floatVector, F_W):
+    size = len(floatVector)
+    fixedVector = [(0, 0) for _ in range(size)]
+    for i in range(size):
+        fixedVector[i] = u.complexToFixedTuple(floatVector[i], F_W)
+    return fixedVector
+
+def randComplexMatrix(rows, cols, F_W):
+    result = [[(0, 0) for _ in range(cols)] for _ in range(rows)]
+    for i in range(rows):
+        for j in range(cols):
+            a_real = random.random();
+            a_img = random.random();
+            ar_fix = u.floatToSignedInt(a_real, F_W)
+            ai_fix = u.floatToSignedInt(a_img, F_W)
+            result[i][j] = (ar_fix, ai_fix)
+    return result
+
+def complexMatrixToFixed(floatM, F_W):
+    rows, cols = len(floatM), len(floatM[0])  
+    result = [[(0, 0) for _ in range(cols)] for _ in range(rows)]
+    for i in range(rows):
+        for j in range(cols):
+            result[i][j] = u.complexToFixedTuple(floatM[i][j], F_W)
+    return result
+
+def ComplexFixDotProduct(vecA, vecB, F_W, D_W):
+    size = len(vecA)
+    result = [(0,0) for _ in range(size)]
+    for i in range(size):
+        a_real = vecA[i][0]
+        a_img = vecA[i][1]
+        b_real = vecB[i][0]
+        b_img = vecB[i][1]
+        result[i] =  multiplyComplexFixedPoint(a_real, a_img, b_real, b_img, F_W, D_W)
+    accum = (0,0)
+    for i in range(size):
+        accum = addComplexFixedPoint(accum[0], accum[1], result[i][0], result[i][1], F_W, D_W)
+    return accum
+
+
+
+def ComplexFixedVectorMatrixMult(vector, matrix, F_W, D_W):
+    size = len(vector)
+    result = [(0,0) for _ in range(size)]
+    for i in range(size):
+        result[i] =  ComplexFixDotProduct(vector, matrix[i], F_W, D_W)
+    return result
+
+
+

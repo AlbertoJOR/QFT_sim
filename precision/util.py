@@ -68,6 +68,12 @@ def floatToSignedInt(A:float, fraction:int) -> int:
         fixed_point = sign_val | fixed_point
     return fixed_point
 
+def complexToFixedTuple(Complex, fraction):
+    real = floatToSignedInt(Complex[0], fraction)
+    img = floatToSignedInt(Complex[1], fraction)
+    return (real, img)
+
+
 def ComplexFloatToSignedInt(Real:float, Img:float, fraction:int, D_W: int):
     real_sint = floatToSignedInt(Real, fraction)
     img_sint = floatToSignedInt(Img, fraction)
@@ -128,14 +134,9 @@ def printComplexFixedMatrix(matrix, D_W, F_W):
         print(rowString)
     print()
 
-def randComplexMatrix(rows, cols, F_W):
-    
-    result = [[(0, 0) for _ in range(cols)] for _ in range(rows)]
-    for i in range(rows):
-        for j in range(cols):
-            a_real = random.random();
-            a_img = random.random();
-            ar_fix = floatToSignedInt(a_real, F_W)
-            ai_fix = floatToSignedInt(a_img, F_W)
-            result[i][j] = (ar_fix, ai_fix)
-    return result
+def printComplexFixedVector(Vector, D_W, F_W):
+    rowString = ""
+    for element in Vector:
+        rowString = rowString + complexFixedPointString(element[0],element[1], D_W, F_W) 
+    print(rowString)
+    print()

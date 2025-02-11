@@ -1,5 +1,7 @@
 import random
 import math
+import carith as ca
+import util as u
 
 def random_complex():
     """Genera un número complejo aleatorio con partes reales e imaginarias en [-1,1]"""
@@ -36,3 +38,8 @@ print_complex_vector(vector)
 # Verificar la norma (debe ser aproximadamente 1)
 norm_result = complex_norm(vector)
 print(f"Norma del vector: {norm_result:.6f}")  # Debe ser ≈1
+
+FRACTION_WIDTH = 12
+fixed_vector = ca.complexVectorToFixed(vector, FRACTION_WIDTH)
+print(vector)
+u.printComplexFixedVector(fixed_vector, FRACTION_WIDTH+2, FRACTION_WIDTH)
