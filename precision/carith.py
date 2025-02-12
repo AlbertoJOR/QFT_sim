@@ -1,5 +1,7 @@
 import util as u
 import math
+import numpy as np
+import random
 
 def complexMultFixed(a_real :int, a_img: int, b_real : int, b_img : int, D_W: int, F_W: int):
     pass
@@ -166,8 +168,8 @@ def complexNorm(vector):
     return math.sqrt(sum(r**2 + i**2 for r, i in vector))
 
 def normalizeComplexVector(size):
-    vector = [random_complex() for _ in range(size)]
-    norm = complex_norm(vector)
+    vector = [randomComplexFloat() for _ in range(size)]
+    norm = complexNorm(vector)
     return [(r / norm, i / norm) for r, i in vector]
 
 def randomNormComplexFixedPVector(size, F_W):
@@ -228,3 +230,101 @@ def ComplexFixedVectorMatrixMult(vector, matrix, F_W, D_W):
 
 
 
+#####       Shor function
+def modularExponentiationVector(a, N, n):
+    size = 2 ** (2 * n)
+    q = 2 ** n
+    
+    vector = np.zeros(size, dtype=complex)
+    
+    amplitude = 1 / np.sqrt(q)
+    
+    for i in range(q):
+        a_i_mod_N = pow(a, i, N)
+        # Encontrar el índice en el espacio de estado |i>|a^i mod N> 
+        index =  i * (2 ** n) + a_i_mod_N
+        if(index < size) :
+            vector[index] = amplitude
+    
+    return vector
+
+def modularExponentiationVectorCFP(a, N, n, F_W):
+    size = 2 ** (2 * n)
+    q = 2 ** n
+    
+    vector = [(0, 0) for _ in range(size)]
+    
+    amplitude = 1 / np.sqrt(q)
+    amplitudefp = u.floatToSignedInt(amplitude, F_W)
+    
+    for i in range(q):
+        a_i_mod_N = pow(a, i, N)
+        # Encontrar el índice en el espacio de estado |i>|a^i mod N> 
+        index =  i * (2 ** n) + a_i_mod_N
+        if(index < size) :
+            vector[index] = (amplitudefp, 0) 
+    
+    return vector
+
+def qfti(vector, n):
+
+    N = 2 ** n
+    
+    # Crear la matriz de la QFTI
+    qfti_matrix = np.zeros((N, N), dtype=complex)
+    for j in range(N):
+        for k in range(N):
+            qfti_matrix[j, k] = (1 / np.sqrt(N)) * np.exp(2j * np.pi * j * k / N)
+    
+    # Aplicar la QFTI al vector
+    result = np.dot(qfti_matrix, vector)
+    
+    return result
+
+def IdentityMatrixCPF(rows, F_W):
+    result = [[(0, 0) for _ in range(rows)] for _ in range(rows)]
+    for i in range(rows):
+        ar_fix = u.floatToSignedInt(1.0, F_W)
+        ai_fix = u.floatToSignedInt(0.0, F_W)
+        result[i][i] = (ar_fix, ai_fix)
+    return result
+
+def qftiCFP(vector, n, F_W, D_W):
+
+    N = 2 ** n
+    
+    # Crear la matriz de la QFTI
+    qfti_matrix = [[(0, 0) for _ in range(N)] for _ in range(N)]
+    for j in range(N):
+        for k in range(N):
+            complexval = (1 / np.sqrt(N)) * np.exp(2j * np.pi * j * k / N)
+            real = complexval.real
+            img = complexval.imag
+            qfti_matrix[j][k] = u.complexToFixedTuple((real, img), F_W)
+    
+    # u.printComplexFixedMatrix(qfti_matrix, D_W, F_W)
+    
+    # Aplicar la QFTI al vector
+    result = ComplexFixedVectorMatrixMult(vector, qfti_matrix, F_W, D_W)
+    
+    return result
+
+def qftTensorCFP(vector, n , F_W, D_W):
+    N = 2 ** n
+    
+    # Crear la matriz de la QFTI
+    qfti_matrix = [[(0, 0) for _ in range(N)] for _ in range(N)]
+    for j in range(N):
+        for k in range(N):
+            complexval = (1 / np.sqrt(N)) * np.exp(2j * np.pi * j * k / N)
+            real = complexval.real
+            img = complexval.imag
+            qfti_matrix[j][k] = u.complexToFixedTuple((real, img), F_W)
+    
+    # u.printComplexFixedMatrix(qfti_matrix, D_W, F_W)
+    
+    identity_matrix = IdentityMatrixCPF(N, F_W)
+    tensor = tensorProductComplexFixed(qfti_matrix, identity_matrix, F_W, D_W)
+    result = ComplexFixedVectorMatrixMult(vector, tensor, F_W, D_W)
+    
+    return result

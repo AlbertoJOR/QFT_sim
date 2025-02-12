@@ -1,5 +1,6 @@
 import math
 import random
+import numpy as np
 def mask_int (a: int, data_w:int) -> int:
     mask = (1 << data_w) - 1 
     masked = a & mask
@@ -139,4 +140,25 @@ def printComplexFixedVector(Vector, D_W, F_W):
     for element in Vector:
         rowString = rowString + complexFixedPointString(element[0],element[1], D_W, F_W) 
     print(rowString)
+    print()
+
+def printComplexFixedVectorShor(Vector, D_W, F_W, n):
+    q = 2**n
+    counter2 = 0 
+    counter1 = 0
+    for element in Vector:
+        rowString = "|"+ str(counter2) + ">" + "|"+ str(counter1) + "> = " + complexFixedPointString(element[0],element[1], D_W, F_W) 
+        print(rowString)
+        if( counter1 == q-1):
+            counter2 = counter2 + 1
+        counter1 = (counter1 + 1) % q
+    print()
+
+
+def printComplexFixedVectorQuantum(Vector, D_W, F_W):
+    counter = 0
+    for element in Vector:
+        rowString = "|"+ str(counter) + "> = " + complexFixedPointString(element[0],element[1], D_W, F_W) 
+        print(rowString)
+        counter += 1
     print()
